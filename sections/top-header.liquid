@@ -1,0 +1,289 @@
+{% if section.settings.enable_top_header %}
+<div class="top-header-section {% unless section.settings.show_on_mobile %}d-none d-lg-block{% endunless %}">
+  <div class="container container-v1">
+    <div class="row align-items-center justify-content-between top-header-row">
+      
+      <!-- Left side: Phone and Email -->
+      <div class="col-12 col-md-4 top-header-left text-left d-flex flex-wrap align-items-center">
+        {% if section.settings.phone != blank %}
+          <a href="tel:{{ section.settings.phone }}" class="top-header-link mr-4 d-inline-flex align-items-center">
+            <i class="fa fa-phone mr-2"></i> <span>{{ section.settings.phone }}</span>
+          </a>
+        {% endif %}
+        {% if section.settings.email != blank %}
+          <a href="mailto:{{ section.settings.email }}" class="top-header-link d-inline-flex align-items-center">
+            <i class="fa fa-envelope mr-2"></i> <span>{{ section.settings.email }}</span>
+          </a>
+        {% endif %}
+      </div>
+      
+      <!-- Middle: Text Announcement -->
+      <div class="col-12 col-md-4 top-header-middle text-center">
+        {% if section.settings.middle_text != blank %}
+          {% if section.settings.middle_link != blank %}
+            <a href="{{ section.settings.middle_link }}" class="top-header-announcement">
+              {{ section.settings.middle_text }}
+            </a>
+          {% else %}
+            <span class="top-header-announcement">{{ section.settings.middle_text }}</span>
+          {% endif %}
+        {% endif %}
+      </div>
+      
+      <!-- Right side: Social Icons -->
+      <div class="col-12 col-md-4 top-header-right text-right d-flex justify-content-md-end justify-content-center">
+        <ul class="list-inline mb-0 d-inline-flex align-items-center social-icons-list">
+          {% if section.settings.social_facebook_link != blank %}
+            <li class="list-inline-item mr-3">
+              <a href="{{ section.settings.social_facebook_link }}" target="_blank" title="Facebook" class="top-header-social-link">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if section.settings.social_twitter_link != blank %}
+            <li class="list-inline-item mr-3">
+              <a href="{{ section.settings.social_twitter_link }}" target="_blank" title="Twitter" class="top-header-social-link">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if section.settings.social_instagram_link != blank %}
+            <li class="list-inline-item mr-3">
+              <a href="{{ section.settings.social_instagram_link }}" target="_blank" title="Instagram" class="top-header-social-link">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if section.settings.social_pinterest_link != blank %}
+            <li class="list-inline-item mr-3">
+              <a href="{{ section.settings.social_pinterest_link }}" target="_blank" title="Pinterest" class="top-header-social-link">
+                <i class="fa fa-pinterest-p"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if section.settings.social_youtube_link != blank %}
+            <li class="list-inline-item mr-3">
+              <a href="{{ section.settings.social_youtube_link }}" target="_blank" title="YouTube" class="top-header-social-link">
+                <i class="fa fa-youtube-play"></i>
+              </a>
+            </li>
+          {% endif %}
+          {% if section.settings.social_tiktok_link != blank %}
+            <li class="list-inline-item mr-0">
+              <a href="{{ section.settings.social_tiktok_link }}" target="_blank" title="TikTok" class="top-header-social-link d-inline-flex align-items-center justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="tiktok-svg-icon"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a73.2,73.2,0,1,0,57.75,71.18V0h90.12a107.45,107.45,0,0,0,20,53c17.51,21.6,44,35,75.12,37V180A209.56,209.56,0,0,1,448,209.91Z"/></svg>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .top-header-section {
+    background-color: {{ section.settings.bg_color }};
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: 'Jost', sans-serif;
+  }
+  .top-header-row {
+    padding-top: {{ section.settings.padding_top_bottom }}px;
+    padding-bottom: {{ section.settings.padding_top_bottom }}px;
+    min-height: 38px;
+  }
+  .top-header-link,
+  .top-header-announcement {
+    color: {{ section.settings.text_color }} !important;
+    font-size: {{ section.settings.font_size }}px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none !important;
+    transition: color 0.25s ease-in-out;
+  }
+  .top-header-announcement {
+    display: inline-block;
+  }
+  .top-header-social-link {
+    color: {{ section.settings.text_color }} !important;
+    font-size: {{ section.settings.font_size }}px;
+    transition: color 0.25s ease-in-out, transform 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+  .top-header-link:hover,
+  .top-header-announcement:hover,
+  .top-header-social-link:hover {
+    color: {{ section.settings.accent_color }} !important;
+  }
+  .top-header-social-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+  .top-header-social-link .tiktok-svg-icon {
+    width: {{ section.settings.font_size }}px;
+    height: {{ section.settings.font_size }}px;
+    fill: currentColor;
+  }
+  
+  /* Mobile and tablet styling */
+  @media (max-width: 767px) {
+    .top-header-row {
+      flex-direction: column;
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .top-header-left,
+    .top-header-middle,
+    .top-header-right {
+      width: 100% !important;
+      text-align: center !important;
+      justify-content: center !important;
+      margin-bottom: 8px;
+    }
+    .top-header-right {
+      margin-bottom: 0;
+    }
+  }
+</style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Top Header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_top_header",
+      "label": "Enable Top Header",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on Mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors & Layout"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#fbf3ed"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text & Icon Color",
+      "default": "#222222"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Hover Accent Color",
+      "default": "#e25c3d"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "padding_top_bottom",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top/Bottom",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Left Block: Contact Details"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "+1 (800) 123-4567"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email Address",
+      "default": "info@yikanshop.com"
+    },
+    {
+      "type": "header",
+      "content": "Middle Block: Text Announcement"
+    },
+    {
+      "type": "textarea",
+      "id": "middle_text",
+      "label": "Announcement Text",
+      "default": "Welcome to Yikan Shoes Store! Free Worldwide Delivery."
+    },
+    {
+      "type": "url",
+      "id": "middle_link",
+      "label": "Announcement Link"
+    },
+    {
+      "type": "header",
+      "content": "Right Block: Social Links"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook_link",
+      "label": "Facebook Link",
+      "default": "https://facebook.com"
+    },
+    {
+      "type": "url",
+      "id": "social_twitter_link",
+      "label": "Twitter/X Link",
+      "default": "https://twitter.com"
+    },
+    {
+      "type": "url",
+      "id": "social_instagram_link",
+      "label": "Instagram Link",
+      "default": "https://instagram.com"
+    },
+    {
+      "type": "url",
+      "id": "social_pinterest_link",
+      "label": "Pinterest Link",
+      "default": "https://pinterest.com"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube_link",
+      "label": "YouTube Link",
+      "default": "https://youtube.com"
+    },
+    {
+      "type": "url",
+      "id": "social_tiktok_link",
+      "label": "TikTok Link",
+      "default": "https://tiktok.com"
+    }
+  ]
+}
+{% endschema %}

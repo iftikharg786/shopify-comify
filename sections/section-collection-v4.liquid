@@ -1,0 +1,280 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-collection-v4" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{% endif %} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} background-color: {{ section.settings.bg_color }};">
+  <div class="section-collection-v4 py-5">
+    <div class="container container-v2">
+      
+      {% if section.settings.title_heading != blank %}
+        <div class="title-wrapper mb-5 text-left">
+          <h3 class="title_heading d-inline-block pb-2 mb-0" style="color: {{ section.settings.color_title }};">
+            {{ section.settings.title_heading }}
+          </h3>
+          <div class="title-underline" style="background-color: {{ section.settings.color_underline }};"></div>
+        </div>
+      {% endif %}
+      
+      <div class="category-grid">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'collection' %}
+              <div class="category-item text-center">
+                <a href="{{ block.settings.brand_url | default: '/collections/all' }}" class="category-link d-block">
+                  <div class="category-img-wrapper" style="border-radius: {{ section.settings.border_radius }}px;">
+                    {% if block.settings.brand_img != blank %}
+                      <img data-src="{{ block.settings.brand_img | img_url: '400x400', crop: 'center' }}" class="lazyload img-fluid w-100 h-100 object-fit-cover" alt="{{ block.settings.title_collection | escape }}">
+                    {% else %}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg w-100 h-100 bg-light' }}
+                    {% endif %}
+                  </div>
+                  <h4 class="category-title mt-3 mb-0" style="color: {{ section.settings.color_label }};">
+                    {{ block.settings.title_collection | default: 'Collection' }}
+                  </h4>
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-collection-v4 .title-wrapper {
+    position: relative;
+  }
+  .section-collection-v4 .title_heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .section-collection-v4 .title-underline {
+    height: 3px;
+    width: 80px;
+    margin-top: 8px;
+    border-radius: 2px;
+  }
+  
+  .section-collection-v4 .category-grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
+    gap: 24px 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .section-collection-v4 .category-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .section-collection-v4 .category-grid {
+      grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+      gap: 30px 24px;
+    }
+  }
+
+  .section-collection-v4 .category-link {
+    text-decoration: none !important;
+  }
+  
+  .section-collection-v4 .category-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .section-collection-v4 .category-img-wrapper img {
+    transition: transform 0.5s ease-out;
+  }
+  
+  .section-collection-v4 .category-link:hover .category-img-wrapper img {
+    transform: scale(1.06);
+  }
+  
+  .section-collection-v4 .category-link:hover .category-img-wrapper {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+  }
+  
+  .section-collection-v4 .category-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    transition: color 0.25s ease-in-out;
+  }
+  
+  .section-collection-v4 .category-link:hover .category-title {
+    color: {{ section.settings.color_underline }} !important;
+  }
+  
+  .section-collection-v4 .object-fit-cover {
+    object-fit: cover;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "COLLECTION V4",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "title_heading",
+      "label": "Title Heading",
+      "default": "Shop By Category"
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Title Color",
+      "default": "#003b46"
+    },
+    {
+      "type": "color",
+      "id": "color_underline",
+      "label": "Underline & Hover Accent Color",
+      "default": "#003b46"
+    },
+    {
+      "type": "header",
+      "content": "Grid Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Mobile Columns",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_label",
+      "label": "Label Color",
+      "default": "#222222"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Category Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "brand_img",
+          "label": "Custom Image",
+          "info": "Square image (400 x 400px) recommended"
+        },
+        {
+          "type": "text",
+          "id": "title_collection",
+          "label": "Category Title",
+          "default": "New Category"
+        },
+        {
+          "type": "url",
+          "id": "brand_url",
+          "label": "Category Link",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "COLLECTION V4",
+      "category": "HOME",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "title_collection": "Bathroom Suites"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title_collection": "Toilets"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title_collection": "Basins"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title_collection": "Baths"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title_collection": "Furniture"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title_collection": "Showers"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
