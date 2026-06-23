@@ -1,0 +1,415 @@
+<div data-section-id="{{ section.id }}" data-section-type="section-banner-v12" style="{% if section.settings.margin_top != blank %}margin-top: {{section.settings.margin_top}}px;{% endif %} {% if section.settings.margin_bottom != blank %}margin-bottom: {{section.settings.margin_bottom}}px;{% endif %} background-color: {{ section.settings.bg_color }};">
+  <div class="section-banner-v12 py-5">
+    <div class="container container-v2">
+      
+      {% if section.settings.title_heading != blank %}
+        <div class="title-wrapper mb-5 text-left">
+          <h3 class="title_heading d-inline-block pb-2 mb-0" style="color: {{ section.settings.color_title_section }};">
+            {{ section.settings.title_heading }}
+          </h3>
+          <div class="title-underline" style="background-color: {{ section.settings.color_underline }};"></div>
+        </div>
+      {% endif %}
+      
+      <div class="banner-grid-v12">
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'banner_card' %}
+              <div class="banner-card-item">
+                <a href="{{ block.settings.link | default: '/collections/all' }}" class="banner-card-link d-block">
+                  
+                  <div class="banner-card-image-wrapper" style="border-radius: {{ section.settings.border_radius }}px;">
+                    
+                    <!-- Background Image -->
+                    {% if block.settings.image != blank %}
+                      <img data-src="{{ block.settings.image | img_url: '800x600', crop: 'center' }}" class="lazyload banner-card-img w-100 h-100 object-fit-cover" alt="{{ block.settings.title | escape }}">
+                    {% else %}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg w-100 h-100 bg-secondary' }}
+                    {% endif %}
+                    
+                    <!-- Overlay Layer -->
+                    {% if section.settings.overlay_type == 'solid' %}
+                      <div class="banner-card-overlay banner-card-overlay-solid" style="background-color: {{ section.settings.overlay_color }}; opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+                    {% elsif section.settings.overlay_type == 'gradient' %}
+                      <div class="banner-card-overlay banner-card-overlay-gradient" style="background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, {{ section.settings.overlay_color }} 100%); opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+                    {% endif %}
+                    
+                    <!-- Text Content (overlayed on top of image & overlay) -->
+                    <div class="banner-card-content text-{{ section.settings.text_align }}">
+                      <h4 class="banner-card-title mb-0" style="color: {{ block.settings.color_title | default: '#ffffff' }}; font-size: {{ section.settings.font_size }}px; font-weight: {{ section.settings.font_weight }}; text-transform: uppercase;">
+                        {{ block.settings.title | default: 'Collection Name' }}
+                      </h4>
+                    </div>
+
+                  </div>
+
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .section-banner-v12 .title-wrapper {
+    position: relative;
+  }
+  .section-banner-v12 .title_heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .section-banner-v12 .title-underline {
+    height: 3px;
+    width: 80px;
+    margin-top: 8px;
+    border-radius: 2px;
+  }
+
+  .banner-grid-v12 {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns_mobile }}, minmax(0, 1fr));
+    gap: 20px;
+  }
+  
+  @media (min-width: 992px) {
+    .banner-grid-v12 {
+      grid-template-columns: repeat({{ section.settings.columns_desktop }}, minmax(0, 1fr));
+      gap: 30px;
+    }
+  }
+
+  .banner-card-link {
+    text-decoration: none !important;
+  }
+  
+  .banner-card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: {{ section.settings.height_mobile }}px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  @media (min-width: 992px) {
+    .banner-card-image-wrapper {
+      height: {{ section.settings.height_desktop }}px;
+    }
+  }
+  
+  .banner-card-img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .banner-card-link:hover .banner-card-img {
+    transform: scale(1.05);
+  }
+  
+  .banner-card-link:hover .banner-card-image-wrapper {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .banner-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .banner-card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    z-index: 2;
+    pointer-events: none;
+    box-sizing: border-box;
+  }
+  
+  @media (min-width: 768px) {
+    .banner-card-content {
+      padding: 30px;
+    }
+  }
+
+  .banner-card-title {
+    font-family: 'Jost', sans-serif;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  }
+  
+  .object-fit-cover {
+    object-fit: cover;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BANNER V12",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "title_heading",
+      "label": "Title Heading",
+      "default": "Shop By Categories"
+    },
+    {
+      "type": "color",
+      "id": "color_title_section",
+      "label": "Title Color",
+      "default": "#003b46"
+    },
+    {
+      "type": "color",
+      "id": "color_underline",
+      "label": "Underline / Accent Color",
+      "default": "#003b46"
+    },
+    {
+      "type": "header",
+      "content": "Grid Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Desktop Columns",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "Mobile Columns",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "height_desktop",
+      "min": 200,
+      "max": 600,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop Card Height",
+      "default": 350
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "min": 150,
+      "max": 450,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile Card Height",
+      "default": 250
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Card Border Radius",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Card Overlay Controls"
+    },
+    {
+      "type": "select",
+      "id": "overlay_type",
+      "label": "Overlay Type",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "solid",
+          "label": "Solid Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Bottom Fade Gradient"
+        }
+      ],
+      "default": "gradient"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Base Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Max Opacity",
+      "default": 65
+    },
+    {
+      "type": "header",
+      "content": "Card Typography Settings"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font Weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Section Space"
+    },
+    {
+      "type": "text",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    },
+    {
+      "type": "text",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "info": "Defined in pixels. Do not add the 'px' unit."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner_card",
+      "name": "Banner Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Card Title",
+          "default": "New Collection"
+        },
+        {
+          "type": "color",
+          "id": "color_title",
+          "label": "Title Color Override",
+          "default": "#ffffff"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link URL",
+          "default": "/collections/all"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BANNER V12",
+      "category": "HOME",
+      "blocks": [
+        {
+          "type": "banner_card",
+          "settings": {
+            "title": "Traditional Furniture"
+          }
+        },
+        {
+          "type": "banner_card",
+          "settings": {
+            "title": "Freestanding Baths"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
