@@ -20,7 +20,7 @@
     "content_promo_topbar": "<em>Check our new Christmas Demos!</em> Perfect for Christmas Sale!",
     "text_btn_promo": "Shop Now",
     "url_btn_promo": "",
-    "ena_popup_news": true,
+    "ena_popup_news": false,
     "select_newletter": "newsletter_v3",
     "title_popup": "Get 20% discount shipped to your inbox",
     "description_popup": "Subscribe to our newsletter and we will ship <strong>20% discount code </strong>today",
