@@ -18,7 +18,7 @@
             "select_position_content": "left",
             "select_textalign_content": "left",
             "block_title_top1": "NEW!",
-            "color_block_title_top1": "#f4f4f4",
+            "color_block_title_top1": "#000000",
             "font_size_top1": 34,
             "fonts_sub_1": "Roboto",
             "effect_title1": "bounce",
