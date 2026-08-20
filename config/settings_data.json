@@ -21,7 +21,7 @@
           "reviews_count": "OVER 1,200+ REVIEWS",
           "shipping_text": "FREE US SHIPPING OVER $50",
           "guarantee_text": "30-DAY MONEY-BACK GUARANTEE",
-          "right_text": "📦 SHIPS IN 24H"
+          "right_text": "SHIPS IN 24H"
         }
       },
       "menvel-header": {
@@ -37,6 +37,7 @@
       "menvel-footer": {
         "type": "menvel-footer",
         "settings": {
+          "footer_logo": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
           "brand_title": "Menvel",
           "brand_subtitle": "Goods",
           "about_text": "Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home.",
