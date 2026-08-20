@@ -1,14 +1,14 @@
 {%- comment -%}
-  Menvel Goods - About Us Hero & Brand Story Section (100% Dynamic Shopify Schema)
+  Menvel Goods - About Us Master Hero & Story (Luxury Editorial Brand Layout)
   File: sections/menvel-about-story.liquid
 {%- endcomment -%}
 
 <section class="py-16 sm:py-24 bg-white border-b border-[#E8DFD5]" role="region" aria-label="About Menvel Goods" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
-    <!-- Top Eyebrow & Hero Heading -->
+    <!-- Top Editorial Eyebrow & Hero Heading -->
     <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
-      <span class="menvel-eyebrow text-[#8A4315]">{{ section.settings.eyebrow | default: "✦ OUR STORY & PHILOSOPHY" }}</span>
+      <span class="menvel-eyebrow text-[#8A4315]">{{ section.settings.eyebrow | default: "✦ OUR HERITAGE & PHILOSOPHY" }}</span>
       <h1 class="menvel-heading-serif text-3xl sm:text-5xl lg:text-6xl text-[#191614] leading-tight">
         {{ section.settings.heading | default: "Crafted By Nature.<br>Designed For Your Table." }}
       </h1>
@@ -21,46 +21,66 @@
     <!-- Editorial 2-Column Split -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
       
-      <!-- Left: Studio Lifestyle Photo -->
+      <!-- Left: Studio Showcase Photo -->
       <div class="lg:col-span-6">
-        <div class="relative w-full aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FBF7F2] shadow-sm group">
+        <div class="relative w-full aspect-square rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FBF7F2] shadow-sm group flex items-center justify-center p-6">
           <img src="{% if section.settings.story_image != blank %}{{ section.settings.story_image | image_url: width: 1000 }}{% else %}{{ 'menvel-hero-showcase.jpg' | asset_url }}{% endif %}" 
                alt="{{ section.settings.heading | escape }}" 
-               class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+               class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" 
                loading="eager">
-          <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-xs px-4 py-2 rounded-xl border border-[#E8DFD5] shadow-xs">
-            <span class="text-xs font-serif font-bold text-[#191614]">{{ section.settings.image_badge | default: "Hand-Finished with Botanical Oils" }}</span>
+          <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-xs px-4 py-2.5 rounded-xl border border-[#E8DFD5] shadow-xs">
+            <span class="text-xs font-serif font-bold text-[#191614] flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#15803D]"></span>
+              {{ section.settings.image_badge | default: "Hand-Finished with Botanical Oils" }}
+            </span>
           </div>
         </div>
       </div>
 
-      <!-- Right: Story Copy -->
+      <!-- Right: Narrative Copy -->
       <div class="lg:col-span-6 space-y-6 text-left">
         <div>
-          <span class="menvel-eyebrow text-[#15803D]">{{ section.settings.story_eyebrow | default: "HOW WE STARTED" }}</span>
+          <span class="menvel-eyebrow text-[#15803D]">{{ section.settings.story_eyebrow | default: "OUR BEGINNING" }}</span>
           <h2 class="menvel-heading-serif text-2xl sm:text-3xl text-[#191614] mt-1">
             {{ section.settings.story_heading | default: "Say Goodbye to Toxic Silicone & Ruined Counters" }}
           </h2>
         </div>
 
-        <div class="prose text-xs sm:text-sm text-[#6B6259] leading-relaxed space-y-4">
+        <div class="prose text-sm text-[#6B6259] leading-relaxed space-y-4 font-sans">
           <p>
-            {{ section.settings.story_paragraph_1 | default: "For years, kitchen trivets were an afterthought — flimsy silicone mats that melted, warped cork pads that stained, or bulky metal wire racks that scratched delicate dining tables." }}
+            {{ section.settings.story_paragraph_1 | default: "For years, kitchen trivets were treated as an afterthought — flimsy silicone mats that melted, warped cork pads that absorbed stains, or clumsy metal wire racks that scratched delicate dining tables." }}
           </p>
 
           <p>
-            {{ section.settings.story_paragraph_2 | default: "We asked ourselves: <em>What if surface protection could be an architectural centerpiece?</em>" }}
+            {{ section.settings.story_paragraph_2 | default: "We asked ourselves a simple question: <em>What if surface protection could be an architectural centerpiece you are proud to display?</em>" }}
           </p>
 
           <p>
-            {{ section.settings.story_paragraph_3 | default: "Inspired by Scandinavian minimalism and traditional woodworking joinery, we engineered the <strong>Menvel Tree Trivet</strong> — an automatic gravity-open mechanism sculpted from 100% solid Black Walnut and Natural Beech wood. When you set cookware down, it expands into a balanced protective star; when lifted, it stands proudly as a handcrafted tree sculpture." }}
+            {{ section.settings.story_paragraph_3 | default: "Inspired by minimalist Scandinavian aesthetics and traditional woodworking joinery, we engineered the <strong>Menvel Foldable Tree Trivet</strong> — an automatic gravity-open design sculpted from 100% solid Black Walnut and Natural Beech wood. When you set cookware down, it expands into a balanced protective star; when lifted, it stands proudly as a handcrafted tree sculpture on your countertop." }}
           </p>
         </div>
 
         <!-- Quote Callout -->
-        <div class="p-5 rounded-xl bg-[#FBF7F2] border-l-4 border-[#3A2213] text-xs text-[#191614] italic">
-          "{{ section.settings.quote | default: "Every piece of wood has a grain story. We simply shape it so it protects your family's gathering place for generations." }}"
+        <div class="p-5 rounded-xl bg-[#FBF7F2] border-l-4 border-[#3A2213] text-sm text-[#191614] italic font-serif leading-relaxed">
+          "{{ section.settings.quote | default: "Every piece of wood has its own unique grain story. We simply shape it so it protects your family's gathering place for generations." }}"
         </div>
+
+        <!-- 3 Brand Highlights -->
+        <div class="grid grid-cols-3 gap-4 pt-2 border-t border-[#E8DFD5]">
+          <div>
+            <span class="font-serif font-bold text-lg text-[#3A2213] block">100%</span>
+            <span class="text-xs text-[#6B6259]">Solid Hardwood</span>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-lg text-[#3A2213] block">450°F</span>
+            <span class="text-xs text-[#6B6259]">Heat Protection</span>
+          </div>
+          <div>
+            <span class="font-serif font-bold text-lg text-[#3A2213] block">0%</span>
+            <span class="text-xs text-[#6B6259]">Plastics or Toxins</span>
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -77,7 +97,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Top Eyebrow",
-      "default": "✦ OUR STORY & PHILOSOPHY"
+      "default": "✦ OUR HERITAGE & PHILOSOPHY"
     },
     {
       "type": "text",
@@ -106,7 +126,7 @@
       "type": "text",
       "id": "story_eyebrow",
       "label": "Story Eyebrow",
-      "default": "HOW WE STARTED"
+      "default": "OUR BEGINNING"
     },
     {
       "type": "text",
@@ -118,25 +138,25 @@
       "type": "textarea",
       "id": "story_paragraph_1",
       "label": "Story Paragraph 1",
-      "default": "For years, kitchen trivets were an afterthought — flimsy silicone mats that melted, warped cork pads that stained, or bulky metal wire racks that scratched delicate dining tables."
+      "default": "For years, kitchen trivets were treated as an afterthought — flimsy silicone mats that melted, warped cork pads that absorbed stains, or clumsy metal wire racks that scratched delicate dining tables."
     },
     {
       "type": "textarea",
       "id": "story_paragraph_2",
       "label": "Story Paragraph 2",
-      "default": "We asked ourselves: What if surface protection could be an architectural centerpiece?"
+      "default": "We asked ourselves a simple question: What if surface protection could be an architectural centerpiece you are proud to display?"
     },
     {
       "type": "textarea",
       "id": "story_paragraph_3",
       "label": "Story Paragraph 3",
-      "default": "Inspired by Scandinavian minimalism and traditional woodworking joinery, we engineered the Menvel Tree Trivet — an automatic gravity-open mechanism sculpted from 100% solid Black Walnut and Natural Beech wood."
+      "default": "Inspired by minimalist Scandinavian aesthetics and traditional woodworking joinery, we engineered the Menvel Foldable Tree Trivet — an automatic gravity-open design sculpted from 100% solid Black Walnut and Natural Beech wood."
     },
     {
       "type": "text",
       "id": "quote",
       "label": "Featured Quote",
-      "default": "Every piece of wood has a grain story. We simply shape it so it protects your family's gathering place for generations."
+      "default": "Every piece of wood has its own unique grain story. We simply shape it so it protects your family's gathering place for generations."
     }
   ],
   "presets": [
