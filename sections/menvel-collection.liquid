@@ -1,0 +1,144 @@
+{%- comment -%}
+  Menvel Goods - Collection Template (Clean OS 2.0)
+  File: sections/menvel-collection.liquid
+{%- endcomment -%}
+
+<section class="py-12 sm:py-16 bg-white" role="region" aria-label="{{ collection.title | escape }}" data-section-id="{{ section.id }}">
+  <div class="menvel-container">
+
+    <!-- Collection Header -->
+    <div class="text-center space-y-3 mb-10 pb-8 border-b border-[#E8DFD5]">
+      <span class="menvel-eyebrow text-[#8A4315]">{{ section.settings.eyebrow | default: "✦ SHOP" }}</span>
+      <h1 class="menvel-heading-serif text-3xl sm:text-4xl lg:text-5xl text-[#191614]">
+        {{ collection.title }}
+      </h1>
+      {%- if collection.description != blank -%}
+        <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed max-w-2xl mx-auto">
+          {{ collection.description }}
+        </p>
+      {%- endif -%}
+      <div class="w-12 h-0.5 bg-[#3A2213] mx-auto mt-3 rounded-full"></div>
+    </div>
+
+    <!-- Products Grid -->
+    {%- if collection.products_count > 0 -%}
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+        {%- for product in collection.products -%}
+          <div class="group rounded-2xl border border-[#E8DFD5] bg-[#FBF7F2] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col">
+
+            <!-- Product Image -->
+            <a href="{{ product.url }}" class="block overflow-hidden bg-white aspect-square relative">
+              {%- if product.featured_image != blank -%}
+                <img src="{{ product.featured_image | image_url: width: 600 }}"
+                     alt="{{ product.featured_image.alt | escape | default: product.title | escape }}"
+                     class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                     loading="lazy">
+              {%- else -%}
+                <div class="w-full h-full bg-[#F4EDE4] flex items-center justify-center">
+                  <span class="text-[#A09587] text-xs">No Image</span>
+                </div>
+              {%- endif -%}
+
+              <!-- Variant Badge -->
+              {%- if product.variants.size > 1 -%}
+                <span class="absolute top-3 left-3 bg-[#3A2213] text-white text-[10px] font-bold px-2 py-1 rounded-full">
+                  {{ product.variants.size }} Options
+                </span>
+              {%- endif -%}
+
+              <!-- Sale Badge -->
+              {%- if product.compare_at_price > product.price -%}
+                <span class="absolute top-3 right-3 bg-[#D93829] text-white text-[10px] font-bold px-2 py-1 rounded-full">
+                  SALE
+                </span>
+              {%- endif -%}
+            </a>
+
+            <!-- Product Info -->
+            <div class="p-4 flex flex-col flex-1 gap-2">
+              <a href="{{ product.url }}" class="block">
+                <h2 class="font-serif font-bold text-sm text-[#191614] leading-snug group-hover:text-[#3A2213] transition line-clamp-2">
+                  {{ product.title }}
+                </h2>
+              </a>
+
+              <!-- Reviews Stars -->
+              <div class="flex items-center gap-1">
+                <span class="text-[#D97706] text-xs">★★★★★</span>
+                <span class="text-[11px] text-[#6B6259]">({{ section.settings.review_count | default: "1,200+" }})</span>
+              </div>
+
+              <!-- Price -->
+              <div class="flex items-center gap-2 mt-auto pt-2">
+                <span class="font-bold text-sm text-[#191614]">
+                  {{ product.price | money }}
+                </span>
+                {%- if product.compare_at_price > product.price -%}
+                  <span class="text-xs text-[#9CA3AF] line-through">
+                    {{ product.compare_at_price | money }}
+                  </span>
+                {%- endif -%}
+              </div>
+
+              <!-- Add to Cart / View Button -->
+              <a href="{{ product.url }}"
+                 class="mt-3 w-full h-10 rounded-xl bg-[#3A2213] hover:bg-[#2A170C] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-200 shadow-xs">
+                <span>View Product</span>
+                <span>→</span>
+              </a>
+            </div>
+
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <!-- Pagination -->
+      {%- if paginate.pages > 1 -%}
+        <div class="mt-12 flex justify-center">
+          {{ paginate | default_pagination | replace: '<span class="page">', '<span class="page px-3 py-2 rounded-lg border border-[#E8DFD5] text-xs font-bold">' }}
+        </div>
+      {%- endif -%}
+
+    {%- else -%}
+      <!-- Empty Collection State -->
+      <div class="text-center py-20 space-y-4">
+        <div class="w-16 h-16 rounded-full bg-[#FBF7F2] border border-[#E8DFD5] flex items-center justify-center mx-auto text-2xl">
+          🌿
+        </div>
+        <h2 class="font-serif font-bold text-xl text-[#191614]">No Products Yet</h2>
+        <p class="text-xs text-[#6B6259]">Check back soon or browse our featured product.</p>
+        <a href="/products/foldable-wooden-trivet-set"
+           class="inline-flex items-center gap-2 h-11 px-7 rounded-xl bg-[#3A2213] text-white text-xs font-bold uppercase tracking-wider shadow-sm hover:bg-[#2A170C] transition">
+          Shop Menvel Trivet Set
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Page",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "✦ SHOP"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "label": "Review Count (display only)",
+      "default": "1,200+"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Page"
+    }
+  ]
+}
+{% endschema %}
