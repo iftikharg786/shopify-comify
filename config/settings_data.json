@@ -19,9 +19,9 @@
           "enable_announcement": true,
           "rating_score": "4.9/5",
           "reviews_count": "OVER 1,200+ REVIEWS",
-          "shipping_text": "FREE US SHIPPING OVER",
-          "guarantee_text": "30-DAY MONEY-BACK GUARANTEE",
-          "right_text": "SHIPS IN 24H"
+          "shipping_text": "",
+          "guarantee_text": "",
+          "right_text": ""
         }
       },
       "menvel-header": {
@@ -45,7 +45,11 @@
           "menu_1_heading": "QUICK LINKS",
           "footer_menu": "footer",
           "menu_2_heading": "CUSTOMER SERVICES",
-          "customer_menu": "customer-services"
+          "customer_menu": "customer-services",
+          "facebook_url": "",
+          "instagram_url": "",
+          "pinterest_url": "",
+          "tiktok_url": ""
         }
       }
     },
