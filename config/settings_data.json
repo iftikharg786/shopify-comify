@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "logo_mobile": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
+    "mobile_logo_maxwidth": 115,
     "brand_walnut": "#3A2213",
     "brand_cream": "#FBF7F2",
     "brand_red_accent": "#D93829",
