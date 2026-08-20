@@ -1,21 +1,22 @@
 {%- comment -%}
-  Menvel Goods - Master Footer (100% Dynamic Shopify Schema)
+  Menvel Goods - Master Footer (Balanced 3-Column Layout & Compact Spacing)
   File: sections/menvel-footer.liquid
 {%- endcomment -%}
 
 {%- assign footer_menu = linklists[section.settings.footer_menu] | default: linklists['footer'] -%}
-{%- assign customer_menu = linklists[section.settings.customer_menu] -%}
+{%- assign customer_menu = linklists[section.settings.customer_menu] | default: linklists['customer-services'] -%}
 
-<footer id="MenvelFooter" class="bg-[#FBF7F2] pt-14 pb-8 border-t border-[#E8DFD5]" role="contentinfo" aria-label="Site Footer" data-section-id="{{ section.id }}">
+<footer id="MenvelFooter" class="bg-[#FBF7F2] pt-10 pb-6 border-t border-[#E8DFD5]" role="contentinfo" aria-label="Site Footer" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+    <!-- 3 Clean Columns: Brand (Col 1-2), Quick Links (Col 3), Customer Services (Col 4) -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 mb-8 items-start">
       
-      <!-- Column 1: Brand & Newsletter -->
-      <div class="space-y-4">
-        <a href="{{ routes.root_url }}" class="flex items-center gap-2.5">
+      <!-- Column 1: Brand & Newsletter (Wider Column) -->
+      <div class="md:col-span-6 lg:col-span-5 space-y-3.5 text-left">
+        <a href="{{ routes.root_url }}" class="inline-flex items-center gap-2.5">
           {%- if section.settings.footer_logo != blank -%}
-            <img src="{{ section.settings.footer_logo | image_url: width: 200 }}" alt="{{ shop.name | escape }}" class="h-auto max-w-[120px]">
+            <img src="{{ section.settings.footer_logo | image_url: width: 220 }}" alt="{{ shop.name | escape }}" class="h-auto max-w-[130px]">
           {%- else -%}
             <div class="w-8 h-8 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-sm tracking-tighter shadow-xs">
               <span class="text-[#D93829]">M</span><span>G</span>
@@ -27,29 +28,29 @@
           {%- endif -%}
         </a>
 
-        <p class="text-xs text-[#6B6259] leading-relaxed max-w-xs">
+        <p class="text-xs text-[#6B6259] leading-relaxed max-w-sm">
           {{ section.settings.about_text | default: "Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home." }}
         </p>
 
         <!-- Newsletter Subscription Form -->
         {%- if section.settings.enable_newsletter -%}
-          {% form 'customer', class: 'flex items-center gap-1.5 pt-1' %}
+          {% form 'customer', class: 'flex items-center gap-1.5 pt-0.5 max-w-sm' %}
             <input type="hidden" name="contact[tags]" value="newsletter">
             <input type="email" 
                    name="contact[email]"
                    placeholder="Your email address..." 
                    required
-                   class="flex-1 px-3.5 py-2.5 text-xs bg-white border border-[#E8DFD5] rounded-md outline-none focus:border-[#3A2213] text-[#191614]">
+                   class="flex-1 px-3 py-2 text-xs bg-white border border-[#E8DFD5] rounded-md outline-none focus:border-[#3A2213] text-[#191614]">
             <button type="submit" 
-                    class="w-9 h-9 rounded-md bg-[#3A2213] text-white flex items-center justify-center hover:bg-[#2A170C] transition flex-shrink-0 cursor-pointer" 
+                    class="w-8 h-8 rounded-md bg-[#3A2213] text-white flex items-center justify-center hover:bg-[#2A170C] transition flex-shrink-0 cursor-pointer" 
                     aria-label="Subscribe">
               ➔
             </button>
           {% endform %}
         {%- endif -%}
 
-        <!-- Social Icons: proper SVG icons -->
-        <div class="flex items-center gap-2.5 pt-2">
+        <!-- Social Icons -->
+        <div class="flex items-center gap-2.5 pt-1">
           <!-- Facebook -->
           <a href="{{ section.settings.facebook_url | default: '#' }}" class="menvel-social-link" aria-label="Facebook" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -69,22 +70,19 @@
         </div>
       </div>
 
-      <!-- Column 2: Empty Spacer or Brand Message -->
-      <div class="hidden lg:block"></div>
-
-      <!-- Column 3: Quick Links -->
-      <div class="space-y-3">
+      <!-- Column 2: Quick Links -->
+      <div class="md:col-span-3 lg:col-span-3 lg:col-start-7 space-y-2.5 text-left">
         <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">
           {{ section.settings.menu_1_heading | default: "QUICK LINKS" }}
         </h4>
-        <ul class="space-y-2 text-xs text-[#6B6259]">
+        <ul class="space-y-1.5 text-xs text-[#6B6259]">
           {%- if footer_menu.links.size > 0 -%}
             {%- for link in footer_menu.links -%}
               <li><a href="{{ link.url }}" class="hover:text-[#3A2213] transition">{{ link.title }}</a></li>
             {%- endfor -%}
           {%- else -%}
             <li><a href="{{ routes.root_url }}" class="hover:text-[#3A2213] transition">Home</a></li>
-            <li><a href="/products/foldable-black-walnut-wooden-trivet-set" class="hover:text-[#3A2213] transition">Trivet Set (Shop)</a></li>
+            <li><a href="/products/foldable-black-walnut-wooden-trivet-set" class="hover:text-[#3A2213] transition">Shop Trivet Set</a></li>
             <li><a href="/pages/about-us" class="hover:text-[#3A2213] transition">About Us</a></li>
             <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Contact Us</a></li>
             <li><a href="/pages/faq" class="hover:text-[#3A2213] transition">FAQs</a></li>
@@ -92,12 +90,12 @@
         </ul>
       </div>
 
-      <!-- Column 4: Customer Services -->
-      <div class="space-y-3">
+      <!-- Column 3: Customer Services -->
+      <div class="md:col-span-3 lg:col-span-3 space-y-2.5 text-left">
         <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">
           {{ section.settings.menu_2_heading | default: "CUSTOMER SERVICES" }}
         </h4>
-        <ul class="space-y-2 text-xs text-[#6B6259]">
+        <ul class="space-y-1.5 text-xs text-[#6B6259]">
           {%- if customer_menu.links.size > 0 -%}
             {%- for link in customer_menu.links -%}
               <li><a href="{{ link.url }}" class="hover:text-[#3A2213] transition">{{ link.title }}</a></li>
@@ -106,18 +104,18 @@
             <li><a href="/pages/shipping-policy" class="hover:text-[#3A2213] transition">Shipping Policy</a></li>
             <li><a href="/pages/refund-policy" class="hover:text-[#3A2213] transition">Returns & Refunds</a></li>
             <li><a href="/pages/privacy-policy" class="hover:text-[#3A2213] transition">Privacy Policy</a></li>
-            <li><a href="/pages/terms-of-service" class="hover:text-[#3A2213] transition">Terms & Conditions</a></li>
-            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Customer Support</a></li>
+            <li><a href="/pages/terms-of-service" class="hover:text-[#3A2213] transition">Terms of Service</a></li>
+            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Help & Support</a></li>
           {%- endif -%}
         </ul>
       </div>
 
     </div>
 
-    <!-- Bottom Copyright -->
-    <div class="pt-6 border-t border-[#E8DFD5] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6B6259]">
+    <!-- Bottom Copyright & Legal Links -->
+    <div class="pt-5 border-t border-[#E8DFD5] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#6B6259]">
       <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
-      <div class="flex items-center gap-4 flex-wrap justify-center">
+      <div class="flex items-center gap-3 flex-wrap justify-center">
         <a href="/pages/privacy-policy" class="hover:text-[#3A2213] transition">Privacy Policy</a>
         <span>•</span>
         <a href="/pages/terms-of-service" class="hover:text-[#3A2213] transition">Terms of Service</a>
@@ -162,7 +160,7 @@
     {
       "type": "checkbox",
       "id": "enable_newsletter",
-      "label": "Enable Newsletter Form",
+      "label": "Enable Newsletter",
       "default": true
     },
     {
@@ -174,7 +172,7 @@
     {
       "type": "link_list",
       "id": "footer_menu",
-      "label": "Menu 1 Linklist"
+      "label": "Quick Links Menu"
     },
     {
       "type": "text",
@@ -185,11 +183,7 @@
     {
       "type": "link_list",
       "id": "customer_menu",
-      "label": "Menu 2 Linklist"
-    },
-    {
-      "type": "header",
-      "content": "Social Media Links"
+      "label": "Customer Services Menu"
     },
     {
       "type": "url",
@@ -210,6 +204,11 @@
       "type": "url",
       "id": "tiktok_url",
       "label": "TikTok URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer"
     }
   ]
 }

@@ -1,25 +1,28 @@
 {%- comment -%}
-  Menvel Goods - Complete Set & Holiday Gift Showcases
+  Menvel Goods - Complete Set & Packaging Showcase (Clean Split Layout)
   File: sections/menvel-included-and-packaging.liquid
 {%- endcomment -%}
 
-<section class="py-12 sm:py-16 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Complete Set & Packaging" data-section-id="{{ section.id }}">
-  <div class="menvel-container space-y-12">
+<section class="py-10 sm:py-14 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Complete Set & Packaging" data-section-id="{{ section.id }}">
+  <div class="menvel-container space-y-8">
     
-    <!-- Row 1: Heat Protection & Everyday Versatility Studio Banner -->
-    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-white shadow-sm">
-      <img src="{{ 'menvel-versatility-banner.png' | asset_url }}" 
-           alt="Heat Protection & Everyday Versatility - Menvel Trivet under Pans, Kettles, Pots and Cups" 
-           class="w-full h-auto object-cover block" 
-           loading="lazy">
+    <!-- Top Editorial Header -->
+    <div class="max-w-2xl mx-auto text-center space-y-1.5">
+      <span class="menvel-eyebrow text-[#8A4315]">✦ PREMIUM PRESENTATION</span>
+      <h2 class="menvel-heading-serif text-2xl sm:text-3xl lg:text-4xl text-[#191614]">
+        Everyday Versatility & Holiday Gift Ready
+      </h2>
+      <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed max-w-lg mx-auto">
+        Complete 4-trivet set + stand packed in a gold-embossed presentation box. Ready to gift or display.
+      </p>
     </div>
 
-    <!-- Row 2: Two High-Converting Packaging Banners (Complete Box + Holiday's Best Choice) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+    <!-- 2 Equal Luxury Showcase Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch max-w-5xl mx-auto">
       
       <!-- Card 1: Complete Set in One Box -->
-      <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-white shadow-sm flex flex-col justify-between group">
-        <div class="w-full overflow-hidden bg-[#FAF6F0]">
+      <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+        <div class="w-full overflow-hidden">
           <img src="{{ 'menvel-complete-set-box.png' | asset_url }}" 
                alt="Complete Set in One Box - Menvel Goods Foldable Wooden Trivet Set" 
                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
@@ -27,11 +30,11 @@
         </div>
       </div>
 
-      <!-- Card 2: Holiday's Best Choice Gift Packaging -->
-      <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-white shadow-sm flex flex-col justify-between group">
-        <div class="w-full overflow-hidden bg-[#FAF6F0]">
+      <!-- Card 2: Holiday Gift Box Packaging -->
+      <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+        <div class="w-full overflow-hidden">
           <img src="{{ 'menvel-holiday-gift-box.png' | asset_url }}" 
-               alt="Holiday's Best Choice - Premium Gift Box Packaging with Ribbon" 
+               alt="Holiday's Best Choice - Premium Gift Box Packaging with Red Ribbon" 
                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
                loading="lazy">
         </div>
@@ -39,7 +42,7 @@
 
     </div>
 
-    <!-- Conversion Shop Button -->
+    <!-- Conversion Action Button -->
     <div class="text-center pt-2">
       <a href="/products/foldable-black-walnut-wooden-trivet-set" 
          class="menvel-btn-primary h-12 px-9 rounded-xl shadow-md text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-2">

@@ -1,101 +1,129 @@
 {%- comment -%}
-  Menvel Goods - Meal & Moment 4-Card Grid (100% Mockup Match with 1024px Uploads)
+  Menvel Goods - Meal & Moment Interactive Carousel / Slider (Clean & Compact)
   File: sections/menvel-various-utensils.liquid
 {%- endcomment -%}
 
-<section id="MenvelMoments" class="py-16 sm:py-24 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Meal and Moment Grid">
+<section id="MenvelMoments" class="py-10 sm:py-14 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Meal and Moment Carousel">
   <div class="menvel-container text-center">
     
     <!-- Section Header -->
-    <div class="max-w-2xl mx-auto mb-12">
-      <h2 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614]">
+    <div class="max-w-2xl mx-auto mb-8">
+      <span class="menvel-eyebrow text-[#8A4315]">VERSATILE PROTECTION</span>
+      <h2 class="menvel-heading-serif text-2xl sm:text-3xl lg:text-4xl text-[#191614] mt-1">
         Perfect For Every Meal & Moment
       </h2>
-      <p class="text-xs sm:text-sm text-[#6B6259] mt-2">
+      <p class="text-xs sm:text-sm text-[#6B6259] mt-1.5 max-w-md mx-auto">
         Versatile protection for everything from morning tea to Sunday roasts.
       </p>
-      <div class="w-12 h-0.5 bg-[#3A2213] mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <!-- 4 Cards Grid with Newly Uploaded High-Res Photos -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+    <!-- Interactive Sliding Carousel Container -->
+    <div class="relative max-w-5xl mx-auto px-2 sm:px-8">
       
-      <!-- Card 1: Cast Iron Skillets -->
-      <div class="menvel-moment-card">
-        <div class="aspect-square w-full overflow-hidden bg-white">
-          <img src="{{ 'menvel-moment-skillet.jpg' | asset_url }}" 
-               alt="Cast Iron Skillet with Fried Egg & Sausage on Menvel Trivet" 
-               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-               loading="lazy">
-        </div>
-        <div class="p-4 bg-white flex-1 flex flex-col justify-between">
-          <div>
+      <!-- Left/Right Arrow Nav -->
+      <button type="button" 
+              id="MomentsPrevBtn" 
+              class="hidden sm:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-[#E8DFD5] shadow-xs items-center justify-center text-[#191614] hover:bg-[#FBF7F2] transition cursor-pointer"
+              aria-label="Previous slide">
+        ‹
+      </button>
+
+      <button type="button" 
+              id="MomentsNextBtn" 
+              class="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-[#E8DFD5] shadow-xs items-center justify-center text-[#191614] hover:bg-[#FBF7F2] transition cursor-pointer"
+              aria-label="Next slide">
+        ›
+      </button>
+
+      <!-- Slider Track with Smooth Touch Scrolling -->
+      <div id="MomentsSliderTrack" class="flex gap-4 sm:gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory py-2 text-left" style="scrollbar-width: none; -ms-overflow-style: none;">
+        
+        <!-- Slide 1: Cast Iron Skillets -->
+        <div class="w-[75%] sm:w-[45%] lg:w-[23%] flex-shrink-0 snap-start rounded-2xl border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col">
+          <div class="aspect-square w-full overflow-hidden bg-white">
+            <img src="{{ 'menvel-moment-skillet.jpg' | asset_url }}" 
+                 alt="Cast Iron Skillet on Menvel Trivet" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                 loading="lazy">
+          </div>
+          <div class="p-4 bg-white flex-1 flex flex-col justify-between">
             <h3 class="font-serif font-bold text-sm text-[#191614]">Cast Iron Skillets</h3>
-            <p class="text-[11px] text-[#6B6259] mt-1 leading-relaxed">
-              Heavy-duty protection for sizzling hot cast iron skillets right off the stove.
+            <p class="text-xs text-[#6B6259] mt-1 leading-relaxed">
+              Heavy-duty protection for sizzling hot skillets off the stove.
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Card 2: Dutch Ovens & Pots -->
-      <div class="menvel-moment-card">
-        <div class="aspect-square w-full overflow-hidden bg-white">
-          <img src="{{ 'menvel-moment-plate.jpg' | asset_url }}" 
-               alt="Dinner Plate with Roasted Veggies & Steak on Menvel Trivet" 
-               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-               loading="lazy">
-        </div>
-        <div class="p-4 bg-white flex-1 flex flex-col justify-between">
-          <div>
+        <!-- Slide 2: Quick Meals & Pots -->
+        <div class="w-[75%] sm:w-[45%] lg:w-[23%] flex-shrink-0 snap-start rounded-2xl border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col">
+          <div class="aspect-square w-full overflow-hidden bg-white">
+            <img src="{{ 'menvel-moment-plate.jpg' | asset_url }}" 
+                 alt="Dinner Plate on Menvel Trivet" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                 loading="lazy">
+          </div>
+          <div class="p-4 bg-white flex-1 flex flex-col justify-between">
             <h3 class="font-serif font-bold text-sm text-[#191614]">Quick Meals & Pots</h3>
-            <p class="text-[11px] text-[#6B6259] mt-1 leading-relaxed">
-              Supports heavy hot plates, boiling pots, and pans effortlessly with balanced protection.
+            <p class="text-xs text-[#6B6259] mt-1 leading-relaxed">
+              Supports heavy hot plates and boiling pots effortlessly.
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Card 3: Soups & Serving Dishes -->
-      <div class="menvel-moment-card">
-        <div class="aspect-square w-full overflow-hidden bg-white">
-          <img src="{{ 'menvel-moment-casserole.jpg' | asset_url }}" 
-               alt="Red Casserole Dutch Oven on Menvel Trivet" 
-               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-               loading="lazy">
-        </div>
-        <div class="p-4 bg-white flex-1 flex flex-col justify-between">
-          <div>
-            <h3 class="font-serif font-bold text-sm text-[#191614]">Soups & Serving Dishes</h3>
-            <p class="text-[11px] text-[#6B6259] mt-1 leading-relaxed">
-              Keep your dining table safe during family dinners, buffets, and holiday feasts.
+        <!-- Slide 3: Soups & Serving Dishes -->
+        <div class="w-[75%] sm:w-[45%] lg:w-[23%] flex-shrink-0 snap-start rounded-2xl border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col">
+          <div class="aspect-square w-full overflow-hidden bg-white">
+            <img src="{{ 'menvel-moment-casserole.jpg' | asset_url }}" 
+                 alt="Red Casserole on Menvel Trivet" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                 loading="lazy">
+          </div>
+          <div class="p-4 bg-white flex-1 flex flex-col justify-between">
+            <h3 class="font-serif font-bold text-sm text-[#191614]">Soups & Casseroles</h3>
+            <p class="text-xs text-[#6B6259] mt-1 leading-relaxed">
+              Keep your table safe during family dinners and feasts.
             </p>
           </div>
         </div>
-      </div>
 
-      <!-- Card 4: Teapots & Kettles -->
-      <div class="menvel-moment-card">
-        <div class="aspect-square w-full overflow-hidden bg-white">
-          <img src="{{ 'menvel-moment-teapot.jpg' | asset_url }}" 
-               alt="Glass Teapot with Red Lid on Menvel Trivet" 
-               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
-               loading="lazy">
-        </div>
-        <div class="p-4 bg-white flex-1 flex flex-col justify-between">
-          <div>
+        <!-- Slide 4: Teapots & Kettles -->
+        <div class="w-[75%] sm:w-[45%] lg:w-[23%] flex-shrink-0 snap-start rounded-2xl border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col">
+          <div class="aspect-square w-full overflow-hidden bg-white">
+            <img src="{{ 'menvel-moment-teapot.jpg' | asset_url }}" 
+                 alt="Glass Teapot on Menvel Trivet" 
+                 class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" 
+                 loading="lazy">
+          </div>
+          <div class="p-4 bg-white flex-1 flex flex-col justify-between">
             <h3 class="font-serif font-bold text-sm text-[#191614]">Teapots & Kettles</h3>
-            <p class="text-[11px] text-[#6B6259] mt-1 leading-relaxed">
-              Ideal for boiling kettles, glass teapots, and French presses without scorching surfaces.
+            <p class="text-xs text-[#6B6259] mt-1 leading-relaxed">
+              Ideal for boiling kettles, teapots, and French presses.
             </p>
           </div>
         </div>
+
       </div>
 
     </div>
 
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var track = document.getElementById('MomentsSliderTrack');
+    var prev = document.getElementById('MomentsPrevBtn');
+    var next = document.getElementById('MomentsNextBtn');
+    if (track && prev && next) {
+      prev.addEventListener('click', function() {
+        track.scrollBy({ left: -260, behavior: 'smooth' });
+      });
+      next.addEventListener('click', function() {
+        track.scrollBy({ left: 260, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
 
 {% schema %}
 {

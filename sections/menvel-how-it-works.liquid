@@ -1,77 +1,90 @@
 {%- comment -%}
-  Menvel Goods - How It Works: Designed to Work with Weight (100% Visual Match)
+  Menvel Goods - How It Works: Interactive 4-Step Slider / Carousel
   File: sections/menvel-how-it-works.liquid
 {%- endcomment -%}
 
-<section class="py-12 sm:py-16 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Designed to Work with Weight" data-section-id="{{ section.id }}">
+<section class="py-10 sm:py-14 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Designed to Work with Weight" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
-    <!-- Section Header -->
-    <div class="max-w-3xl mx-auto text-center space-y-2.5 mb-10">
-      <h2 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614] tracking-tight uppercase">
+    <!-- Section Header (Clean & Compact) -->
+    <div class="max-w-2xl mx-auto text-center space-y-2 mb-8">
+      <span class="menvel-eyebrow text-[#8A181A]">AUTOMATIC GRAVITY MECHANISM</span>
+      <h2 class="menvel-heading-serif text-2xl sm:text-3xl lg:text-4xl text-[#191614] tracking-tight uppercase">
         DESIGNED TO WORK <span class="text-[#8A181A]">WITH WEIGHT</span>
       </h2>
-      <p class="text-xs sm:text-sm text-[#4B443D] leading-relaxed max-w-xl mx-auto">
-        The trivet opens <strong class="text-[#8A181A] font-bold">only</strong> when something is placed on it. It springs back up when lifted.
+      <p class="text-xs sm:text-sm text-[#4B443D] leading-relaxed max-w-lg mx-auto">
+        The trivet opens <strong class="text-[#8A181A] font-bold">only</strong> when hot cookware is placed on it, and springs back up when lifted.
       </p>
-      <div class="w-12 h-0.5 bg-[#8A181A] mx-auto mt-2 rounded-full"></div>
     </div>
 
-    <!-- Master Infographic Photo / Graphic Box -->
-    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-sm max-w-4xl mx-auto">
-      <img src="{{ 'menvel-designed-with-weight.jpg' | asset_url }}" 
-           alt="Designed to Work with Weight - 4 Step Automatic Gravity Mechanism" 
-           class="w-full h-auto object-contain block" 
-           loading="lazy">
+    <!-- Cropped Clean Infographic (Hides the duplicate header text baked in the image) -->
+    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs max-w-3xl mx-auto relative group">
+      <!-- Container with negative top margin to crop out the top duplicate banner in the image -->
+      <div class="w-full overflow-hidden" style="margin-top: -14%; margin-bottom: -2%;">
+        <img src="{{ 'menvel-designed-with-weight.jpg' | asset_url }}" 
+             alt="How the Menvel Trivet Opens with Weight" 
+             class="w-full h-auto object-cover block" 
+             loading="lazy">
+      </div>
     </div>
 
-    <!-- 4 Clear Step Descriptions Beneath for Perfect Readability & SEO -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8 max-w-4xl mx-auto text-center">
-      
-      <!-- Step 1 -->
-      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
-        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
-          1
+    <!-- 4-Step Interactive Carousel / Grid with Touch Support -->
+    <div class="mt-8 max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5 text-center">
+        
+        <!-- Step 1 -->
+        <div class="p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] shadow-2xs hover:shadow-xs transition flex flex-col justify-between">
+          <div>
+            <span class="w-8 h-8 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+              01
+            </span>
+            <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">At Rest</h3>
+            <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+              Trivet stands upright on its legs as a tree sculpture.
+            </p>
+          </div>
         </div>
-        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">At Rest</h3>
-        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
-          The trivet stands upright on its legs as a decorative tree.
-        </p>
-      </div>
 
-      <!-- Step 2 -->
-      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
-        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
-          2
+        <!-- Step 2 -->
+        <div class="p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] shadow-2xs hover:shadow-xs transition flex flex-col justify-between">
+          <div>
+            <span class="w-8 h-8 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+              02
+            </span>
+            <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Place Cookware</h3>
+            <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+              Place cup, pan, pot, or kettle directly on top.
+            </p>
+          </div>
         </div>
-        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Place Cookware</h3>
-        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
-          Set your cup, hot pot, pan, or kettle directly on top.
-        </p>
-      </div>
 
-      <!-- Step 3 -->
-      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
-        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
-          3
+        <!-- Step 3 -->
+        <div class="p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] shadow-2xs hover:shadow-xs transition flex flex-col justify-between">
+          <div>
+            <span class="w-8 h-8 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+              03
+            </span>
+            <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Weight Opens It</h3>
+            <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+              Gravity opens petals flat to support & protect table.
+            </p>
+          </div>
         </div>
-        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Weight Opens It</h3>
-        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
-          The downward weight expands petals flat to support and protect.
-        </p>
-      </div>
 
-      <!-- Step 4 -->
-      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
-        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
-          4
+        <!-- Step 4 -->
+        <div class="p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] shadow-2xs hover:shadow-xs transition flex flex-col justify-between">
+          <div>
+            <span class="w-8 h-8 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+              04
+            </span>
+            <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Springs Up</h3>
+            <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+              Lift cookware and trivet springs back up automatically.
+            </p>
+          </div>
         </div>
-        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Springs Back Up</h3>
-        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
-          Lift your cookware and the trivet springs back up automatically.
-        </p>
-      </div>
 
+      </div>
     </div>
 
   </div>
