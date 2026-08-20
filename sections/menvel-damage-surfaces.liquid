@@ -1,5 +1,5 @@
 {%- comment -%}
-  Menvel Goods - Split Problem & Solution Cards (Clean Rectangles + Number Badges)
+  Menvel Goods - Split Problem & Solution Cards (Tall Full-Height Portrait Cards + Red Number Badges)
   File: sections/menvel-damage-surfaces.liquid
 {%- endcomment -%}
 
@@ -19,91 +19,75 @@
           </p>
         </div>
 
-        <!-- 4 Heat Damage Images: Clean Rectangles with Number Badges + ✕ Icon -->
-        <div class="pt-6 mt-auto">
+        <!-- 4 Heat Damage Images: Full-Height Portrait Images (Aspect 3/4 or h-48+) with Red Number Badges -->
+        <div class="pt-4 mt-auto">
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 items-stretch">
             
             <!-- Item 1: Kettle + Burn Ring -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-1.jpg' | asset_url }}" 
                      alt="Kettle heat burn damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Top-Left Number Badge -->
-                <span class="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#191614]/80 text-white text-[10px] font-bold tracking-wider">
+                <!-- Red Badge with Number inside (replacing ✕) -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   01
                 </span>
-                <!-- Bottom-Right Warning Badge -->
-                <span class="absolute bottom-1.5 right-1.5 w-5 h-5 bg-[#B91C1C] text-white flex items-center justify-center text-[10px] font-black shadow-xs">
-                  ✕
-                </span>
               </div>
-              <div class="p-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
-                <span class="text-[11px] font-semibold text-[#191614]">Kettle Rings</span>
+              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+                <span class="text-xs font-bold text-[#191614]">Kettle Rings</span>
               </div>
             </div>
 
             <!-- Item 2: Scorch Ring Closeup -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-2.jpg' | asset_url }}" 
                      alt="Scorch ring damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Top-Left Number Badge -->
-                <span class="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#191614]/80 text-white text-[10px] font-bold tracking-wider">
+                <!-- Red Badge with Number inside (replacing ✕) -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   02
                 </span>
-                <!-- Bottom-Right Warning Badge -->
-                <span class="absolute bottom-1.5 right-1.5 w-5 h-5 bg-[#B91C1C] text-white flex items-center justify-center text-[10px] font-black shadow-xs">
-                  ✕
-                </span>
               </div>
-              <div class="p-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
-                <span class="text-[11px] font-semibold text-[#191614]">Scorch Marks</span>
+              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+                <span class="text-xs font-bold text-[#191614]">Scorch Marks</span>
               </div>
             </div>
 
             <!-- Item 3: Skillet Heat Damage -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-3.jpg' | asset_url }}" 
                      alt="Skillet heat damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Top-Left Number Badge -->
-                <span class="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#191614]/80 text-white text-[10px] font-bold tracking-wider">
+                <!-- Red Badge with Number inside (replacing ✕) -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   03
                 </span>
-                <!-- Bottom-Right Warning Badge -->
-                <span class="absolute bottom-1.5 right-1.5 w-5 h-5 bg-[#B91C1C] text-white flex items-center justify-center text-[10px] font-black shadow-xs">
-                  ✕
-                </span>
               </div>
-              <div class="p-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
-                <span class="text-[11px] font-semibold text-[#191614]">Pan Burns</span>
+              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+                <span class="text-xs font-bold text-[#191614]">Pan Burns</span>
               </div>
             </div>
 
             <!-- Item 4: Pot Heat Damage -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-4.jpg' | asset_url }}" 
                      alt="Pot surface damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Top-Left Number Badge -->
-                <span class="absolute top-1.5 left-1.5 px-2 py-0.5 bg-[#191614]/80 text-white text-[10px] font-bold tracking-wider">
+                <!-- Red Badge with Number inside (replacing ✕) -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   04
                 </span>
-                <!-- Bottom-Right Warning Badge -->
-                <span class="absolute bottom-1.5 right-1.5 w-5 h-5 bg-[#B91C1C] text-white flex items-center justify-center text-[10px] font-black shadow-xs">
-                  ✕
-                </span>
               </div>
-              <div class="p-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
-                <span class="text-[11px] font-semibold text-[#191614]">Pot Stains</span>
+              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+                <span class="text-xs font-bold text-[#191614]">Pot Stains</span>
               </div>
             </div>
 
