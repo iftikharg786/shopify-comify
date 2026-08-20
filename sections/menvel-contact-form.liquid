@@ -1,19 +1,21 @@
 {%- comment -%}
-  Menvel Goods - Contact Us Hero & Form Section (Dynamic Shopify Contact Form)
+  Menvel Goods - Contact Us Hero & Form Section (100% Dynamic Shopify Schema)
   File: sections/menvel-contact-form.liquid
 {%- endcomment -%}
 
-<section class="py-12 sm:py-20 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Contact Us">
+<section class="py-12 sm:py-20 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Contact Us" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
     <!-- Hero Header -->
     <div class="max-w-2xl mx-auto text-center space-y-3 mb-12 sm:mb-16">
-      <span class="menvel-eyebrow text-[#8A4315]">✦ CUSTOMER CARE & SUPPORT</span>
+      <span class="menvel-eyebrow text-[#8A4315]">
+        {{ section.settings.eyebrow | default: "✦ CUSTOMER CARE & SUPPORT" }}
+      </span>
       <h1 class="menvel-heading-serif text-3xl sm:text-5xl text-[#191614] leading-tight">
-        We're Here To Help
+        {{ section.settings.heading | default: "We're Here To Help" }}
       </h1>
       <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed max-w-lg mx-auto">
-        Have a question about your order, shipping, or our handcrafted wooden trivets? Send us a message and our team will get back to you within 24 hours.
+        {{ section.settings.subheading | default: "Have a question about your order, shipping, or our handcrafted wooden trivets? Send us a message and our team will get back to you within 24 hours." }}
       </p>
       <div class="w-14 h-0.5 bg-[#3A2213] mx-auto mt-4 rounded-full"></div>
     </div>
@@ -23,8 +25,12 @@
       
       <!-- Left: Contact Form -->
       <div class="lg:col-span-7 bg-[#FBF7F2] border border-[#E8DFD5] rounded-3xl p-6 sm:p-8 sm:p-10 shadow-xs">
-        <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#191614] mb-2">Send Us A Message</h2>
-        <p class="text-xs text-[#6B6259] mb-6">Fill out the form below and we'll reply promptly.</p>
+        <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#191614] mb-2">
+          {{ section.settings.form_heading | default: "Send Us A Message" }}
+        </h2>
+        <p class="text-xs text-[#6B6259] mb-6">
+          {{ section.settings.form_subheading | default: "Fill out the form below and we'll reply promptly." }}
+        </p>
 
         {% form 'contact', class: 'space-y-4' %}
           
@@ -102,7 +108,7 @@
           <!-- Submit Button -->
           <button type="submit" 
                   class="w-full h-12 bg-black hover:bg-neutral-800 text-white rounded-xl text-xs font-bold uppercase tracking-wider shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
-            <span>SEND MESSAGE</span>
+            <span>{{ section.settings.submit_button_label | default: "SEND MESSAGE" }}</span>
             <span>→</span>
           </button>
 
@@ -123,7 +129,9 @@
               </div>
               <div>
                 <span class="font-bold text-[#191614] block">Email Us Directly</span>
-                <a href="mailto:support@menvelgoods.com" class="text-[#8A4315] font-semibold hover:underline">support@menvelgoods.com</a>
+                <a href="mailto:{{ section.settings.support_email | default: 'support@menvelgoods.com' }}" class="text-[#8A4315] font-semibold hover:underline">
+                  {{ section.settings.support_email | default: "support@menvelgoods.com" }}
+                </a>
                 <p class="text-[#6B6259] text-[11px] mt-0.5">Average response time: &lt; 24 hours</p>
               </div>
             </div>
@@ -134,8 +142,8 @@
               </div>
               <div>
                 <span class="font-bold text-[#191614] block">Customer Service Hours</span>
-                <p class="text-[#6B6259] text-[11px] mt-0.5">Monday – Friday: 9:00 AM – 6:00 PM EST</p>
-                <p class="text-[#6B6259] text-[11px]">Saturday – Sunday: 10:00 AM – 4:00 PM EST</p>
+                <p class="text-[#6B6259] text-[11px] mt-0.5">{{ section.settings.hours_weekday | default: "Monday – Friday: 9:00 AM – 6:00 PM EST" }}</p>
+                <p class="text-[#6B6259] text-[11px]">{{ section.settings.hours_weekend | default: "Saturday – Sunday: 10:00 AM – 4:00 PM EST" }}</p>
               </div>
             </div>
 
@@ -175,8 +183,63 @@
 
 {% schema %}
 {
-  "name": "Menvel Contact Section",
+  "name": "Contact Form",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "✦ CUSTOMER CARE & SUPPORT"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We're Here To Help"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Have a question about your order, shipping, or our handcrafted wooden trivets? Send us a message and our team will get back to you within 24 hours."
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Form Heading",
+      "default": "Send Us A Message"
+    },
+    {
+      "type": "text",
+      "id": "form_subheading",
+      "label": "Form Subheading",
+      "default": "Fill out the form below and we'll reply promptly."
+    },
+    {
+      "type": "text",
+      "id": "submit_button_label",
+      "label": "Submit Button Label",
+      "default": "SEND MESSAGE"
+    },
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support Email Address",
+      "default": "support@menvelgoods.com"
+    },
+    {
+      "type": "text",
+      "id": "hours_weekday",
+      "label": "Weekday Hours",
+      "default": "Monday – Friday: 9:00 AM – 6:00 PM EST"
+    },
+    {
+      "type": "text",
+      "id": "hours_weekend",
+      "label": "Weekend Hours",
+      "default": "Saturday – Sunday: 10:00 AM – 4:00 PM EST"
+    }
+  ]
 }
 {% endschema %}

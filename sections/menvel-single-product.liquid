@@ -531,8 +531,53 @@
 
 {% schema %}
 {
-  "name": "Menvel Single Product PDP",
+  "name": "Single Product (PDP)",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "text",
+      "id": "urgency_text",
+      "label": "Urgency Stock Text",
+      "default": "HURRY! ONLY 43 LEFT IN STOCK"
+    },
+    {
+      "type": "text",
+      "id": "special_offer_heading",
+      "label": "Special Offer Heading",
+      "default": "SPECIAL OFFER"
+    },
+    {
+      "type": "text",
+      "id": "promo_code_text",
+      "label": "Promo Code Callout",
+      "default": "Sale 30% Off Use Code: Deal30"
+    },
+    {
+      "type": "text",
+      "id": "visitors_text",
+      "label": "Real-time Visitors Text",
+      "default": "Real-time 11 Visitors right now"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "custom_tab",
+      "name": "Accordion Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Tab Title",
+          "default": "SHIPPING & RETURNS"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Tab Content",
+          "default": "<p>We offer free standard U.S. shipping on orders over $50. All orders include a 30-day money-back guarantee.</p>"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

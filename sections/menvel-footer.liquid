@@ -1,40 +1,52 @@
 {%- comment -%}
-  Menvel Goods - Master Footer (100% Mockup Match)
+  Menvel Goods - Master Footer (100% Dynamic Shopify Schema)
   File: sections/menvel-footer.liquid
 {%- endcomment -%}
 
-<footer id="MenvelFooter" class="bg-[#FBF7F2] pt-14 pb-8 border-t border-[#E8DFD5]" role="contentinfo" aria-label="Site Footer">
+{%- assign footer_menu = linklists[section.settings.footer_menu] | default: linklists['footer'] -%}
+{%- assign customer_menu = linklists[section.settings.customer_menu] -%}
+
+<footer id="MenvelFooter" class="bg-[#FBF7F2] pt-14 pb-8 border-t border-[#E8DFD5]" role="contentinfo" aria-label="Site Footer" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
       
       <!-- Column 1: Brand & Newsletter -->
       <div class="space-y-4">
-        <a href="/" class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-sm tracking-tighter shadow-xs">
-            <span class="text-[#D93829]">M</span><span>G</span>
-          </div>
-          <div class="flex items-baseline gap-1">
-            <span class="font-serif text-xl font-bold tracking-tight text-[#191614]">Menvel</span>
-            <span class="font-sans text-xl font-medium text-[#D93829]">Goods</span>
-          </div>
+        <a href="{{ routes.root_url }}" class="flex items-center gap-2.5">
+          {%- if section.settings.footer_logo != blank -%}
+            <img src="{{ section.settings.footer_logo | image_url: width: 200 }}" alt="{{ shop.name | escape }}" class="h-auto max-w-[120px]">
+          {%- else -%}
+            <div class="w-8 h-8 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-sm tracking-tighter shadow-xs">
+              <span class="text-[#D93829]">M</span><span>G</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="font-serif text-xl font-bold tracking-tight text-[#191614]">{{ section.settings.brand_title | default: "Menvel" }}</span>
+              <span class="font-sans text-xl font-medium text-[#D93829]">{{ section.settings.brand_subtitle | default: "Goods" }}</span>
+            </div>
+          {%- endif -%}
         </a>
 
         <p class="text-xs text-[#6B6259] leading-relaxed max-w-xs">
-          Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home.
+          {{ section.settings.about_text | default: "Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home." }}
         </p>
 
         <!-- Newsletter Subscription Form -->
-        <form class="flex items-center gap-1.5 pt-1">
-          <input type="email" 
-                 placeholder="Your email address..." 
-                 class="flex-1 px-3.5 py-2.5 text-xs bg-white border border-[#E8DFD5] rounded-md outline-none focus:border-[#3A2213] text-[#191614]">
-          <button type="submit" 
-                  class="w-9 h-9 rounded-md bg-[#3A2213] text-white flex items-center justify-center hover:bg-[#2A170C] transition flex-shrink-0" 
-                  aria-label="Subscribe">
-            ➔
-          </button>
-        </form>
+        {%- if section.settings.enable_newsletter -%}
+          {% form 'customer', class: 'flex items-center gap-1.5 pt-1' %}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input type="email" 
+                   name="contact[email]"
+                   placeholder="Your email address..." 
+                   required
+                   class="flex-1 px-3.5 py-2.5 text-xs bg-white border border-[#E8DFD5] rounded-md outline-none focus:border-[#3A2213] text-[#191614]">
+            <button type="submit" 
+                    class="w-9 h-9 rounded-md bg-[#3A2213] text-white flex items-center justify-center hover:bg-[#2A170C] transition flex-shrink-0 cursor-pointer" 
+                    aria-label="Subscribe">
+              ➔
+            </button>
+          {% endform %}
+        {%- endif -%}
 
         <!-- Social Icons -->
         <div class="flex items-center gap-2.5 text-[#3A2213] pt-2">
@@ -50,23 +62,39 @@
 
       <!-- Column 3: Quick Links -->
       <div class="space-y-3">
-        <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">QUICK LINKS</h4>
+        <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">
+          {{ section.settings.menu_1_heading | default: "QUICK LINKS" }}
+        </h4>
         <ul class="space-y-2 text-xs text-[#6B6259]">
-          <li><a href="{{ routes.root_url }}" class="hover:text-[#3A2213] transition">Home</a></li>
-          <li><a href="/products/foldable-wooden-trivet-set" class="hover:text-[#3A2213] transition font-bold text-[#D93829]">Product Page (PDP)</a></li>
-          <li><a href="/pages/about" class="hover:text-[#3A2213] transition">About Us</a></li>
-          <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Contact Us</a></li>
+          {%- if footer_menu.links.size > 0 -%}
+            {%- for link in footer_menu.links -%}
+              <li><a href="{{ link.url }}" class="hover:text-[#3A2213] transition">{{ link.title }}</a></li>
+            {%- endfor -%}
+          {%- else -%}
+            <li><a href="{{ routes.root_url }}" class="hover:text-[#3A2213] transition">Home</a></li>
+            <li><a href="/products/foldable-wooden-trivet-set" class="hover:text-[#3A2213] transition font-bold text-[#D93829]">Product Page (PDP)</a></li>
+            <li><a href="/pages/about" class="hover:text-[#3A2213] transition">About Us</a></li>
+            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Contact Us</a></li>
+          {%- endif -%}
         </ul>
       </div>
 
       <!-- Column 4: Customer Services -->
       <div class="space-y-3">
-        <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">CUSTOMER SERVICES</h4>
+        <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">
+          {{ section.settings.menu_2_heading | default: "CUSTOMER SERVICES" }}
+        </h4>
         <ul class="space-y-2 text-xs text-[#6B6259]">
-          <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Shipping Policy</a></li>
-          <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Returns & Refunds</a></li>
-          <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">FAQ</a></li>
-          <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Contact Us</a></li>
+          {%- if customer_menu.links.size > 0 -%}
+            {%- for link in customer_menu.links -%}
+              <li><a href="{{ link.url }}" class="hover:text-[#3A2213] transition">{{ link.title }}</a></li>
+            {%- endfor -%}
+          {%- else -%}
+            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Shipping Policy</a></li>
+            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Returns & Refunds</a></li>
+            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">FAQ</a></li>
+            <li><a href="/pages/contact" class="hover:text-[#3A2213] transition">Contact Us</a></li>
+          {%- endif -%}
         </ul>
       </div>
 
@@ -74,13 +102,13 @@
 
     <!-- Bottom Copyright -->
     <div class="pt-6 border-t border-[#E8DFD5] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6B6259]">
-      <p>© 2026 Menvel Goods. All rights reserved.</p>
+      <p>© {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
       <div class="flex items-center gap-4">
-        <a href="#" class="hover:text-[#3A2213] transition">Privacy Policy</a>
+        <a href="{{ routes.root_url }}" class="hover:text-[#3A2213] transition">Privacy Policy</a>
         <span>•</span>
-        <a href="#" class="hover:text-[#3A2213] transition">Terms of Service</a>
+        <a href="{{ routes.root_url }}" class="hover:text-[#3A2213] transition">Terms of Service</a>
         <span>•</span>
-        <a href="#" class="hover:text-[#3A2213] transition">Refund Policy</a>
+        <a href="{{ routes.root_url }}" class="hover:text-[#3A2213] transition">Refund Policy</a>
       </div>
     </div>
 
@@ -89,8 +117,60 @@
 
 {% schema %}
 {
-  "name": "Menvel Footer",
+  "name": "Footer",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "brand_title",
+      "label": "Brand Title",
+      "default": "Menvel"
+    },
+    {
+      "type": "text",
+      "id": "brand_subtitle",
+      "label": "Brand Subtitle",
+      "default": "Goods"
+    },
+    {
+      "type": "textarea",
+      "id": "about_text",
+      "label": "About Text",
+      "default": "Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "Enable Newsletter Form",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "menu_1_heading",
+      "label": "Menu 1 Heading",
+      "default": "QUICK LINKS"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Menu 1 Linklist"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_heading",
+      "label": "Menu 2 Heading",
+      "default": "CUSTOMER SERVICES"
+    },
+    {
+      "type": "link_list",
+      "id": "customer_menu",
+      "label": "Menu 2 Linklist"
+    }
+  ]
 }
 {% endschema %}

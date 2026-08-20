@@ -1,22 +1,24 @@
 {%- comment -%}
-  Menvel Goods - Hero Showcase (100% Mockup Match)
+  Menvel Goods - Hero Showcase (100% Dynamic Shopify Schema)
   File: sections/menvel-hero-pdp.liquid
 {%- endcomment -%}
 
-<section id="MenvelHero" class="menvel-hero-wrap py-12 md:py-16 lg:py-20" role="region" aria-label="Serve Beautifully Hero">
+<section id="MenvelHero" class="menvel-hero-wrap py-12 md:py-16 lg:py-20" role="region" aria-label="Serve Beautifully Hero" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
       
       <!-- Left Column: Editorial Headline & Copy -->
       <div class="lg:col-span-6 space-y-5 text-left">
-        <span class="menvel-eyebrow text-[#3A2213]">✦ PROTECT YOUR TABLE IN STYLE</span>
+        <span class="menvel-eyebrow text-[#3A2213]">
+          {{ section.settings.eyebrow | default: "✦ PROTECT YOUR TABLE IN STYLE" }}
+        </span>
         
         <h1 class="menvel-heading-serif text-4xl sm:text-5xl lg:text-6xl text-[#191614] leading-[1.08]">
-          Serve Beautifully
+          {{ section.settings.heading | default: "Serve Beautifully" }}
         </h1>
 
         <p class="text-sm sm:text-base text-[#6B6259] leading-relaxed max-w-lg">
-          A handcrafted wooden foldable trivet set made from solid wood, designed to protect your table from hot pans, pots, kettles, and dinnerware.
+          {{ section.settings.subheading | default: "A handcrafted wooden foldable trivet set made from solid wood, designed to protect your table from hot pans, pots, kettles, and dinnerware." }}
         </p>
 
         <!-- Wood Finish Selector -->
@@ -29,7 +31,7 @@
             <button type="button" 
                     class="menvel-variant-card is-selected flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-[#3A2213] bg-white text-xs font-bold text-[#191614] shadow-xs cursor-pointer"
                     data-variant-name="Black Walnut"
-                    data-variant-img="{{ 'menvel-hero-showcase.jpg' | asset_url }}"
+                    data-variant-img="{% if section.settings.walnut_image != blank %}{{ section.settings.walnut_image | image_url: width: 1000 }}{% else %}{{ 'menvel-hero-showcase.jpg' | asset_url }}{% endif %}"
                     data-variant-id="1">
               <span class="w-3.5 h-3.5 rounded-full bg-[#3A2213]"></span>
               <span>Black Walnut</span>
@@ -38,7 +40,7 @@
             <button type="button" 
                     class="menvel-variant-card flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#E8DFD5] bg-white text-xs font-bold text-[#191614] shadow-xs cursor-pointer hover:border-[#3A2213]"
                     data-variant-name="Natural Beech"
-                    data-variant-img="{{ 'menvel-beech-showcase.jpg' | asset_url }}"
+                    data-variant-img="{% if section.settings.beech_image != blank %}{{ section.settings.beech_image | image_url: width: 1000 }}{% else %}{{ 'menvel-beech-showcase.jpg' | asset_url }}{% endif %}"
                     data-variant-id="2">
               <span class="w-3.5 h-3.5 rounded-full bg-[#E2BA9A]"></span>
               <span>Natural Beech</span>
@@ -48,13 +50,13 @@
 
         <!-- Action Button & Price -->
         <div class="pt-3 flex items-center gap-4 flex-wrap">
-          <a href="/products/foldable-wooden-trivet-set" 
+          <a href="{{ section.settings.button_link | default: '/products/foldable-wooden-trivet-set' }}" 
              class="menvel-btn-primary h-12 px-8 rounded-lg shadow-md text-xs font-extrabold uppercase tracking-wider">
-            <span>SHOP NOW — $18.99</span>
+            <span>{{ section.settings.button_label | default: "SHOP NOW — $18.99" }}</span>
           </a>
           
           <span class="text-xs text-[#6B6259] font-medium flex items-center gap-1">
-            <span class="text-[#15803D] font-bold">✓</span> Free U.S. Shipping Included
+            <span class="text-[#15803D] font-bold">✓</span> {{ section.settings.badge_text | default: "Free U.S. Shipping Included" }}
           </span>
         </div>
 
@@ -64,8 +66,8 @@
       <div class="lg:col-span-6 flex justify-center">
         <div class="relative w-full max-w-lg aspect-square rounded-2xl overflow-hidden bg-transparent flex items-center justify-center">
           <img id="MenvelMainImage" 
-               src="{{ 'menvel-hero-showcase.jpg' | asset_url }}" 
-               alt="Menvel Tree Trivet Set on Table" 
+               src="{% if section.settings.hero_image != blank %}{{ section.settings.hero_image | image_url: width: 1000 }}{% else %}{{ 'menvel-hero-showcase.jpg' | asset_url }}{% endif %}" 
+               alt="{{ section.settings.heading | escape }}" 
                class="w-full h-full object-contain transform transition-all duration-300 hover:scale-105"
                loading="eager">
         </div>
@@ -77,8 +79,59 @@
 
 {% schema %}
 {
-  "name": "Menvel Hero Section",
+  "name": "Hero Section",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "✦ PROTECT YOUR TABLE IN STYLE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Serve Beautifully"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "A handcrafted wooden foldable trivet set made from solid wood, designed to protect your table from hot pans, pots, kettles, and dinnerware."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "SHOP NOW — $18.99"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Free U.S. Shipping Included"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image (Default Walnut)"
+    },
+    {
+      "type": "image_picker",
+      "id": "walnut_image",
+      "label": "Walnut Variant Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "beech_image",
+      "label": "Beech Variant Image"
+    }
+  ]
 }
 {% endschema %}

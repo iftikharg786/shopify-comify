@@ -1,18 +1,18 @@
 {%- comment -%}
-  Menvel Goods - About Us Craftsmanship & Materials Section
+  Menvel Goods - About Us Craftsmanship & Materials Section (100% Dynamic Shopify Schema)
   File: sections/menvel-about-craft.liquid
 {%- endcomment -%}
 
-<section class="py-16 sm:py-24 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Craftsmanship and Materials">
+<section class="py-16 sm:py-24 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Craftsmanship and Materials" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
     <div class="max-w-2xl mx-auto text-center mb-14">
-      <span class="menvel-eyebrow text-[#8A4315]">MATERIALS & ARTISANRY</span>
+      <span class="menvel-eyebrow text-[#8A4315]">{{ section.settings.eyebrow | default: "MATERIALS & ARTISANRY" }}</span>
       <h2 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614] mt-2">
-        Pure Timber. No Plastics. No Shortcuts.
+        {{ section.settings.heading | default: "Pure Timber. No Plastics. No Shortcuts." }}
       </h2>
       <p class="text-xs sm:text-sm text-[#6B6259] mt-2">
-        Every Menvel piece undergoes an 8-step hand-carving and precision sanding process.
+        {{ section.settings.subheading | default: "Every Menvel piece undergoes an 8-step hand-carving and precision sanding process." }}
       </p>
     </div>
 
@@ -22,17 +22,17 @@
       <!-- Card 1: Sustainable Timber -->
       <div class="rounded-2xl bg-white border border-[#E8DFD5] overflow-hidden shadow-xs flex flex-col">
         <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-          <img src="{{ 'menvel-beech-showcase.jpg' | asset_url }}" 
-               alt="Natural Hardwood Selection" 
+          <img src="{% if section.settings.card_1_image != blank %}{{ section.settings.card_1_image | image_url: width: 600 }}{% else %}{{ 'menvel-beech-showcase.jpg' | asset_url }}{% endif %}" 
+               alt="{{ section.settings.card_1_title | default: '100% Solid Natural Timber' | escape }}" 
                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                loading="lazy">
         </div>
         <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
             <span class="text-[10px] font-bold uppercase tracking-wider text-[#15803D]">01 • SOURCING</span>
-            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">100% Solid Natural Timber</h3>
+            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">{{ section.settings.card_1_title | default: "100% Solid Natural Timber" }}</h3>
             <p class="text-xs text-[#6B6259] mt-2 leading-relaxed">
-              We never use veneer, synthetic particle board, or MDF. Only genuine North American Black Walnut and Natural European Beech harvested from certified renewable forests.
+              {{ section.settings.card_1_text | default: "We never use veneer, synthetic particle board, or MDF. Only genuine North American Black Walnut and Natural European Beech harvested from certified renewable forests." }}
             </p>
           </div>
         </div>
@@ -41,17 +41,17 @@
       <!-- Card 2: Gravity Mechanism -->
       <div class="rounded-2xl bg-white border border-[#E8DFD5] overflow-hidden shadow-xs flex flex-col">
         <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-          <img src="{{ 'menvel-moment-teapot.jpg' | asset_url }}" 
-               alt="Automatic Gravity Drop Mechanism" 
+          <img src="{% if section.settings.card_2_image != blank %}{{ section.settings.card_2_image | image_url: width: 600 }}{% else %}{{ 'menvel-moment-teapot.jpg' | asset_url }}{% endif %}" 
+               alt="{{ section.settings.card_2_title | default: 'Automatic Gravity Drop' | escape }}" 
                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                loading="lazy">
         </div>
         <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
             <span class="text-[10px] font-bold uppercase tracking-wider text-[#8A4315]">02 • PRECISION JOINERY</span>
-            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">Automatic Gravity Drop</h3>
+            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">{{ section.settings.card_2_title | default: "Automatic Gravity Drop" }}</h3>
             <p class="text-xs text-[#6B6259] mt-2 leading-relaxed">
-              Precision interlocking petals open effortlessly with downward pressure when cookware is placed on top, distributing weight evenly across six protective wood contact points.
+              {{ section.settings.card_2_text | default: "Precision interlocking petals open effortlessly with downward pressure when cookware is placed on top, distributing weight evenly across six protective wood contact points." }}
             </p>
           </div>
         </div>
@@ -60,17 +60,17 @@
       <!-- Card 3: 450°F Heat Resistance -->
       <div class="rounded-2xl bg-white border border-[#E8DFD5] overflow-hidden shadow-xs flex flex-col">
         <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
-          <img src="{{ 'menvel-pdp-meal-banner.jpg' | asset_url }}" 
-               alt="Heat Resistance with Hot Cookware" 
+          <img src="{% if section.settings.card_3_image != blank %}{{ section.settings.card_3_image | image_url: width: 600 }}{% else %}{{ 'menvel-pdp-meal-banner.jpg' | asset_url }}{% endif %}" 
+               alt="{{ section.settings.card_3_title | default: 'Heat Proof up to 450°F' | escape }}" 
                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                loading="lazy">
         </div>
         <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
             <span class="text-[10px] font-bold uppercase tracking-wider text-[#D93829]">03 • PROTECTION</span>
-            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">Heat Proof up to 450°F</h3>
+            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">{{ section.settings.card_3_title | default: "Heat Proof up to 450°F" }}</h3>
             <p class="text-xs text-[#6B6259] mt-2 leading-relaxed">
-              Treated with natural botanical mineral oils that nourish the timber grain while shielding against direct heat, scorch marks, and condensation rings from boiling pots and skillets.
+              {{ section.settings.card_3_text | default: "Treated with natural botanical mineral oils that nourish the timber grain while shielding against direct heat, scorch marks, and condensation rings from boiling pots and skillets." }}
             </p>
           </div>
         </div>
@@ -85,6 +85,76 @@
 {
   "name": "About Craftsmanship",
   "tag": "section",
-  "settings": []
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "MATERIALS & ARTISANRY"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Pure Timber. No Plastics. No Shortcuts."
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Every Menvel piece undergoes an 8-step hand-carving and precision sanding process."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_1_image",
+      "label": "Card 1 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_1_title",
+      "label": "Card 1 Title",
+      "default": "100% Solid Natural Timber"
+    },
+    {
+      "type": "textarea",
+      "id": "card_1_text",
+      "label": "Card 1 Description",
+      "default": "We never use veneer, synthetic particle board, or MDF. Only genuine North American Black Walnut and Natural European Beech harvested from certified renewable forests."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_2_image",
+      "label": "Card 2 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_2_title",
+      "label": "Card 2 Title",
+      "default": "Automatic Gravity Drop"
+    },
+    {
+      "type": "textarea",
+      "id": "card_2_text",
+      "label": "Card 2 Description",
+      "default": "Precision interlocking petals open effortlessly with downward pressure when cookware is placed on top, distributing weight evenly across six protective wood contact points."
+    },
+    {
+      "type": "image_picker",
+      "id": "card_3_image",
+      "label": "Card 3 Image"
+    },
+    {
+      "type": "text",
+      "id": "card_3_title",
+      "label": "Card 3 Title",
+      "default": "Heat Proof up to 450°F"
+    },
+    {
+      "type": "textarea",
+      "id": "card_3_text",
+      "label": "Card 3 Description",
+      "default": "Treated with natural botanical mineral oils that nourish the timber grain while shielding against direct heat, scorch marks, and condensation rings from boiling pots and skillets."
+    }
+  ]
 }
 {% endschema %}
