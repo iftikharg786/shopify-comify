@@ -16,7 +16,7 @@
       <div class="md:col-span-6 lg:col-span-5 space-y-3.5 text-left">
         <a href="{{ routes.root_url }}" class="inline-flex items-center gap-2.5">
           {%- if section.settings.footer_logo != blank -%}
-            <img src="{{ section.settings.footer_logo | image_url: width: 220 }}" alt="{{ shop.name | escape }}" class="h-auto max-w-[130px]">
+            <img src="{{ section.settings.footer_logo | image_url: width: 400 }}" alt="{{ shop.name | escape }}" style="max-width: {{ section.settings.footer_logo_width | default: 200 }}px;" class="h-auto w-full">
           {%- else -%}
             <div class="w-8 h-8 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-sm tracking-tighter shadow-xs">
               <span class="text-[#D93829]">M</span><span>G</span>
@@ -138,6 +138,16 @@
       "type": "image_picker",
       "id": "footer_logo",
       "label": "Footer Logo"
+    },
+    {
+      "type": "range",
+      "id": "footer_logo_width",
+      "min": 80,
+      "max": 300,
+      "step": 5,
+      "unit": "px",
+      "label": "Footer Logo Width",
+      "default": 200
     },
     {
       "type": "text",
