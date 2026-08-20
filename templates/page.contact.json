@@ -1,5 +1,4 @@
 {
-  "name": "Contact Us",
   "sections": {
     "contact_form": {
       "type": "menvel-contact-form",
