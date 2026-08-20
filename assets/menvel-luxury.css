@@ -1,0 +1,308 @@
+/* ==========================================================================
+   MENVEL GOODS - 100% Mockup Match Luxury Aesthetic
+   File: assets/menvel-luxury.css
+   ========================================================================== */
+
+:root {
+  --mv-cream-bg: #F7EFE7;
+  --mv-cream-card: #FBF7F2;
+  --mv-cream-alt: #EFE6DD;
+  --mv-text: #191614;
+  --mv-text-muted: #6B6259;
+  --mv-forest: #0B2921;
+  --mv-walnut: #3A2213;
+  --mv-walnut-dark: #2A170C;
+  --mv-border: #E8DFD5;
+  --mv-border-light: #F0E8DF;
+  --mv-accent-gold: #D97706;
+  --mv-accent-red: #D93829;
+  --mv-font-serif: 'Playfair Display', Georgia, serif;
+  --mv-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --mv-radius-sm: 8px;
+  --mv-radius-md: 14px;
+  --mv-radius-lg: 20px;
+}
+
+body, .menvel-scope {
+  background-color: #FFFFFF;
+  color: var(--mv-text);
+  font-family: var(--mv-font-sans);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+.font-serif {
+  font-family: var(--mv-font-serif);
+}
+
+.font-sans {
+  font-family: var(--mv-font-sans);
+}
+
+.menvel-container {
+  width: 100%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .menvel-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Headings */
+.menvel-heading-serif {
+  font-family: var(--mv-font-serif);
+  color: var(--mv-text);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.menvel-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mv-text-muted);
+}
+
+/* Buttons */
+.menvel-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--mv-walnut);
+  color: #FFFFFF !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  height: 46px;
+  padding: 0 1.75rem;
+  border-radius: var(--mv-radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.menvel-btn-primary:hover {
+  background-color: var(--mv-walnut-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(58, 34, 19, 0.2);
+}
+
+.menvel-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--mv-walnut);
+  color: #FFFFFF !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  height: 42px;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.menvel-btn-pill:hover {
+  background-color: var(--mv-walnut-dark);
+  transform: translateY(-1px);
+}
+
+/* Hero Section */
+.menvel-hero-wrap {
+  background: linear-gradient(135deg, #FBF6F0 0%, #F5EDE4 50%, #ECE0D4 100%);
+  border-bottom: 1px solid var(--mv-border);
+}
+
+/* Split Problem & Solution Cards */
+.menvel-split-card {
+  background-color: var(--mv-cream-card);
+  border: 1px solid var(--mv-border);
+  border-radius: var(--mv-radius-lg);
+  padding: 2.25rem 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menvel-num-circle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--mv-accent-red);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  border: 1.5px solid #FFFFFF;
+}
+
+/* Meal & Moment Cards */
+.menvel-moment-card {
+  background: #FFFFFF;
+  border: 1px solid var(--mv-border);
+  border-radius: var(--mv-radius-md);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menvel-moment-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(25, 22, 20, 0.06);
+}
+
+.menvel-moment-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  background-color: #FBF7F2;
+}
+
+/* Icon Badges Strip */
+.menvel-icon-badge-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--mv-cream-card);
+  border: 1.5px solid var(--mv-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--mv-walnut);
+}
+
+/* Video Section */
+.menvel-play-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menvel-play-btn:hover {
+  transform: scale(1.1);
+  background: #FFFFFF;
+}
+
+/* Review Cards */
+.menvel-review-card {
+  background-color: var(--mv-cream-card);
+  border: 1px solid var(--mv-border);
+  border-radius: var(--mv-radius-md);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Cart Drawer */
+.menvel-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 22, 20, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menvel-drawer-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menvel-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  background: #FFFFFF;
+  z-index: 10001;
+  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menvel-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* Mobile Left Navigation Drawer */
+.menvel-drawer-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 320px;
+  background: #FFFFFF;
+  z-index: 10001;
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menvel-drawer-left.is-open {
+  transform: translateX(0);
+}
+
+/* Mobile Sticky Bottom Floating Buy Bar */
+.menvel-mobile-sticky-buy {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menvel-mobile-sticky-buy {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border-top: 1px solid var(--mv-border);
+    padding: 0.75rem 1rem;
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+

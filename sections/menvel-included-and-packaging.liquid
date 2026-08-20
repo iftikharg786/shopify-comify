@@ -1,0 +1,49 @@
+{%- comment -%}
+  Menvel Goods - Beautiful Protection Split Banner (100% Mockup Match)
+  File: sections/menvel-included-and-packaging.liquid
+{%- endcomment -%}
+
+<section class="py-16 sm:py-24 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Beautiful Protection For Your Home">
+  <div class="menvel-container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      
+      <!-- Left: Split Before/After Graphic -->
+      <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-sm bg-white">
+        <img src="{{ 'menvel-split-protection.jpg' | asset_url }}" 
+             alt="Without a Trivet vs With Our Wooden Trivet" 
+             class="w-full h-auto object-cover"
+             loading="lazy">
+      </div>
+
+      <!-- Right: Editorial Content -->
+      <div class="lg:col-span-6 space-y-5 text-left">
+        <span class="menvel-eyebrow text-[#3A2213]">ENGINEERED FOR EVERY KITCHEN</span>
+        
+        <h2 class="menvel-heading-serif text-3xl sm:text-4xl lg:text-5xl text-[#191614] leading-tight">
+          Beautiful Protection For Your Home
+        </h2>
+
+        <p class="text-sm sm:text-base text-[#6B6259] leading-relaxed">
+          Never worry about scorched wood, cracked stone, or ruined tables again. The Menvel tree trivet set elevates your dinner table while keeping every surface pristine.
+        </p>
+
+        <div class="pt-2">
+          <button type="button" 
+                  onclick="window.openMenvelDrawer()" 
+                  class="menvel-btn-primary h-12 px-8 rounded-lg shadow-sm text-xs font-extrabold uppercase tracking-wider">
+            <span>SHOP THE COLLECTION →</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Menvel Protection Banner",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

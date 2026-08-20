@@ -1,0 +1,75 @@
+{%- comment -%}
+  Menvel Goods - About Us Hero & Brand Story Section
+  File: sections/menvel-about-story.liquid
+{%- endcomment -%}
+
+<section class="py-16 sm:py-24 bg-white border-b border-[#E8DFD5]" role="region" aria-label="About Menvel Goods">
+  <div class="menvel-container">
+    
+    <!-- Top Eyebrow & Hero Heading -->
+    <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+      <span class="menvel-eyebrow text-[#8A4315]">✦ OUR STORY & PHILOSOPHY</span>
+      <h1 class="menvel-heading-serif text-3xl sm:text-5xl lg:text-6xl text-[#191614] leading-tight">
+        Crafted By Nature.<br>Designed For Your Table.
+      </h1>
+      <p class="text-sm sm:text-base text-[#6B6259] leading-relaxed max-w-2xl mx-auto">
+        We believe kitchen essentials shouldn't be hidden away in crowded drawers. Menvel Goods was born to create functional wood decor that protects your surfaces while celebrating the timeless beauty of natural hardwood.
+      </p>
+      <div class="w-16 h-0.5 bg-[#3A2213] mx-auto mt-6 rounded-full"></div>
+    </div>
+
+    <!-- Editorial 2-Column Split -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      
+      <!-- Left: Studio Lifestyle Photo -->
+      <div class="lg:col-span-6">
+        <div class="relative w-full aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FBF7F2] shadow-sm group">
+          <img src="{{ 'menvel-hero-showcase.jpg' | asset_url }}" 
+               alt="Menvel Goods Handcrafted Tree Trivet on Kitchen Counter" 
+               class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+               loading="eager">
+          <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-xs px-4 py-2 rounded-xl border border-[#E8DFD5] shadow-xs">
+            <span class="text-xs font-serif font-bold text-[#191614]">Hand-Finished with Botanical Oils</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Story Copy -->
+      <div class="lg:col-span-6 space-y-6 text-left">
+        <div>
+          <span class="menvel-eyebrow text-[#15803D]">HOW WE STARTED</span>
+          <h2 class="menvel-heading-serif text-2xl sm:text-3xl text-[#191614] mt-1">
+            Say Goodbye to Toxic Silicone & Ruined Counters
+          </h2>
+        </div>
+
+        <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed">
+          For years, kitchen trivets were an afterthought — flimsy silicone mats that melted, warped cork pads that stained, or bulky metal wire racks that scratched delicate dining tables.
+        </p>
+
+        <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed">
+          We asked ourselves: <em>What if surface protection could be an architectural centerpiece?</em>
+        </p>
+
+        <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed">
+          Inspired by Scandinavian minimalism and traditional woodworking joinery, we engineered the <strong>Menvel Tree Trivet</strong> — an automatic gravity-open mechanism sculpted from 100% solid Black Walnut and Natural Beech wood. When you set cookware down, it expands into a balanced protective star; when lifted, it stands proudly as a handcrafted tree sculpture.
+        </p>
+
+        <!-- Quote Callout -->
+        <div class="p-5 rounded-xl bg-[#FBF7F2] border-l-4 border-[#3A2213] text-xs text-[#191614] italic">
+          "Every piece of wood has a grain story. We simply shape it so it protects your family's gathering place for generations."
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Brand Story",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

@@ -1,4 +1,5 @@
-.agents/
-.codebuddy/
-assets/timber.scss
-assets/timber_2.scss
+# Temporary scripts
+*.ps1
+node_modules/
+.DS_Store
+Thumbs.db

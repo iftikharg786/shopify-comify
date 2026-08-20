@@ -1,0 +1,124 @@
+{%- comment -%}
+  Single Product: Luxury AJAX Slide-Out Cart Drawer
+  File: snippets/menvel-cart-drawer.liquid
+{%- endcomment -%}
+
+<div id="MenvelCartOverlay" class="menvel-drawer-overlay" aria-hidden="true"></div>
+
+<aside id="MenvelCartDrawer" class="menvel-drawer" aria-modal="true" role="dialog" aria-label="Shopping Bag">
+  
+  <!-- Header -->
+  <div class="p-5 border-b border-[#EADFCF] flex items-center justify-between bg-[#F8F2E9]">
+    <div class="flex items-center gap-2">
+      <h3 class="font-serif text-lg font-bold text-[#1F1B17]">Your Shopping Bag</h3>
+      <span class="js-cart-count bg-[#55331F] text-white text-xs font-bold px-2 py-0.5 rounded-full">
+        {{ cart.item_count | default: 1 }}
+      </span>
+    </div>
+    <button id="MenvelCloseDrawer" type="button" class="p-1.5 rounded-full text-[#655E56] hover:text-[#1F1B17] hover:bg-white transition" aria-label="Close Bag">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Free Shipping Progress Tracker -->
+  <div class="p-4 bg-white border-b border-[#EADFCF]">
+    {%- assign threshold_cents = 5000 -%}
+    {%- assign cart_total = cart.total_price | default: 3499 -%}
+    {%- assign remaining_cents = threshold_cents | minus: cart_total -%}
+    {%- assign progress_percent = cart_total | times: 100.0 | divided_by: threshold_cents -%}
+    {%- if progress_percent > 100 -%}{%- assign progress_percent = 100 -%}{%- endif -%}
+
+    <p id="MenvelShippingMsg" class="text-xs text-center font-semibold text-[#1F1B17] mb-2">
+      {%- if remaining_cents <= 0 -%}
+        🎉 You unlocked <strong>FREE U.S. Shipping</strong>!
+      {%- else -%}
+        Add <strong>{{ remaining_cents | money }}</strong> more to unlock <strong>FREE Shipping</strong>
+      {%- endif -%}
+    </p>
+    <div class="w-full bg-[#F1E8DC] rounded-full h-2 overflow-hidden">
+      <div id="MenvelShippingBarFill" class="bg-[#15803D] h-full rounded-full transition-all duration-500" style="width: {{ progress_percent }}%;"></div>
+    </div>
+  </div>
+
+  <!-- Line Items Area -->
+  <div id="MenvelDrawerBody" class="flex-1 overflow-y-auto p-5 space-y-4">
+    {%- if cart.item_count > 0 -%}
+      {%- for item in cart.items -%}
+        <div class="flex gap-4 pb-4 border-b border-[#EADFCF]">
+          <div class="w-20 h-20 rounded-xl bg-white overflow-hidden border border-[#EADFCF] flex-shrink-0 p-1">
+            <img src="{{ item.image | default: 'menvel-product-main.jpg' | asset_url }}" alt="{{ item.title | escape }}" class="w-full h-full object-contain">
+          </div>
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start gap-2">
+                <h4 class="font-serif font-bold text-sm text-[#1F1B17] leading-tight">{{ item.product.title }}</h4>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="text-xs text-neutral-400 hover:text-red-500">✕</a>
+              </div>
+              <p class="text-xs text-[#8A5428] font-semibold mt-0.5">{{ item.variant.title | default: 'Black Walnut Set' }}</p>
+            </div>
+            <div class="flex justify-between items-center mt-2">
+              <span class="text-xs font-semibold text-[#655E56]">Qty: {{ item.quantity }}</span>
+              <span class="font-bold text-sm text-[#1F1B17]">{{ item.final_line_price | money }}</span>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    {%- else -%}
+      <!-- Default Display Item -->
+      <div class="flex gap-4 pb-4 border-b border-[#EADFCF]">
+        <div class="w-20 h-20 rounded-xl bg-white overflow-hidden border border-[#EADFCF] flex-shrink-0 p-1">
+          <img src="{{ 'menvel-product-main.jpg' | asset_url }}" alt="Foldable Wooden Trivet Set" class="w-full h-full object-contain">
+        </div>
+        <div class="flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="font-serif font-bold text-sm text-[#1F1B17] leading-tight">Foldable Wooden Trivet Tree Set</h4>
+            <p class="text-xs text-[#8A5428] font-semibold mt-0.5">Black Walnut • Model BD-001</p>
+          </div>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-xs font-semibold text-[#655E56]">Qty: 1</span>
+            <span class="font-bold text-sm text-[#1F1B17]">$34.99</span>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    <!-- Upsell Card in Cart -->
+    <div class="p-3.5 rounded-xl bg-[#F8F2E9] border border-[#EADFCF] flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🪵</span>
+        <div>
+          <h5 class="font-bold text-xs text-[#1F1B17]">Wood Care Botanical Oil</h5>
+          <p class="text-[10px] text-[#655E56]">Preserves natural wood luster</p>
+        </div>
+      </div>
+      <button type="button" class="px-3 py-1.5 bg-[#55331F] text-white rounded-lg text-xs font-bold hover:bg-[#8A5428] transition whitespace-nowrap">
+        + $9.99
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer Checkout Area -->
+  <div class="p-5 bg-[#F8F2E9] border-t border-[#EADFCF] space-y-3">
+    <div class="flex justify-between items-center text-sm font-bold text-[#1F1B17]">
+      <span>Subtotal</span>
+      <span id="MenvelDrawerSubtotal">{{ cart.total_price | money | default: "$34.99" }}</span>
+    </div>
+    <p class="text-[11px] text-[#655E56] text-center">Shipping & taxes calculated at checkout.</p>
+    
+    <a href="/checkout" class="menvel-btn-primary py-3.5 text-sm shadow-lg flex items-center justify-center gap-2">
+      <span>PROCEED TO CHECKOUT</span>
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+      </svg>
+    </a>
+
+    <div class="flex items-center justify-center gap-3 text-[11px] font-semibold text-[#655E56] pt-1">
+      <span>🔒 256-Bit SSL</span>
+      <span>•</span>
+      <span>🛡️ 30-Day Money Back</span>
+    </div>
+  </div>
+
+</aside>

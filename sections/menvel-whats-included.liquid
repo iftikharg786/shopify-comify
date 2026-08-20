@@ -1,0 +1,110 @@
+{%- comment -%}
+  Single Product: What's Included & Gifting Section with Exact Lifestyle Banner
+  File: sections/menvel-whats-included.liquid
+{%- endcomment -%}
+
+<section id="MenvelIncluded" class="menvel-whats-included py-16 sm:py-24 bg-[#F8F2E9] border-b border-[#EADFCF]">
+  <div class="menvel-container">
+    
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="menvel-eyebrow">The Complete Luxury Set</span>
+      <h2 class="menvel-heading-lg text-[#1F1B17]">
+        A Gift Everyone Will Love.
+      </h2>
+      <p class="menvel-lead mt-4 text-[#655E56]">
+        Whether for festive holiday feasts, game days, outdoor patio dinners, or cozy family evenings, the Menvel Tree Set is the ultimate thoughtful gift.
+      </p>
+    </div>
+
+    <!-- Exact 4-Panel Family Lifestyle Banner -->
+    <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden border border-[#EADFCF] shadow-xl bg-white mb-14">
+      <img src="{{ 'menvel-gift-lifestyle-banner.png' | asset_url }}" 
+           alt="A Gift Everyone Will Love - Menvel Goods Family Lifestyle" 
+           class="w-full h-auto object-cover" 
+           loading="lazy">
+    </div>
+
+    <!-- 3 Included Items Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Item 1: 4x Trivets -->
+      <div class="p-8 rounded-2xl bg-white border border-[#EADFCF] shadow-sm flex flex-col justify-between text-center items-center">
+        <div class="w-16 h-16 rounded-2xl bg-[#F8F2E9] text-[#8A5428] text-3xl flex items-center justify-center mb-6 shadow-inner">
+          🪵
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#8A5428]">4 × Pieces</span>
+          <h3 class="font-serif text-2xl font-bold text-[#1F1B17] mt-1 mb-3">Foldable Trivets</h3>
+          <p class="text-xs text-[#655E56] leading-relaxed">
+            Precision-milled from solid Black Walnut or Natural Beech. Expands automatically with weight to support hot cookware.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-[#EADFCF] w-full text-xs font-bold text-[#1F1B17]">
+          Heat Rated up to 450°F
+        </div>
+      </div>
+
+      <!-- Item 2: 1x Tree Stand -->
+      <div class="p-8 rounded-2xl bg-white border border-[#8A5428] shadow-md flex flex-col justify-between text-center items-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-[#8A5428] text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">
+          Centerpiece
+        </div>
+        <div class="w-16 h-16 rounded-2xl bg-[#55331F] text-white text-3xl flex items-center justify-center mb-6 shadow-md">
+          🌲
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#8A5428]">1 × Piece</span>
+          <h3 class="font-serif text-2xl font-bold text-[#1F1B17] mt-1 mb-3">Tree Display Stand</h3>
+          <p class="text-xs text-[#655E56] leading-relaxed">
+            Weighted, non-slip base holds all four trivets vertically. Transforms functional storage into an eye-catching tabletop sculpture.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-[#EADFCF] w-full text-xs font-bold text-[#8A5428]">
+          Compact 4" × 4" Countertop Footprint
+        </div>
+      </div>
+
+      <!-- Item 3: Luxury Gift Box -->
+      <div class="p-8 rounded-2xl bg-white border border-[#EADFCF] shadow-sm flex flex-col justify-between text-center items-center">
+        <div class="w-16 h-16 rounded-2xl bg-[#F8F2E9] text-[#8A5428] text-3xl flex items-center justify-center mb-6 shadow-inner">
+          🎁
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-[#8A5428]">1 × Package</span>
+          <h3 class="font-serif text-2xl font-bold text-[#1F1B17] mt-1 mb-3">Premium Gift Box</h3>
+          <p class="text-xs text-[#655E56] leading-relaxed">
+            Custom molded foam insert and gold foil stamped presentation box. Arrives gift-ready for weddings, housewarmings, and holidays.
+          </p>
+        </div>
+        <div class="mt-8 pt-4 border-t border-[#EADFCF] w-full text-xs font-bold text-[#1F1B17]">
+          Zero Additional Wrapping Needed
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom CTA Bar -->
+    <div class="mt-12 text-center">
+      <a href="#MenvelBuySection" class="inline-flex items-center gap-2 menvel-btn-primary max-w-sm mx-auto js-scroll-to-buy">
+        <span>Order Your Set Now • $34.99</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Menvel Whats Included",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Menvel Whats Included"
+    }
+  ]
+}
+{% endschema %}

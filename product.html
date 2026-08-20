@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foldable Wooden Trivet Set For Hot Dishes — Menvel Goods</title>
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <!-- Menvel Theme Styles -->
+  <link rel="stylesheet" href="assets/menvel-luxury.css">
+</head>
+<body class="menvel-scope min-h-screen flex flex-col antialiased bg-white text-[#191614] pb-16 md:pb-0">
+
+  <!-- 1. Top Announcement Bar -->
+  <div class="bg-[#0B2820] text-[#E5ECE9] py-2 px-4 text-[11px] font-semibold tracking-wider border-b border-[#071E18] relative z-20">
+    <div class="menvel-container flex items-center justify-between flex-wrap gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-1.5 justify-center sm:justify-start">
+        <span class="text-[#D97706] text-xs">★★★★★</span>
+        <span class="font-bold text-white">4.9/5</span>
+        <span class="text-white/70">OVER 1,200+ REVIEWS</span>
+      </div>
+      <div class="hidden md:flex items-center gap-2 text-white/90">
+        <span>📦 FREE US SHIPPING OVER $50</span>
+      </div>
+      <div class="flex items-center gap-2 text-white/90 justify-center sm:justify-end">
+        <span>🛡️ 30-DAY MONEY-BACK GUARANTEE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Header with Mobile Menu Button -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#E8DFD5] transition-all duration-300">
+    <div class="menvel-container py-3.5 flex items-center justify-between">
+      
+      <!-- Mobile Menu Toggle Button -->
+      <button type="button" id="MenvelMobileNavOpen" class="md:hidden p-1.5 -ml-1.5 text-[#191614] hover:text-[#3A2213]" aria-label="Open Navigation Menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Logo -->
+      <a href="preview.html" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-sm tracking-tighter shadow-xs">
+          <span class="text-[#D93829]">M</span><span>G</span>
+        </div>
+        <div class="flex items-baseline gap-1">
+          <span class="font-serif text-xl font-bold tracking-tight text-[#191614]">Menvel</span>
+          <span class="font-sans text-xl font-medium text-[#D93829]">Goods</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-[13px] font-semibold text-[#191614]">
+        <a href="preview.html" class="hover:text-[#3A2213] transition">Home</a>
+        <a href="product.html" class="text-[#3A2213] font-bold border-b-2 border-[#3A2213] pb-0.5">Product Page (PDP)</a>
+        <a href="about.html" class="hover:text-[#3A2213] transition">About Us</a>
+        <a href="contact.html" class="hover:text-[#3A2213] transition">Contact Us</a>
+        <a href="preview.html#MenvelMoments" class="hover:text-[#3A2213] transition">Features</a>
+        <a href="preview.html#MenvelReviews" class="hover:text-[#3A2213] transition">Reviews</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-4 sm:gap-5 text-[#191614]">
+        <button type="button" class="hover:text-[#3A2213] transition" aria-label="Search">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+        <button type="button" class="hidden sm:block hover:text-[#3A2213] transition" aria-label="Account">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          </svg>
+        </button>
+        <button type="button" class="js-open-cart-drawer relative hover:text-[#3A2213] transition" aria-label="Cart">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+          </svg>
+          <span class="js-cart-count absolute -top-1.5 -right-2 bg-[#D93829] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-xs">
+            0
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="MenvelMobileNavOverlay" class="menvel-drawer-overlay md:hidden" aria-hidden="true"></div>
+  <aside id="MenvelMobileNavDrawer" class="menvel-drawer-left md:hidden" aria-modal="true" role="dialog" aria-label="Navigation Menu">
+    <div class="p-5 border-b border-[#E8DFD5] flex items-center justify-between bg-[#FBF7F2]">
+      <div class="flex items-center gap-2">
+        <div class="w-7 h-7 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-xs">
+          <span class="text-[#D93829]">M</span><span>G</span>
+        </div>
+        <span class="font-serif font-bold text-sm text-[#191614]">Menvel Menu</span>
+      </div>
+      <button id="MenvelMobileNavClose" type="button" class="p-1.5 rounded-full text-[#6B6259] hover:text-black">
+        ✕
+      </button>
+    </div>
+    <nav class="p-6 space-y-4 text-sm font-semibold">
+      <a href="preview.html" class="block py-2 border-b border-[#E8DFD5] text-[#191614]">Home</a>
+      <a href="product.html" class="block py-2 border-b border-[#E8DFD5] text-[#D93829] font-bold">✨ Product Page (PDP)</a>
+      <a href="about.html" class="block py-2 border-b border-[#E8DFD5] text-[#191614]">About Us</a>
+      <a href="contact.html" class="block py-2 border-b border-[#E8DFD5] text-[#191614]">Contact Us</a>
+      <a href="preview.html#MenvelMoments" class="block py-2 border-b border-[#E8DFD5] text-[#191614]">Features</a>
+      <a href="preview.html#MenvelReviews" class="block py-2 text-[#191614]">Reviews</a>
+    </nav>
+  </aside>
+
+  <!-- 3. Dedicated Single Product PDP (2 Variants) -->
+  <main class="flex-1 py-6 sm:py-10 bg-white">
+    <div class="menvel-container">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- LEFT COLUMN: Visual Media & Storytelling -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <!-- Master Product Hero Frame -->
+          <div class="relative w-full aspect-[4/3] sm:aspect-[16/13] rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FBF7F2] shadow-xs group">
+            <span class="absolute top-4 left-4 z-10 bg-[#8A4315] text-white text-[10px] sm:text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+              BEST SELLER
+            </span>
+
+            <button type="button" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 backdrop-blur-xs flex items-center justify-center text-[#191614] shadow-md hover:bg-white transition" aria-label="Zoom image">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
+              </svg>
+            </button>
+
+            <img id="PDPMainImage" 
+                 src="assets/menvel-pdp-main-hero.jpg" 
+                 alt="Foldable Wooden Trivet Set" 
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                 loading="eager">
+          </div>
+
+          <!-- Horizontal Carousel Thumbnails -->
+          <div class="flex items-center justify-center gap-3">
+            <button type="button" class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] transition flex-shrink-0" aria-label="Previous thumbnail">
+              ‹
+            </button>
+
+            <div class="flex items-center gap-3 overflow-x-auto py-1">
+              <button type="button" 
+                      class="js-pdp-thumb is-active w-16 h-16 sm:w-18 sm:h-18 rounded-xl border-2 border-[#191614] p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs"
+                      data-large-src="assets/menvel-pdp-main-hero.jpg"
+                      data-variant-name="Black Walnut"
+                      aria-label="Thumbnail 1">
+                <img src="assets/menvel-pdp-main-hero.jpg" alt="Black Walnut Set" class="w-full h-full object-cover rounded-lg">
+              </button>
+
+              <button type="button" 
+                      class="js-pdp-thumb w-16 h-16 sm:w-18 sm:h-18 rounded-xl border border-[#E8DFD5] p-1 bg-white overflow-hidden transition flex-shrink-0 hover:border-[#191614] cursor-pointer shadow-xs"
+                      data-large-src="assets/menvel-beech-showcase.jpg"
+                      data-variant-name="Natural Beech"
+                      aria-label="Thumbnail 2">
+                <img src="assets/menvel-beech-showcase.jpg" alt="Natural Beech Set" class="w-full h-full object-cover rounded-lg">
+              </button>
+
+              <button type="button" 
+                      class="js-pdp-thumb w-16 h-16 sm:w-18 sm:h-18 rounded-xl border border-[#E8DFD5] p-1 bg-white overflow-hidden transition flex-shrink-0 hover:border-[#191614] cursor-pointer shadow-xs"
+                      data-large-src="assets/menvel-moment-teapot.jpg"
+                      aria-label="Thumbnail 3">
+                <img src="assets/menvel-moment-teapot.jpg" alt="Teapot on Trivet" class="w-full h-full object-cover rounded-lg">
+              </button>
+
+              <button type="button" 
+                      class="js-pdp-thumb w-16 h-16 sm:w-18 sm:h-18 rounded-xl border border-[#E8DFD5] p-1 bg-white overflow-hidden transition flex-shrink-0 hover:border-[#191614] cursor-pointer shadow-xs"
+                      data-large-src="assets/menvel-moment-casserole.jpg"
+                      aria-label="Thumbnail 4">
+                <img src="assets/menvel-moment-casserole.jpg" alt="Casserole on Trivet" class="w-full h-full object-cover rounded-lg">
+              </button>
+            </div>
+
+            <button type="button" class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] transition flex-shrink-0" aria-label="Next thumbnail">
+              ›
+            </button>
+          </div>
+
+          <!-- 4-Icon Trust Badges Horizontal Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 py-4 px-2 border-y border-[#E8DFD5] text-[11px] text-[#191614] font-semibold text-center">
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-base">🛡️</span>
+              <div class="text-left leading-tight">
+                <div>30-Day</div>
+                <div class="text-[#6B6259] font-normal">Money Back</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-base">🚚</span>
+              <div class="text-left leading-tight">
+                <div>Free Shipping</div>
+                <div class="text-[#6B6259] font-normal">On Orders $50+</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-base">🪵</span>
+              <div class="text-left leading-tight">
+                <div>100% Solid</div>
+                <div class="text-[#6B6259] font-normal">Hardwood</div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-2">
+              <span class="text-base">🌡️</span>
+              <div class="text-left leading-tight">
+                <div>Heat Proof</div>
+                <div class="text-[#6B6259] font-normal">Up to 450°F</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4-Box Feature Benefit Container -->
+          <div class="rounded-2xl border border-[#E8DFD5] bg-[#FBF7F2] p-5 sm:p-6 shadow-xs">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 text-center divide-y md:divide-y-0 md:divide-x divide-[#E8DFD5]">
+              
+              <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+                <div class="text-2xl mb-2">☀️</div>
+                <h4 class="font-serif font-bold text-xs text-[#191614]">Protects Surfaces</h4>
+                <p class="text-[10px] text-[#6B6259] mt-1 leading-relaxed">
+                  Creates a protective barrier between hot cookware and tables or countertops.
+                </p>
+              </div>
+
+              <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+                <div class="text-2xl mb-2">⏱️</div>
+                <h4 class="font-serif font-bold text-xs text-[#191614]">Easy to Use</h4>
+                <p class="text-[10px] text-[#6B6259] mt-1 leading-relaxed">
+                  Expand the trivet and place it underneath hot cookware or serving dishes.
+                </p>
+              </div>
+
+              <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+                <div class="text-2xl mb-2">🧼</div>
+                <h4 class="font-serif font-bold text-xs text-[#191614]">Easy to Clean</h4>
+                <p class="text-[10px] text-[#6B6259] mt-1 leading-relaxed">
+                  Wipe clean with a soft, slightly damp cloth.
+                </p>
+              </div>
+
+              <div class="pt-3 md:pt-0 px-2 flex flex-col items-center">
+                <div class="text-2xl mb-2">🌲</div>
+                <h4 class="font-serif font-bold text-xs text-[#191614]">Space-Saving</h4>
+                <p class="text-[10px] text-[#6B6259] mt-1 leading-relaxed">
+                  Folds neatly for convenient storage and includes a matching stand.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Perfect For Every Meal & Moment Feature Banner (Red Casserole) -->
+          <div class="rounded-2xl border border-[#E8DFD5] bg-[#FBF7F2] overflow-hidden shadow-xs grid grid-cols-1 md:grid-cols-12 items-stretch">
+            <div class="md:col-span-5 p-6 sm:p-8 flex flex-col justify-center text-left space-y-2.5">
+              <h3 class="menvel-heading-serif text-2xl sm:text-3xl text-[#191614] leading-snug">
+                Perfect For Every Meal<br class="hidden sm:inline"> & Moment
+              </h3>
+              <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed">
+                Use it under hot pans and skillets, Dutch ovens and pots, serving bowls, teapots, and kettles.
+              </p>
+            </div>
+            <div class="md:col-span-7 h-56 sm:h-72 md:h-auto overflow-hidden">
+              <img src="assets/menvel-pdp-meal-banner.jpg" 
+                   alt="Red Casserole Dutch Oven on Wooden Trivet" 
+                   class="w-full h-full object-cover object-center"
+                   loading="lazy">
+            </div>
+          </div>
+
+          <!-- 3 Square Meal & Moment Cards -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 text-center">
+            
+            <div class="space-y-2">
+              <div class="aspect-square rounded-xl overflow-hidden border border-[#E8DFD5] bg-white shadow-xs">
+                <img src="assets/menvel-pdp-kettle.jpg" alt="For Teapots & Kettles" class="w-full h-full object-cover">
+              </div>
+              <h5 class="font-serif font-bold text-xs text-[#191614]">For Teapots & Kettles</h5>
+            </div>
+
+            <div class="space-y-2">
+              <div class="aspect-square rounded-xl overflow-hidden border border-[#E8DFD5] bg-white shadow-xs">
+                <img src="assets/menvel-pdp-bowl.jpg" alt="For Serving Bowls" class="w-full h-full object-cover">
+              </div>
+              <h5 class="font-serif font-bold text-xs text-[#191614]">For Serving Bowls</h5>
+            </div>
+
+            <div class="space-y-2">
+              <div class="aspect-square rounded-xl overflow-hidden border border-[#E8DFD5] bg-white shadow-xs">
+                <img src="assets/menvel-pdp-skillet.jpg" alt="For Pans & Pots" class="w-full h-full object-cover">
+              </div>
+              <h5 class="font-serif font-bold text-xs text-[#191614]">For Pans & Pots</h5>
+            </div>
+
+          </div>
+
+          <!-- Why Black Walnut? Luxury Dark Banner -->
+          <div class="rounded-2xl overflow-hidden bg-[#241710] text-white p-6 sm:p-8 shadow-md relative">
+            <div class="max-w-md space-y-6">
+              <h3 class="menvel-heading-serif text-2xl sm:text-3xl text-white">
+                Why Black Walnut?
+              </h3>
+
+              <div class="grid grid-cols-2 gap-5 text-left">
+                <div class="space-y-1">
+                  <div class="text-base text-[#D97706]">🪵</div>
+                  <h4 class="font-bold text-xs text-white">Premium Hardwood</h4>
+                  <p class="text-[10px] text-neutral-300 leading-relaxed">Strong, durable and made to last.</p>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="text-base text-[#D97706]">🌿</div>
+                  <h4 class="font-bold text-xs text-white">Natural Beauty</h4>
+                  <p class="text-[10px] text-neutral-300 leading-relaxed">Rich grain and warm tones elevate any kitchen.</p>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="text-base text-[#D97706]">✦</div>
+                  <h4 class="font-bold text-xs text-white">Timeless Design</h4>
+                  <p class="text-[10px] text-neutral-300 leading-relaxed">A practical natural wood accessory for everyday use.</p>
+                </div>
+
+                <div class="space-y-1">
+                  <div class="text-base text-[#D97706]">🌲</div>
+                  <h4 class="font-bold text-xs text-white">Eco-Friendly</h4>
+                  <p class="text-[10px] text-neutral-300 leading-relaxed">Sustainably sourced and crafted with care.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Sticky Purchase Details & Accordions (Exactly 2 Variants) -->
+        <div class="lg:col-span-5 space-y-5 text-left lg:sticky lg:top-24 lg:self-start bg-white z-10">
+          
+          <!-- Rating Header -->
+          <div class="flex items-center gap-1.5 text-xs text-[#D97706]">
+            <span>★★★★★</span>
+            <span class="font-bold text-[#191614]">4.9</span>
+            <span class="text-neutral-400 font-medium">(248 reviews)</span>
+          </div>
+
+          <!-- Product Title -->
+          <h1 class="font-serif text-2xl sm:text-3xl font-bold text-[#191614] leading-snug">
+            Foldable Wooden Trivet Set For Hot Dishes – 4 Trivets + 1 Stand
+          </h1>
+
+          <!-- Price Display -->
+          <div class="flex items-baseline gap-3">
+            <span class="text-xs text-neutral-400 line-through font-medium">$19.99 USD</span>
+            <span class="text-2xl font-bold text-[#191614]">$18.99 USD</span>
+            <span class="text-[11px] font-bold text-[#15803D] bg-[#DCFCE7] px-2.5 py-0.5 rounded-full">
+              Save 5%
+            </span>
+          </div>
+
+          <!-- Short Description -->
+          <p class="text-xs text-[#6B6259] leading-relaxed">
+            Protect Your Surfaces. Serve Beautifully. A beautifully crafted foldable wooden trivet set designed to protect tables and countertops from hot pots, pans, bowls, Dutch ovens, serving dishes, teapots, and kettles.
+          </p>
+
+          <!-- Special Offer Box -->
+          <div class="rounded-lg border border-[#BAE6FD] bg-[#F0F9FF] p-3.5 space-y-1.5 text-xs text-[#0369A1]">
+            <h4 class="font-bold text-[#0284C7] uppercase tracking-wider text-[11px]">SPECIAL OFFER</h4>
+            <div class="flex items-center gap-2">
+              <span>▶</span>
+              <span class="font-medium text-[#0C4A6E]">In Stock & Ready to Ship</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>▶</span>
+              <span class="font-medium text-[#0C4A6E]">Free Delivery Available on Orders $50+</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>▶</span>
+              <span class="font-medium text-[#0C4A6E]">Sale 30% Off Use Code: <strong class="text-[#0284C7]">Deal30</strong></span>
+            </div>
+          </div>
+
+          <!-- Scarcity Urgency Progress Bar -->
+          <div class="space-y-1.5 pt-1">
+            <div class="flex items-center gap-1.5 text-xs font-bold text-[#D93829]">
+              <span>🔥</span>
+              <span>HURRY! ONLY 43 LEFT IN STOCK</span>
+            </div>
+            <div class="w-full bg-[#F3F4F6] rounded-full h-2 overflow-hidden border border-[#E5E7EB]">
+              <div class="bg-gradient-to-r from-[#F97316] to-[#DC2626] h-full rounded-full w-[68%] transition-all duration-500"></div>
+            </div>
+          </div>
+
+          <!-- Color Variation Swatches (Exactly 2 Variants: Black Walnut & Natural Beech) -->
+          <div class="pt-2 space-y-2.5">
+            <div class="text-xs font-semibold text-[#191614]">
+              Color: <strong id="PDPActiveColorName" class="text-[#3A2213]">Black Walnut</strong>
+            </div>
+
+            <div class="flex items-center gap-3">
+              
+              <!-- Variation 1: Black Walnut -->
+              <button type="button" 
+                      class="js-pdp-color-swatch is-active relative w-18 h-22 rounded-xl border-2 border-[#1A56DB] bg-white p-1.5 shadow-xs transition cursor-pointer flex flex-col items-center justify-center overflow-hidden"
+                      data-color-name="Black Walnut"
+                      data-variant-id="1"
+                      data-img-src="assets/menvel-pdp-main-hero.jpg"
+                      data-sku="MG-RD-001-BW"
+                      aria-label="Select Black Walnut">
+                <div class="w-full h-12 flex items-center justify-center">
+                  <img src="assets/menvel-swatch-walnut.jpg" alt="Black Walnut" class="w-full h-full object-contain">
+                </div>
+                <span class="text-[10px] font-bold text-[#191614] mt-1">Black Walnut</span>
+              </button>
+
+              <!-- Variation 2: Natural Beech -->
+              <button type="button" 
+                      class="js-pdp-color-swatch relative w-18 h-22 rounded-xl border border-[#D1D5DB] bg-white p-1.5 shadow-xs transition hover:border-[#1A56DB] cursor-pointer flex flex-col items-center justify-center overflow-hidden"
+                      data-color-name="Natural Beech"
+                      data-variant-id="2"
+                      data-img-src="assets/menvel-beech-showcase.jpg"
+                      data-sku="MG-RD-002-NB"
+                      aria-label="Select Natural Beech">
+                <div class="w-full h-12 flex items-center justify-center">
+                  <img src="assets/menvel-swatch-beech.jpg" alt="Natural Beech" class="w-full h-full object-contain">
+                </div>
+                <span class="text-[10px] font-bold text-[#191614] mt-1">Natural Beech</span>
+              </button>
+
+            </div>
+          </div>
+
+          <!-- Quantity Stepper -->
+          <div class="flex items-center border border-[#D1D5DB] rounded-md h-11 bg-white px-3 w-32 justify-between">
+            <button type="button" id="PDPQtyMinus" class="text-sm font-bold text-neutral-600 hover:text-black transition" aria-label="Decrease quantity">-</button>
+            <input type="number" id="PDPQtyInput" value="1" min="1" max="99" class="w-10 text-center font-bold text-xs text-[#191614] border-none outline-none">
+            <button type="button" id="PDPQtyPlus" class="text-sm font-bold text-neutral-600 hover:text-black transition" aria-label="Increase quantity">+</button>
+          </div>
+
+          <!-- Add to Cart & Buy It Now Buttons -->
+          <div class="space-y-2 pt-1">
+            <button type="button" 
+                    onclick="window.openMenvelDrawer()" 
+                    class="w-full h-12 bg-black text-white rounded-md text-xs font-bold uppercase tracking-wider hover:bg-neutral-800 transition flex items-center justify-center gap-2 shadow-xs cursor-pointer">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+              </svg>
+              <span>ADD TO CART</span>
+            </button>
+
+            <button type="button" 
+                    onclick="window.openMenvelDrawer()" 
+                    class="w-full h-12 bg-black text-white rounded-md text-xs font-bold uppercase tracking-wider hover:bg-neutral-800 transition flex items-center justify-center gap-2 shadow-xs cursor-pointer">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span>BUY IT NOW</span>
+            </button>
+          </div>
+
+          <!-- Real-Time Social Proof -->
+          <div class="flex items-center gap-2 text-xs font-semibold text-[#191614] pt-1">
+            <span class="w-2 h-2 rounded-full bg-[#15803D] animate-ping"></span>
+            <span>Real-time <strong>11 Visitors</strong> right now</span>
+          </div>
+
+          <!-- Meta Info -->
+          <div class="pt-2 border-t border-[#E8DFD5] space-y-1 text-xs text-[#6B6259]">
+            <p>SKU: <span id="PDPSkuLabel" class="text-[#191614] font-medium">MG-RD-001-BW</span></p>
+            <p>Categories: <span class="text-[#191614] font-medium">Home page, Kitchenware, Wooden Decor</span></p>
+          </div>
+
+          <!-- Mini Trust Badges Grid -->
+          <div class="grid grid-cols-2 gap-3 pt-3 border-t border-[#E8DFD5] text-[11px] text-[#191614] font-medium">
+            <div class="flex items-center gap-2">
+              <span>🛡️</span>
+              <span>30-Day Money Back</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>🚚</span>
+              <span>Free Shipping $50+</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>🪵</span>
+              <span>100% Solid Hardwood</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span>🌡️</span>
+              <span>Heat Proof to 450°F</span>
+            </div>
+          </div>
+
+          <!-- Interactive Collapsible Accordions (100% Mockup Match) -->
+          <div class="pt-4 border-t border-[#E8DFD5] space-y-3">
+            
+            <!-- Accordion 1: DESCRIPTION (Open by default) -->
+            <div class="rounded-xl border border-[#E8DFD5] bg-white overflow-hidden">
+              <button type="button" class="js-pdp-accordion-header w-full p-4 flex items-center justify-between font-bold text-xs uppercase tracking-wider text-[#191614] text-left hover:bg-[#FBF7F2] transition">
+                <span>DESCRIPTION</span>
+                <svg class="w-4 h-4 transform transition-transform duration-300 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="js-pdp-accordion-content p-4 pt-0 space-y-4 text-xs text-[#6B6259] leading-relaxed border-t border-[#E8DFD5]/40">
+                <p class="font-bold text-[#191614] pt-3">Protect Your Surfaces. Serve Beautifully.</p>
+                <p>A beautifully crafted foldable wooden trivet set designed to protect tables and countertops from hot pots, pans, bowls, Dutch ovens, serving dishes, teapots, and kettles.</p>
+
+                <div class="space-y-1">
+                  <h4 class="font-bold text-[#191614]">What's Included</h4>
+                  <ul class="list-disc pl-4 space-y-0.5">
+                    <li>4 foldable wooden trivets</li>
+                    <li>1 wooden stand/storage holder</li>
+                  </ul>
+                </div>
+
+                <div class="space-y-1">
+                  <h4 class="font-bold text-[#191614]">Why You'll Love It</h4>
+                  <ul class="space-y-1">
+                    <li><strong>Protects Your Surfaces:</strong> Creates a protective barrier between hot cookware and tables or countertops.</li>
+                    <li><strong>Foldable & Space-Saving:</strong> Folds neatly for convenient storage and includes a matching stand.</li>
+                    <li><strong>Easy to Use:</strong> Expand the trivet and place it underneath hot cookware or serving dishes.</li>
+                    <li><strong>Easy to Clean:</strong> Wipe clean with a soft, slightly damp cloth.</li>
+                  </ul>
+                </div>
+
+                <div class="space-y-1">
+                  <h4 class="font-bold text-[#191614]">Perfect For Every Meal & Moment</h4>
+                  <p>Use it under hot pans and skillets, Dutch ovens and pots, serving bowls, teapots, and kettles.</p>
+                </div>
+
+                <div class="space-y-1">
+                  <h4 class="font-bold text-[#191614]">Why Black Walnut?</h4>
+                  <ul class="space-y-1">
+                    <li><strong>Premium Hardwood:</strong> Strong, durable and made to last.</li>
+                    <li><strong>Natural Beauty:</strong> Rich grain and warm tones elevate any kitchen.</li>
+                    <li><strong>Timeless Kitchen Design:</strong> A practical natural wood accessory for everyday use.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion 2: ADDITIONAL INFORMATION -->
+            <div class="rounded-xl border border-[#E8DFD5] bg-white overflow-hidden">
+              <button type="button" class="js-pdp-accordion-header w-full p-4 flex items-center justify-between font-bold text-xs uppercase tracking-wider text-[#191614] text-left hover:bg-[#FBF7F2] transition">
+                <span>ADDITIONAL INFORMATION</span>
+                <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="js-pdp-accordion-content hidden p-4 pt-3 text-xs text-[#6B6259] leading-relaxed border-t border-[#E8DFD5]/40">
+                <table class="w-full text-xs">
+                  <tbody>
+                    <tr class="border-b border-[#E8DFD5]"><td class="py-2 font-bold text-[#191614]">Material</td><td class="py-2 text-right">100% Solid Natural Hardwood</td></tr>
+                    <tr class="border-b border-[#E8DFD5]"><td class="py-2 font-bold text-[#191614]">Dimensions</td><td class="py-2 text-right">8.5" H Stand • 7.8" Trivet</td></tr>
+                    <tr class="border-b border-[#E8DFD5]"><td class="py-2 font-bold text-[#191614]">Heat Rating</td><td class="py-2 text-right">Up to 450°F (232°C)</td></tr>
+                    <tr><td class="py-2 font-bold text-[#191614]">Care</td><td class="py-2 text-right">Wipe clean with damp cloth</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Accordion 3: REVIEWS (48) -->
+            <div class="rounded-xl border border-[#E8DFD5] bg-white overflow-hidden">
+              <button type="button" class="js-pdp-accordion-header w-full p-4 flex items-center justify-between font-bold text-xs uppercase tracking-wider text-[#191614] text-left hover:bg-[#FBF7F2] transition">
+                <span>REVIEWS (48)</span>
+                <svg class="w-4 h-4 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </button>
+              <div class="js-pdp-accordion-content hidden p-4 pt-3 space-y-3 text-xs text-[#6B6259] leading-relaxed border-t border-[#E8DFD5]/40">
+                <div class="p-3 rounded-lg bg-[#FBF7F2]">
+                  <div class="flex text-[#D97706] text-xs mb-1">★★★★★</div>
+                  <h5 class="font-bold text-xs text-[#191614]">Sarah M. — Verified Buyer</h5>
+                  <p class="text-[11px] text-[#6B6259] mt-0.5">"The wood grain is stunning and the automatic gravity drop works like magic. It stays on my table 24/7!"</p>
+                </div>
+                <div class="p-3 rounded-lg bg-[#FBF7F2]">
+                  <div class="flex text-[#D97706] text-xs mb-1">★★★★★</div>
+                  <h5 class="font-bold text-xs text-[#191614]">David R. — Verified Buyer</h5>
+                  <p class="text-[11px] text-[#6B6259] mt-0.5">"Bought 4 sets as holiday gifts. Unbelievable craftsmanship and packaging."</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 4. Mobile Floating Quick-Buy Bar (Appears on Phones) -->
+  <div class="menvel-mobile-sticky-buy md:hidden items-center justify-between gap-3">
+    <div>
+      <span class="text-xs font-bold text-[#191614] block">Foldable Trivet Set</span>
+      <span class="text-xs text-[#8A4315] font-extrabold">$18.99 USD</span>
+    </div>
+    <button type="button" 
+            onclick="window.openMenvelDrawer()" 
+            class="flex-1 max-w-[200px] h-11 bg-black text-white rounded-lg text-xs font-black uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md">
+      <span>ADD TO CART</span>
+      <span>→</span>
+    </button>
+  </div>
+
+  <!-- 5. Footer -->
+  <footer id="MenvelFooter" class="bg-[#FBF7F2] pt-12 sm:pt-14 pb-8 border-t border-[#E8DFD5]">
+    <div class="menvel-container">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+        
+        <div class="space-y-4">
+          <a href="preview.html" class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-md bg-[#3A2213] flex items-center justify-center text-white font-serif font-black text-sm tracking-tighter shadow-xs">
+              <span class="text-[#D93829]">M</span><span>G</span>
+            </div>
+            <div class="flex items-baseline gap-1">
+              <span class="font-serif text-xl font-bold tracking-tight text-[#191614]">Menvel</span>
+              <span class="font-sans text-xl font-medium text-[#D93829]">Goods</span>
+            </div>
+          </a>
+
+          <p class="text-xs text-[#6B6259] leading-relaxed max-w-xs">
+            Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home.
+          </p>
+
+          <form class="flex items-center gap-1.5 pt-1">
+            <input type="email" 
+                   placeholder="Your email address..." 
+                   class="flex-1 px-3.5 py-2.5 text-xs bg-white border border-[#E8DFD5] rounded-md outline-none focus:border-[#3A2213] text-[#191614]">
+            <button type="submit" 
+                    class="w-9 h-9 rounded-md bg-[#3A2213] text-white flex items-center justify-center hover:bg-[#2A170C] transition flex-shrink-0" 
+                    aria-label="Subscribe">
+              ➔
+            </button>
+          </form>
+
+          <div class="flex items-center gap-2.5 text-[#3A2213] pt-2">
+            <a href="#" class="w-7 h-7 rounded-full bg-white border border-[#E8DFD5] flex items-center justify-center text-xs hover:bg-[#3A2213] hover:text-white transition" aria-label="Facebook">f</a>
+            <a href="#" class="w-7 h-7 rounded-full bg-white border border-[#E8DFD5] flex items-center justify-center text-xs hover:bg-[#3A2213] hover:text-white transition" aria-label="Instagram">ig</a>
+            <a href="#" class="w-7 h-7 rounded-full bg-white border border-[#E8DFD5] flex items-center justify-center text-xs hover:bg-[#3A2213] hover:text-white transition" aria-label="Pinterest">p</a>
+            <a href="#" class="w-7 h-7 rounded-full bg-white border border-[#E8DFD5] flex items-center justify-center text-xs hover:bg-[#3A2213] hover:text-white transition" aria-label="TikTok">tk</a>
+          </div>
+        </div>
+
+        <div class="hidden lg:block"></div>
+
+        <div class="space-y-3">
+          <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">MAIN LINKS</h4>
+          <ul class="space-y-2 text-xs text-[#6B6259]">
+            <li><a href="preview.html" class="hover:text-[#3A2213] transition">Home</a></li>
+            <li><a href="product.html" class="hover:text-[#3A2213] transition font-bold text-[#3A2213]">Product Page (PDP)</a></li>
+            <li><a href="about.html" class="hover:text-[#3A2213] transition">About Us</a></li>
+            <li><a href="preview.html#MenvelReviews" class="hover:text-[#3A2213] transition">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="font-bold text-xs text-[#191614] uppercase tracking-wider">CUSTOMER SERVICES</h4>
+          <ul class="space-y-2 text-xs text-[#6B6259]">
+            <li><a href="#" class="hover:text-[#3A2213] transition">Shipping Policy</a></li>
+            <li><a href="#" class="hover:text-[#3A2213] transition">Returns & Refunds</a></li>
+            <li><a href="#" class="hover:text-[#3A2213] transition">FAQ</a></li>
+            <li><a href="#" class="hover:text-[#3A2213] transition">Contact Us</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 border-t border-[#E8DFD5] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#6B6259]">
+        <p>© Copyright 2026 Menvel Goods. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-[#3A2213] transition">Privacy Policy</a>
+          <span>•</span>
+          <a href="#" class="hover:text-[#3A2213] transition">Terms of Service</a>
+          <span>•</span>
+          <a href="#" class="hover:text-[#3A2213] transition">Refund Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Cart Drawer Component -->
+  <div id="MenvelCartOverlay" class="menvel-drawer-overlay" aria-hidden="true"></div>
+  <aside id="MenvelCartDrawer" class="menvel-drawer" aria-modal="true" role="dialog" aria-label="Shopping Bag">
+    <div class="p-5 border-b border-[#E8DFD5] flex items-center justify-between bg-[#FBF7F2]">
+      <div class="flex items-center gap-2">
+        <h3 class="font-serif text-lg font-bold text-[#191614]">Your Shopping Bag</h3>
+        <span class="js-cart-count bg-[#3A2213] text-white text-xs font-bold px-2 py-0.5 rounded-full">1</span>
+      </div>
+      <button id="MenvelCloseDrawer" type="button" class="p-1.5 rounded-full text-[#6B6259] hover:text-[#191614] hover:bg-white transition" aria-label="Close Bag">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="p-4 bg-white border-b border-[#E8DFD5]">
+      <p class="text-xs text-center font-semibold text-[#191614] mb-2">
+        🎉 You unlocked <strong>FREE U.S. Shipping</strong>!
+      </p>
+      <div class="w-full bg-[#EFE6DD] rounded-full h-2 overflow-hidden">
+        <div class="bg-[#15803D] h-full rounded-full transition-all duration-500" style="width: 100%;"></div>
+      </div>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-5 space-y-4">
+      <div class="flex gap-4 pb-4 border-b border-[#E8DFD5]">
+        <div class="w-20 h-20 rounded-xl bg-white overflow-hidden border border-[#E8DFD5] flex-shrink-0 p-1">
+          <img src="assets/menvel-pdp-main-hero.jpg" alt="Trivet Set" class="w-full h-full object-cover rounded-lg">
+        </div>
+        <div class="flex-1 flex flex-col justify-between">
+          <div>
+            <h4 class="font-serif font-bold text-sm text-[#191614]">Foldable Wooden Trivet Set</h4>
+            <p class="text-xs text-[#8A5428] font-semibold mt-0.5">Black Walnut • 4 Trivets + Tree Stand</p>
+          </div>
+          <div class="flex justify-between items-center mt-2">
+            <span class="text-xs font-semibold text-[#6B6259]">Qty: 1</span>
+            <span class="font-bold text-sm text-[#191614]">$18.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-5 bg-[#FBF7F2] border-t border-[#E8DFD5] space-y-3">
+      <div class="flex justify-between items-center text-sm font-bold text-[#191614]">
+        <span>Subtotal</span>
+        <span>$18.99</span>
+      </div>
+      <p class="text-[11px] text-[#6B6259] text-center">Shipping & taxes calculated at checkout.</p>
+      
+      <button type="button" class="menvel-btn-primary py-3.5 text-sm shadow-md flex items-center justify-center gap-2 w-full">
+        <span>PROCEED TO CHECKOUT</span>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Theme Script -->
+  <script src="assets/menvel-luxury.js"></script>
+</body>
+</html>

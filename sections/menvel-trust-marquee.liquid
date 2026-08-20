@@ -1,0 +1,36 @@
+{%- comment -%}
+  Single Product: Animated Trust Marquee
+  File: sections/menvel-trust-marquee.liquid
+{%- endcomment -%}
+
+<div class="menvel-trust-marquee bg-[#55331F] text-[#F8F2E9] py-3.5 overflow-hidden border-y border-[#3d2314]">
+  <div class="menvel-marquee-track flex items-center gap-8 text-xs sm:text-sm font-bold uppercase tracking-widest whitespace-nowrap">
+    {%- for i in (1..6) -%}
+      <div class="flex items-center gap-8">
+        <span>🌳 100% Solid Natural Black Walnut</span>
+        <span class="text-[#D97706]">•</span>
+        <span>⚡ Automatic Gravity-Assisted Unfolding</span>
+        <span class="text-[#D97706]">•</span>
+        <span>🛡️ Protects Granite, Quartz & Hardwood</span>
+        <span class="text-[#D97706]">•</span>
+        <span>✨ Handcrafted Decorative Tree Display</span>
+        <span class="text-[#D97706]">•</span>
+        <span>🎁 Arrives in Luxury Gift Packaging</span>
+        <span class="text-[#D97706]">•</span>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Menvel Trust Marquee",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Menvel Trust Marquee"
+    }
+  ]
+}
+{% endschema %}

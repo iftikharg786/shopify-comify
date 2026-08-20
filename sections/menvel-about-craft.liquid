@@ -1,0 +1,90 @@
+{%- comment -%}
+  Menvel Goods - About Us Craftsmanship & Materials Section
+  File: sections/menvel-about-craft.liquid
+{%- endcomment -%}
+
+<section class="py-16 sm:py-24 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Craftsmanship and Materials">
+  <div class="menvel-container">
+    
+    <div class="max-w-2xl mx-auto text-center mb-14">
+      <span class="menvel-eyebrow text-[#8A4315]">MATERIALS & ARTISANRY</span>
+      <h2 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614] mt-2">
+        Pure Timber. No Plastics. No Shortcuts.
+      </h2>
+      <p class="text-xs sm:text-sm text-[#6B6259] mt-2">
+        Every Menvel piece undergoes an 8-step hand-carving and precision sanding process.
+      </p>
+    </div>
+
+    <!-- 3-Column Craft Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+      
+      <!-- Card 1: Sustainable Timber -->
+      <div class="rounded-2xl bg-white border border-[#E8DFD5] overflow-hidden shadow-xs flex flex-col">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
+          <img src="{{ 'menvel-beech-showcase.jpg' | asset_url }}" 
+               alt="Natural Hardwood Selection" 
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+               loading="lazy">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#15803D]">01 • SOURCING</span>
+            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">100% Solid Natural Timber</h3>
+            <p class="text-xs text-[#6B6259] mt-2 leading-relaxed">
+              We never use veneer, synthetic particle board, or MDF. Only genuine North American Black Walnut and Natural European Beech harvested from certified renewable forests.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Gravity Mechanism -->
+      <div class="rounded-2xl bg-white border border-[#E8DFD5] overflow-hidden shadow-xs flex flex-col">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
+          <img src="{{ 'menvel-moment-teapot.jpg' | asset_url }}" 
+               alt="Automatic Gravity Drop Mechanism" 
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+               loading="lazy">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#8A4315]">02 • PRECISION JOINERY</span>
+            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">Automatic Gravity Drop</h3>
+            <p class="text-xs text-[#6B6259] mt-2 leading-relaxed">
+              Precision interlocking petals open effortlessly with downward pressure when cookware is placed on top, distributing weight evenly across six protective wood contact points.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: 450°F Heat Resistance -->
+      <div class="rounded-2xl bg-white border border-[#E8DFD5] overflow-hidden shadow-xs flex flex-col">
+        <div class="aspect-[4/3] w-full overflow-hidden bg-neutral-100">
+          <img src="{{ 'menvel-pdp-meal-banner.jpg' | asset_url }}" 
+               alt="Heat Resistance with Hot Cookware" 
+               class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+               loading="lazy">
+        </div>
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-[#D93829]">03 • PROTECTION</span>
+            <h3 class="font-serif font-bold text-lg text-[#191614] mt-1">Heat Proof up to 450°F</h3>
+            <p class="text-xs text-[#6B6259] mt-2 leading-relaxed">
+              Treated with natural botanical mineral oils that nourish the timber grain while shielding against direct heat, scorch marks, and condensation rings from boiling pots and skillets.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Craftsmanship",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

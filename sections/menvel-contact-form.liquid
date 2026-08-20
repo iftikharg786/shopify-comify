@@ -1,0 +1,182 @@
+{%- comment -%}
+  Menvel Goods - Contact Us Hero & Form Section (Dynamic Shopify Contact Form)
+  File: sections/menvel-contact-form.liquid
+{%- endcomment -%}
+
+<section class="py-12 sm:py-20 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Contact Us">
+  <div class="menvel-container">
+    
+    <!-- Hero Header -->
+    <div class="max-w-2xl mx-auto text-center space-y-3 mb-12 sm:mb-16">
+      <span class="menvel-eyebrow text-[#8A4315]">✦ CUSTOMER CARE & SUPPORT</span>
+      <h1 class="menvel-heading-serif text-3xl sm:text-5xl text-[#191614] leading-tight">
+        We're Here To Help
+      </h1>
+      <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed max-w-lg mx-auto">
+        Have a question about your order, shipping, or our handcrafted wooden trivets? Send us a message and our team will get back to you within 24 hours.
+      </p>
+      <div class="w-14 h-0.5 bg-[#3A2213] mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- 2-Column Split: Form (Left) + Contact Details & Guarantees (Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start max-w-5xl mx-auto">
+      
+      <!-- Left: Contact Form -->
+      <div class="lg:col-span-7 bg-[#FBF7F2] border border-[#E8DFD5] rounded-3xl p-6 sm:p-8 sm:p-10 shadow-xs">
+        <h2 class="font-serif text-xl sm:text-2xl font-bold text-[#191614] mb-2">Send Us A Message</h2>
+        <p class="text-xs text-[#6B6259] mb-6">Fill out the form below and we'll reply promptly.</p>
+
+        {% form 'contact', class: 'space-y-4' %}
+          
+          {% if form.posted_successfully? %}
+            <div class="p-4 rounded-xl bg-[#DCFCE7] border border-[#86EFAC] text-xs font-bold text-[#15803D] flex items-center gap-2">
+              <span>✓</span>
+              <span>Thank you! Your message has been sent successfully. We'll be in touch soon.</span>
+            </div>
+          {% endif %}
+
+          {% if form.errors %}
+            <div class="p-4 rounded-xl bg-[#FEE2E2] border border-[#FCA5A5] text-xs font-bold text-[#B91C1C]">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <!-- Name & Email (2-Column Grid on tablets+) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1.5 text-left">
+              <label for="ContactFormName" class="text-xs font-bold text-[#191614] uppercase tracking-wider">Your Name *</label>
+              <input type="text" 
+                     id="ContactFormName" 
+                     name="contact[name]" 
+                     placeholder="John Doe" 
+                     required 
+                     class="w-full px-4 py-3 text-xs bg-white border border-[#E8DFD5] rounded-xl outline-none focus:border-[#3A2213] text-[#191614] transition">
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="ContactFormEmail" class="text-xs font-bold text-[#191614] uppercase tracking-wider">Email Address *</label>
+              <input type="email" 
+                     id="ContactFormEmail" 
+                     name="contact[email]" 
+                     placeholder="john@example.com" 
+                     required 
+                     class="w-full px-4 py-3 text-xs bg-white border border-[#E8DFD5] rounded-xl outline-none focus:border-[#3A2213] text-[#191614] transition">
+            </div>
+          </div>
+
+          <!-- Order Number & Topic -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1.5 text-left">
+              <label for="ContactFormOrder" class="text-xs font-bold text-[#191614] uppercase tracking-wider">Order # (Optional)</label>
+              <input type="text" 
+                     id="ContactFormOrder" 
+                     name="contact[order_number]" 
+                     placeholder="MG-1048" 
+                     class="w-full px-4 py-3 text-xs bg-white border border-[#E8DFD5] rounded-xl outline-none focus:border-[#3A2213] text-[#191614] transition">
+            </div>
+
+            <div class="space-y-1.5 text-left">
+              <label for="ContactFormSubject" class="text-xs font-bold text-[#191614] uppercase tracking-wider">Topic *</label>
+              <select id="ContactFormSubject" 
+                      name="contact[subject]" 
+                      class="w-full px-4 py-3 text-xs bg-white border border-[#E8DFD5] rounded-xl outline-none focus:border-[#3A2213] text-[#191614] transition">
+                <option value="General Inquiry">General Question</option>
+                <option value="Order Status & Tracking">Order Status & Tracking</option>
+                <option value="Returns & Exchanges">Returns & Refunds</option>
+                <option value="Wholesale & Gifting">Wholesale / Corporate Gifting</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="space-y-1.5 text-left">
+            <label for="ContactFormMessage" class="text-xs font-bold text-[#191614] uppercase tracking-wider">Your Message *</label>
+            <textarea id="ContactFormMessage" 
+                      name="contact[body]" 
+                      rows="5" 
+                      placeholder="How can we help you today?" 
+                      required 
+                      class="w-full px-4 py-3 text-xs bg-white border border-[#E8DFD5] rounded-xl outline-none focus:border-[#3A2213] text-[#191614] transition"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" 
+                  class="w-full h-12 bg-black hover:bg-neutral-800 text-white rounded-xl text-xs font-bold uppercase tracking-wider shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+            <span>SEND MESSAGE</span>
+            <span>→</span>
+          </button>
+
+        {% endform %}
+      </div>
+
+      <!-- Right: Direct Support Channels & Brand Promises -->
+      <div class="lg:col-span-5 space-y-6 text-left">
+        
+        <!-- Quick Contact Info Card -->
+        <div class="rounded-3xl border border-[#E8DFD5] bg-[#FBF7F2] p-6 sm:p-8 space-y-6 shadow-xs">
+          <h3 class="font-serif font-bold text-xl text-[#191614]">Direct Channels</h3>
+          
+          <div class="space-y-4 text-xs">
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-[#3A2213] text-white flex items-center justify-center flex-shrink-0 text-sm shadow-xs">
+                ✉️
+              </div>
+              <div>
+                <span class="font-bold text-[#191614] block">Email Us Directly</span>
+                <a href="mailto:support@menvelgoods.com" class="text-[#8A4315] font-semibold hover:underline">support@menvelgoods.com</a>
+                <p class="text-[#6B6259] text-[11px] mt-0.5">Average response time: &lt; 24 hours</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-[#3A2213] text-white flex items-center justify-center flex-shrink-0 text-sm shadow-xs">
+                ⏰
+              </div>
+              <div>
+                <span class="font-bold text-[#191614] block">Customer Service Hours</span>
+                <p class="text-[#6B6259] text-[11px] mt-0.5">Monday – Friday: 9:00 AM – 6:00 PM EST</p>
+                <p class="text-[#6B6259] text-[11px]">Saturday – Sunday: 10:00 AM – 4:00 PM EST</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-9 h-9 rounded-xl bg-[#3A2213] text-white flex items-center justify-center flex-shrink-0 text-sm shadow-xs">
+                📦
+              </div>
+              <div>
+                <span class="font-bold text-[#191614] block">Order Tracking & Returns</span>
+                <p class="text-[#6B6259] text-[11px] mt-0.5">30-day hassle-free money-back guarantee.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Feature Showcase Box -->
+        <div class="rounded-3xl border border-[#E8DFD5] bg-white p-6 space-y-4 shadow-xs">
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] p-1 flex-shrink-0 flex items-center justify-center overflow-hidden">
+              <img src="{{ 'menvel-pdp-main-hero.jpg' | asset_url }}" alt="Menvel Tree Trivet" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <h4 class="font-serif font-bold text-sm text-[#191614]">Handcrafted With Care</h4>
+              <p class="text-[11px] text-[#6B6259] mt-0.5 leading-relaxed">
+                Made from 100% genuine Black Walnut & Beech timber.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Menvel Contact Section",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}

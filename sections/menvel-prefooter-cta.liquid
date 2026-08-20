@@ -1,0 +1,72 @@
+{%- comment -%}
+  Single Product: Pre-Footer Banner CTA Section (Flawless Pixel-Perfect Layout)
+  File: sections/menvel-prefooter-cta.liquid
+{%- endcomment -%}
+
+<section class="py-12 bg-[#F9F5F0]" role="region" aria-label="Order Trivet Set Pre-Footer">
+  <div class="menvel-container">
+    
+    <div class="bg-[#3D2314] text-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-8">
+      
+      <!-- Left: Thumbnail + Heading & Subtitle -->
+      <div class="flex items-center gap-5 sm:gap-6 flex-1">
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-white/10 p-2 flex-shrink-0 flex items-center justify-center border border-white/15 shadow-inner">
+          <img src="{{ 'menvel-product-main.jpg' | asset_url }}" alt="Foldable Trivet Set" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white leading-tight">
+            Protect Your Table Beautifully.
+          </h2>
+          <p class="text-xs sm:text-sm text-white/80 mt-1.5 leading-relaxed max-w-md">
+            Add the Menvel Goods Black Walnut Trivet Set to your kitchen today.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Price Block & Aligned Action Buttons -->
+      <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center sm:items-end lg:items-end xl:items-center gap-4 sm:gap-6 flex-shrink-0">
+        
+        <!-- Price Row -->
+        <div class="flex items-center gap-3">
+          <span class="text-3xl font-extrabold text-white tracking-tight">$49.99</span>
+          <span class="text-base font-medium text-white/50 line-through">$79.99</span>
+          <span class="px-2.5 py-1 bg-[#DC2626] text-white text-xs font-bold rounded-md uppercase tracking-wide shadow-xs">
+            Save 37%
+          </span>
+        </div>
+
+        <!-- Buttons Row (Perfect Equal Sizing & No Text Wrap) -->
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <!-- Buy It Now Button -->
+          <button type="button" 
+                  onclick="window.openMenvelDrawer()" 
+                  class="flex-1 sm:flex-initial min-w-[135px] h-12 px-6 rounded-lg bg-white text-[#3D2314] font-extrabold text-xs uppercase tracking-wider flex items-center justify-center hover:bg-[#F3ECE2] transition-all transform hover:-translate-y-0.5 shadow-sm whitespace-nowrap">
+            <span>BUY IT NOW</span>
+          </button>
+
+          <!-- Add to Cart Button -->
+          <a href="#MenvelBuySection" 
+             class="flex-1 sm:flex-initial min-w-[135px] h-12 px-6 rounded-lg bg-white/10 hover:bg-white/20 text-white font-extrabold text-xs uppercase tracking-wider border border-white/30 hover:border-white/60 flex items-center justify-center transition-all transform hover:-translate-y-0.5 whitespace-nowrap js-scroll-to-buy">
+            <span>ADD TO CART</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Menvel Pre-Footer CTA",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Menvel Pre-Footer CTA"
+    }
+  ]
+}
+{% endschema %}

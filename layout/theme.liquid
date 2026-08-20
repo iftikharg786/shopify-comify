@@ -25,11 +25,13 @@
   <link rel="icon" href="{{'favicon.png'| asset_url}}" type="image/png" sizes="16x16">
 
 
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
   <!-- font -->
   {% include 'engo-header-fonts' %}
   <!-- CSS ================================================== -->
+  {{ 'menvel-luxury.css' | asset_url | stylesheet_tag }}
   {% if settings.po_style == "po_swatchs" %}
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {% endif %}
@@ -372,7 +374,9 @@ Add the page template as a class for easy page or template specific styling.
   </script>
   {% endunless %}
 
-
+  {% render 'menvel-sticky-buy' %}
+  {% render 'menvel-cart-drawer' %}
+  <script src="{{ 'menvel-luxury.js' | asset_url }}" defer="defer"></script>
 
 </body>
 </html>

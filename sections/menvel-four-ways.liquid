@@ -1,0 +1,49 @@
+{%- comment -%}
+  Single Product: Four Ways To Protect Section with Exact Utensils Images
+  File: sections/menvel-four-ways.liquid
+{%- endcomment -%}
+
+<section class="menvel-four-ways py-16 sm:py-24 bg-white border-b border-[#EADFCF]">
+  <div class="menvel-container">
+    
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="menvel-eyebrow">Everyday Culinary Versatility</span>
+      <h2 class="menvel-heading-lg text-[#1F1B17]">
+        Suitable for Various Kitchen Utensils.
+      </h2>
+      <p class="menvel-lead mt-4 text-[#655E56]">
+        Perfect for hot pots, pans, kettles, and cups — protecting your table with timeless natural style.
+      </p>
+    </div>
+
+    <!-- Exact Utensils Grid Banner from Listing -->
+    <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-[#EADFCF] shadow-xl bg-white mb-12">
+      <img src="{{ 'menvel-utensils-grid.jpg' | asset_url }}" 
+           alt="Suitable for various kitchen utensils - Teapot, Frying Pan, Plate, and Dutch Oven" 
+           class="w-full h-auto object-contain" 
+           loading="lazy">
+    </div>
+
+    <!-- Full Panoramic Versatility Banner -->
+    <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden border border-[#EADFCF] shadow-xl bg-white mb-12">
+      <img src="{{ 'menvel-versatility-banner.png' | asset_url }}" 
+           alt="Heat Protection & Everyday Versatility - Menvel Goods" 
+           class="w-full h-auto object-cover" 
+           loading="lazy">
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Menvel Four Ways",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Menvel Four Ways"
+    }
+  ]
+}
+{% endschema %}

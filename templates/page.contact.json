@@ -1,5 +1,5 @@
 {
-  "name": "Menvel Goods - Single Product Page",
+  "name": "Contact Us",
   "sections": {
     "announcement": {
       "type": "menvel-announcement",
@@ -9,8 +9,16 @@
       "type": "menvel-header",
       "settings": {}
     },
-    "main_product": {
-      "type": "menvel-single-product",
+    "contact_form": {
+      "type": "menvel-contact-form",
+      "settings": {}
+    },
+    "faq": {
+      "type": "menvel-contact-faq",
+      "settings": {}
+    },
+    "features": {
+      "type": "menvel-feature-ribbon",
       "settings": {}
     },
     "footer": {
@@ -21,7 +29,9 @@
   "order": [
     "announcement",
     "header",
-    "main_product",
+    "contact_form",
+    "faq",
+    "features",
     "footer"
   ]
 }

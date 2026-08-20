@@ -1,0 +1,42 @@
+{
+  "name": "About Us",
+  "sections": {
+    "announcement": {
+      "type": "menvel-announcement",
+      "settings": {}
+    },
+    "header": {
+      "type": "menvel-header",
+      "settings": {}
+    },
+    "story": {
+      "type": "menvel-about-story",
+      "settings": {}
+    },
+    "craft": {
+      "type": "menvel-about-craft",
+      "settings": {}
+    },
+    "features": {
+      "type": "menvel-feature-ribbon",
+      "settings": {}
+    },
+    "cta": {
+      "type": "menvel-about-cta",
+      "settings": {}
+    },
+    "footer": {
+      "type": "menvel-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "announcement",
+    "header",
+    "story",
+    "craft",
+    "features",
+    "cta",
+    "footer"
+  ]
+}

@@ -1,0 +1,36 @@
+{%- comment -%}
+  Single Product: Mobile & Desktop Sticky Buy Bar on Scroll
+  File: snippets/menvel-sticky-buy.liquid
+{%- endcomment -%}
+
+<div id="MenvelStickyBar" class="menvel-sticky-buy" aria-hidden="true">
+  <div class="menvel-container flex items-center justify-between gap-4">
+    
+    <!-- Product Thumbnail & Title Info -->
+    <div class="flex items-center gap-3 overflow-hidden">
+      <div class="w-12 h-12 rounded-lg bg-white overflow-hidden border border-[#EADFCF] flex-shrink-0 p-1">
+        <img src="{{ 'menvel-product-main.jpg' | asset_url }}" 
+             alt="Menvel Trivet" 
+             class="w-full h-full object-contain">
+      </div>
+      <div class="truncate">
+        <h4 class="font-serif font-bold text-sm text-[#1F1B17] truncate leading-tight">Foldable Wooden Trivet Tree Set</h4>
+        <div class="flex items-center gap-2 mt-0.5">
+          <span class="font-bold text-sm text-[#1F1B17]">$34.99</span>
+          <span class="text-xs text-[#8C827A] line-through">$49.99</span>
+          <span class="text-[10px] font-bold text-[#15803D] bg-green-100 px-1.5 py-0.2 rounded">Save $15</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="flex items-center gap-3">
+      <button type="button" 
+              onclick="document.getElementById('MenvelAddToCart').click();"
+              class="menvel-btn-primary py-2.5 px-6 text-xs whitespace-nowrap shadow-md">
+        <span>Add to Cart • $34.99</span>
+      </button>
+    </div>
+
+  </div>
+</div>
