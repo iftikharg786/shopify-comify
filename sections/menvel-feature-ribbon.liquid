@@ -1,14 +1,14 @@
 {%- comment -%}
-  Menvel Goods - 4 Feature Icon Badges (Inline SVG, Poppins)
+  Menvel Goods - 4 Feature Icon Badges (Compact Spacing)
   File: sections/menvel-feature-ribbon.liquid
 {%- endcomment -%}
 
-<section class="py-14 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Key Product Features" data-section-id="{{ section.id }}">
+<section class="py-10 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Key Product Features" data-section-id="{{ section.id }}">
   <div class="menvel-container">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
 
       <!-- Feature 1: Natural Solid Wood -->
-      <div class="flex flex-col items-center gap-3">
+      <div class="flex flex-col items-center gap-2.5">
         <div class="menvel-icon-badge-box">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2C8 2 5 5.5 5 9c0 3 1.5 5.5 4 7v3h6v-3c2.5-1.5 4-4 4-7 0-3.5-3-7-7-7z"/>
@@ -19,14 +19,14 @@
           <h4 class="font-semibold text-base text-[#191614] leading-tight mb-1">
             {{ section.settings.feat1_title | default: "Natural Solid Wood" }}
           </h4>
-          <p class="text-sm text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
+          <p class="text-xs text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
             {{ section.settings.feat1_text | default: "100% premium natural hardwood with unique grain patterns." }}
           </p>
         </div>
       </div>
 
       <!-- Feature 2: Automatic Gravity Open -->
-      <div class="flex flex-col items-center gap-3">
+      <div class="flex flex-col items-center gap-2.5">
         <div class="menvel-icon-badge-box">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <circle cx="12" cy="12" r="10"/>
@@ -38,14 +38,14 @@
           <h4 class="font-semibold text-base text-[#191614] leading-tight mb-1">
             {{ section.settings.feat2_title | default: "Gravity Opens Automatically" }}
           </h4>
-          <p class="text-sm text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
+          <p class="text-xs text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
             {{ section.settings.feat2_text | default: "Opens with gravity when cookware is placed on top." }}
           </p>
         </div>
       </div>
 
       <!-- Feature 3: Space-Saving Tree Shape -->
-      <div class="flex flex-col items-center gap-3">
+      <div class="flex flex-col items-center gap-2.5">
         <div class="menvel-icon-badge-box">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 2L5 9h4l-3 5h4l-3 5h10l-3-5h4L14 9h4L12 2z"/>
@@ -56,14 +56,14 @@
           <h4 class="font-semibold text-base text-[#191614] leading-tight mb-1">
             {{ section.settings.feat3_title | default: "Space-Saving Tree Form" }}
           </h4>
-          <p class="text-sm text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
+          <p class="text-xs text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
             {{ section.settings.feat3_text | default: "Stores upright as a decorative tree sculpture on your countertop." }}
           </p>
         </div>
       </div>
 
       <!-- Feature 4: Gift-Ready Box -->
-      <div class="flex flex-col items-center gap-3">
+      <div class="flex flex-col items-center gap-2.5">
         <div class="menvel-icon-badge-box">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <rect x="3" y="9" width="18" height="13" rx="2"/>
@@ -77,7 +77,7 @@
           <h4 class="font-semibold text-base text-[#191614] leading-tight mb-1">
             {{ section.settings.feat4_title | default: "Gift-Ready Luxury Box" }}
           </h4>
-          <p class="text-sm text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
+          <p class="text-xs text-[#6B6259] leading-relaxed max-w-[180px] mx-auto">
             {{ section.settings.feat4_text | default: "Packed in a gold-embossed premium presentation gift box." }}
           </p>
         </div>

@@ -1,15 +1,15 @@
 {%- comment -%}
-  Menvel Goods - Split Problem & Solution Cards (Tall Full-Height Portrait Cards + Red Number Badges)
+  Menvel Goods - Split Problem & Solution Cards (2x2 Grid, Clean Rectangles + Red Numbers)
   File: sections/menvel-damage-surfaces.liquid
 {%- endcomment -%}
 
-<section class="py-14 sm:py-20 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Problem and Solution">
+<section class="py-10 sm:py-14 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Problem and Solution">
   <div class="menvel-container">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
       
       <!-- Left Card: The Problem -->
       <div class="menvel-split-card flex flex-col justify-between">
-        <div class="space-y-3 mb-6">
+        <div class="space-y-2 mb-4">
           <span class="menvel-eyebrow text-[#D93829]">THE PROBLEM</span>
           <h2 class="menvel-heading-serif text-2xl sm:text-3xl text-[#191614] uppercase tracking-wide">
             HOT COOKWARE CAN DAMAGE BEAUTIFUL SURFACES.
@@ -19,74 +19,74 @@
           </p>
         </div>
 
-        <!-- 4 Heat Damage Images: Full-Height Portrait Images (Aspect 3/4 or h-48+) with Red Number Badges -->
-        <div class="pt-4 mt-auto">
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 items-stretch">
+        <!-- 4 Heat Damage Images: 2 IN 1 ROW (2x2 Grid) With Clean Rectangles & Red Number Badges -->
+        <div class="pt-2 mt-auto">
+          <div class="grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
             
             <!-- Item 1: Kettle + Burn Ring -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-1.jpg' | asset_url }}" 
                      alt="Kettle heat burn damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Red Badge with Number inside (replacing ✕) -->
-                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
+                <!-- Red Badge with Number inside -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-0.5 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   01
                 </span>
               </div>
-              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+              <div class="py-2 px-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
                 <span class="text-xs font-bold text-[#191614]">Kettle Rings</span>
               </div>
             </div>
 
             <!-- Item 2: Scorch Ring Closeup -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-2.jpg' | asset_url }}" 
                      alt="Scorch ring damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Red Badge with Number inside (replacing ✕) -->
-                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
+                <!-- Red Badge with Number inside -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-0.5 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   02
                 </span>
               </div>
-              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+              <div class="py-2 px-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
                 <span class="text-xs font-bold text-[#191614]">Scorch Marks</span>
               </div>
             </div>
 
             <!-- Item 3: Skillet Heat Damage -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-3.jpg' | asset_url }}" 
                      alt="Skillet heat damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Red Badge with Number inside (replacing ✕) -->
-                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
+                <!-- Red Badge with Number inside -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-0.5 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   03
                 </span>
               </div>
-              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+              <div class="py-2 px-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
                 <span class="text-xs font-bold text-[#191614]">Pan Burns</span>
               </div>
             </div>
 
             <!-- Item 4: Pot Heat Damage -->
             <div class="relative flex flex-col group border border-[#E8DFD5] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all duration-300">
-              <div class="w-full h-44 sm:h-52 overflow-hidden bg-[#FBF7F2] relative">
+              <div class="w-full aspect-[4/3] overflow-hidden bg-[#FBF7F2] relative">
                 <img src="{{ 'menvel-damage-circle-4.jpg' | asset_url }}" 
                      alt="Pot surface damage" 
                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                      loading="lazy">
-                <!-- Red Badge with Number inside (replacing ✕) -->
-                <span class="absolute bottom-2 right-2 px-2.5 py-1 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
+                <!-- Red Badge with Number inside -->
+                <span class="absolute bottom-2 right-2 px-2.5 py-0.5 bg-[#B91C1C] text-white flex items-center justify-center text-xs font-extrabold shadow-sm">
                   04
                 </span>
               </div>
-              <div class="py-2.5 px-1.5 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
+              <div class="py-2 px-2 text-center bg-[#FAF6F0] border-t border-[#E8DFD5]">
                 <span class="text-xs font-bold text-[#191614]">Pot Stains</span>
               </div>
             </div>
@@ -97,7 +97,7 @@
 
       <!-- Right Card: The Natural Solution -->
       <div class="menvel-split-card flex flex-col justify-between">
-        <div class="space-y-3 mb-6">
+        <div class="space-y-2 mb-4">
           <span class="menvel-eyebrow text-[#15803D]">THE BEAUTIFUL, NATURAL SOLUTION</span>
           <h2 class="menvel-heading-serif text-2xl sm:text-3xl text-[#191614]">
             The Smarter Way To Protect Your Table.
@@ -111,7 +111,7 @@
         <div class="overflow-hidden border border-[#E8DFD5] bg-white shadow-xs mt-auto">
           <img src="{{ 'menvel-featured-teapot.jpg' | asset_url }}" 
                alt="Glass Teapot resting on Menvel Wooden Trivet" 
-               class="w-full h-64 sm:h-72 object-cover hover:scale-105 transition-transform duration-500" 
+               class="w-full h-60 sm:h-72 object-cover hover:scale-105 transition-transform duration-500" 
                loading="lazy">
         </div>
       </div>

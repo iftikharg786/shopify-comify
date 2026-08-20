@@ -1,30 +1,46 @@
 {%- comment -%}
-  Menvel Goods - Top Announcement Bar (100% Dynamic Shopify Schema)
+  Menvel Goods - Top Announcement Bar (No unwanted default fallbacks when cleared)
   File: sections/menvel-announcement.liquid
 {%- endcomment -%}
 
 {%- if section.settings.enable_announcement -%}
-<div class="bg-[#0B2820] text-[#E5ECE9] py-2 px-4 text-[11px] font-semibold tracking-wider border-b border-[#071E18] relative z-20" data-section-id="{{ section.id }}">
+<div class="bg-[#0B2820] text-[#E5ECE9] py-2 px-4 text-xs font-medium tracking-wide border-b border-[#071E18] relative z-20 {% unless section.settings.show_on_mobile %}hidden sm:block{% endunless %} {% unless section.settings.show_on_desktop %}sm:hidden{% endunless %}" data-section-id="{{ section.id }}">
   <div class="menvel-container flex items-center justify-between flex-wrap gap-2 text-center sm:text-left">
     
     <!-- Left: Star Rating -->
-    <div class="flex items-center gap-1.5 justify-center sm:justify-start">
-      <span class="text-[#D97706] text-xs">★★★★★</span>
-      <span class="font-bold text-white">{{ section.settings.rating_score | default: "4.9/5" }}</span>
-      <span class="text-white/70">{{ section.settings.reviews_count | default: "OVER 1,200+ REVIEWS" }}</span>
-    </div>
+    {%- if section.settings.rating_score != blank or section.settings.reviews_count != blank -%}
+      <div class="flex items-center gap-1.5 justify-center sm:justify-start mx-auto sm:mx-0">
+        <span class="text-[#D97706] text-xs">★★★★★</span>
+        {%- if section.settings.rating_score != blank -%}
+          <span class="font-bold text-white">{{ section.settings.rating_score }}</span>
+        {%- endif -%}
+        {%- if section.settings.reviews_count != blank -%}
+          <span class="text-white/80 text-[11px] sm:text-xs">{{ section.settings.reviews_count }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
-    <!-- Center: Guarantee & Free Shipping -->
-    <div class="hidden md:flex items-center gap-2 text-white/90">
-      <span>{{ section.settings.shipping_text | default: "FREE US SHIPPING OVER $50" }}</span>
-      <span class="text-white/40">•</span>
-      <span>{{ section.settings.guarantee_text | default: "30-DAY MONEY-BACK GUARANTEE" }}</span>
-    </div>
+    <!-- Center: Guarantee & Free Shipping (Only shows what user types) -->
+    {%- if section.settings.shipping_text != blank or section.settings.guarantee_text != blank -%}
+      <div class="hidden md:flex items-center gap-2 text-white/90 text-xs">
+        {%- if section.settings.shipping_text != blank -%}
+          <span>{{ section.settings.shipping_text }}</span>
+        {%- endif -%}
+        {%- if section.settings.shipping_text != blank and section.settings.guarantee_text != blank -%}
+          <span class="text-white/40">•</span>
+        {%- endif -%}
+        {%- if section.settings.guarantee_text != blank -%}
+          <span>{{ section.settings.guarantee_text }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
 
-    <!-- Right: Highlight / Badge -->
-    <div class="flex items-center gap-3 justify-center sm:justify-end text-white/80">
-      <span>{{ section.settings.right_text | default: "📦 SHIPS IN 24H" }}</span>
-    </div>
+    <!-- Right: Highlight / Badge (Only shows if not blank) -->
+    {%- if section.settings.right_text != blank -%}
+      <div class="hidden sm:flex items-center gap-3 justify-end text-white/90 text-xs">
+        <span>{{ section.settings.right_text }}</span>
+      </div>
+    {%- endif -%}
 
   </div>
 </div>
@@ -42,6 +58,18 @@
       "default": true
     },
     {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "Show on Mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "Show on Desktop",
+      "default": true
+    },
+    {
       "type": "text",
       "id": "rating_score",
       "label": "Rating Score",
@@ -56,20 +84,22 @@
     {
       "type": "text",
       "id": "shipping_text",
-      "label": "Shipping Text",
-      "default": "FREE US SHIPPING OVER $50"
+      "label": "Shipping Text"
     },
     {
       "type": "text",
       "id": "guarantee_text",
-      "label": "Guarantee Text",
-      "default": "30-DAY MONEY-BACK GUARANTEE"
+      "label": "Guarantee Text"
     },
     {
       "type": "text",
       "id": "right_text",
-      "label": "Right Highlight",
-      "default": "📦 SHIPS IN 24H"
+      "label": "Right Highlight"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar"
     }
   ]
 }
