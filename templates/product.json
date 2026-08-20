@@ -1,27 +1,12 @@
 {
   "name": "Menvel Goods - Single Product Page",
   "sections": {
-    "announcement": {
-      "type": "menvel-announcement",
-      "settings": {}
-    },
-    "header": {
-      "type": "menvel-header",
-      "settings": {}
-    },
     "main_product": {
       "type": "menvel-single-product",
-      "settings": {}
-    },
-    "footer": {
-      "type": "menvel-footer",
       "settings": {}
     }
   },
   "order": [
-    "announcement",
-    "header",
-    "main_product",
-    "footer"
+    "main_product"
   ]
 }

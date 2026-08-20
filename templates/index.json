@@ -1,14 +1,6 @@
 {
   "name": "Menvel Goods - Single Product Store",
   "sections": {
-    "announcement": {
-      "type": "menvel-announcement",
-      "settings": {}
-    },
-    "header": {
-      "type": "menvel-header",
-      "settings": {}
-    },
     "hero_pdp": {
       "type": "menvel-hero-pdp",
       "settings": {}
@@ -41,14 +33,12 @@
       "type": "menvel-reviews-and-faq",
       "settings": {}
     },
-    "footer": {
-      "type": "menvel-footer",
+    "prefooter_cta": {
+      "type": "menvel-prefooter-cta",
       "settings": {}
     }
   },
   "order": [
-    "announcement",
-    "header",
     "hero_pdp",
     "damage_surfaces",
     "various_utensils",
@@ -57,6 +47,6 @@
     "video_showcase",
     "included_and_packaging",
     "reviews_and_faq",
-    "footer"
+    "prefooter_cta"
   ]
 }

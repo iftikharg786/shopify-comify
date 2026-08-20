@@ -1,120 +1,82 @@
-<!-- /templates/cart.liquid -->
-{% comment %}
+{%- comment -%}
+  Menvel Goods - Standard Cart Page Section
+  File: sections/page-cart.liquid
+{%- endcomment -%}
 
-For info on test orders:
-- General http://docs.shopify.com/manual/your-store/orders/test-orders
-- Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
-
-{% endcomment %}
-<div class="wrap-bread-crumb breadcrumb_cart">
-  <div class="container container-v1" >
-    {% include 'breadcrumb' %}
-  </div>
-</div>
-<section class="page-cart">
-  <div class="content-pages">
-    <div class="container container-v1">
-      <div class="content-about content-cart-page">
-        {% if cart.item_count > 0 %}
-        <form action="/cart" method="post" novalidate>
-          <div class="table-responsive">
-            <table class="shop_table table--responsive cart table">
-              <thead>
-                <tr class="cart-title">
-
-                  <th colspan="2" class="product-thumbnail"> {{ 'cart.label.product' | t }}</th>
-                  <th class="product-price">{{ 'cart.label.price' | t }}</th>
-                  <th class="product-quantity">{{ 'cart.label.quantity' | t }}</th>
-                  <th class="product-subtotal">{{ 'cart.label.total' | t }}</th>
-                  <th class="product-remove">&nbsp;</th>
-                </tr>
-              </thead>
-              {% if cart.item_count > 0 %}
-              <form action="/cart" method="post" novalidate>
-                <tbody>
-                  {% for item in cart.items %}
-                  <tr class="cart_item">
-                    <td data-label="Product Name" class="product-thumbnail">
-                      <a href="{{ item.url }}"><img  src="{{ item | img_url: 'small' }}" alt="{{ item.title | escape }}"/></a>           
-                    </td>
-                    <td class="product-name-thumb" data-title="Product">
-                      <a href="{{ item.url }}">{{ item.product.title }}</a> 
-                      {% unless item.variant.title contains 'Default' %}
-                      <small style="display: block; color: #959595;">{{ item.variant.title }}</small>
-                      {% endunless %}
-                      {% if settings.cart_vendor_enable %}
-                      <p>{{ item.vendor }}</p>
-                      {% endif %}           
-
-                    </td>
-                    <td data-label="Product Price" class="product-price" data-title="Price">
-                      <span class="amount">{{ item.price | money }}</span>          
-                    </td>
-                    <td data-label="Quantity" class="product-quantity" data-title="Quantity">
-                      <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0">
-                    </td>
-                    <td data-label="Sub Total" class="product-subtotal" data-title="Total">
-                      <span class="amount">{{ item.line_price | money }}</span> 
-                    </td>
-                    <td  class="product-remove">
-                      <a class="remove set-12-svg" href="/cart/change?line={{ forloop.index }}&amp;quantity=0"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 298.667 298.667" style="enable-background:new 0 0 298.667 298.667;" xml:space="preserve"> <g> <g> <polygon points="298.667,30.187 268.48,0 149.333,119.147 30.187,0 0,30.187 119.147,149.333 0,268.48 30.187,298.667     149.333,179.52 268.48,298.667 298.667,268.48 179.52,149.333   "></polygon> </g> </g> </svg></a>
-                    </td>
-                  </tr>
-                  {% endfor %}            
-
-                </tbody>
-              </form>
-              {% endif %}
-            </table>
-          </div>
-
-          <div class="cart_totals ">
-            <div class="cart-update">
-              <input type="submit" value="{{ 'cart.general.update' | t }}" name="update_cart" class="button bg-color">      
-            </div>
-            <div class="continue-shopping-1">
-              <a href="/collections/all">{{'cart.general.continue' | t}}</a>
-            </div>
-
-            <div class="cart-check">
-              <h2 class="cart-title">{{'cart.label.cart_total' | t}}</h2>
-              <table class="total-checkout">
-                <tbody>
-                  <tr>
-                    <th class="cart-label"><span >{{ 'cart.label.total' | t }}</span></th>
-                    <td class="cart-amount"><span ><strong><span class="amount">{{ cart.total_price | money }}</span></strong> </span></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="wc-proceed-to-checkout clearfix">
-                <a class="checkout-button button alt wc-forward bg-color" href="/checkout">{{ 'cart.general.checkout' | t }}</a>
-              </div>
-            </div>  
-          </div>
-        </form>
-        {% else %}
-        {% comment %}
-        The cart is empty
-        {% endcomment %}
-        <p>{{ 'cart.general.empty' | t }}</p>
-        <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
-        {% endif %}
-      </div>  
+<section class="py-12 sm:py-16 bg-[#FBF7F2]" role="region" aria-label="Shopping Cart">
+  <div class="menvel-container max-w-4xl">
+    
+    <div class="text-center space-y-2 mb-10 pb-6 border-b border-[#E8DFD5]">
+      <h1 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614]">
+        Your Shopping Bag
+      </h1>
+      <p class="text-xs sm:text-sm text-[#6B6259]">Review your items before proceeding to secure checkout.</p>
     </div>
+
+    {%- if cart.item_count > 0 -%}
+      <form action="/cart" method="post" class="space-y-6">
+        <div class="bg-white rounded-2xl border border-[#E8DFD5] p-6 shadow-xs space-y-4">
+          {%- for item in cart.items -%}
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4 border-b border-[#E8DFD5] last:border-0 last:pb-0">
+              <div class="flex items-center gap-4 w-full sm:w-auto">
+                <div class="w-20 h-20 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] p-1 flex-shrink-0">
+                  <img src="{{ item.image | image_url: width: 200 }}" alt="{{ item.title | escape }}" class="w-full h-full object-cover rounded-lg">
+                </div>
+                <div>
+                  <h3 class="font-serif font-bold text-sm text-[#191614]">{{ item.product.title }}</h3>
+                  <p class="text-xs text-[#8A4315] font-semibold mt-0.5">{{ item.variant.title }}</p>
+                  <span class="text-xs text-[#6B6259]">{{ item.price | money }} each</span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between sm:justify-end gap-6 w-full sm:w-auto">
+                <div class="flex items-center border border-[#D1D5DB] rounded-lg h-9 bg-white px-2 w-28 justify-between">
+                  <input type="number" name="updates[]" id="updates_{{ item.id }}" value="{{ item.quantity }}" min="0" class="w-12 text-center font-bold text-xs text-[#191614] border-none outline-none">
+                </div>
+                <span class="font-bold text-sm text-[#191614] w-20 text-right">{{ item.line_price | money }}</span>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="text-xs text-neutral-400 hover:text-red-600 transition" aria-label="Remove item">✕</a>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-2xl border border-[#E8DFD5] p-6 shadow-xs">
+          <div>
+            <span class="text-xs text-[#6B6259] block">Estimated Subtotal</span>
+            <span class="font-serif text-2xl font-bold text-[#191614]">{{ cart.total_price | money }} USD</span>
+            <p class="text-[11px] text-[#6B6259] mt-0.5">Taxes & shipping calculated at checkout.</p>
+          </div>
+
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <button type="submit" name="update" class="px-5 py-3 rounded-xl border border-[#E8DFD5] bg-white text-xs font-bold text-[#191614] hover:bg-[#FAF7F2] transition">
+              UPDATE CART
+            </button>
+            <button type="submit" name="checkout" class="menvel-btn-primary h-12 px-8 rounded-xl text-xs font-bold uppercase tracking-wider shadow-md">
+              <span>PROCEED TO CHECKOUT</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    {%- else -%}
+      <div class="bg-white rounded-3xl border border-[#E8DFD5] p-10 sm:p-16 text-center space-y-4 shadow-xs">
+        <div class="text-4xl">🛍️</div>
+        <h2 class="font-serif text-xl font-bold text-[#191614]">Your bag is empty</h2>
+        <p class="text-xs text-[#6B6259] max-w-sm mx-auto">Discover our handcrafted solid wood foldable trivets to protect your countertops in style.</p>
+        <div class="pt-2">
+          <a href="/products/foldable-wooden-trivet-set" class="menvel-btn-primary h-12 px-8 rounded-xl shadow-md">
+            <span>SHOP THE COLLECTION</span>
+          </a>
+        </div>
+      </div>
+    {%- endif -%}
+
   </div>
-  <!-- End Content Pages -->
 </section>
+
 {% schema %}
 {
   "name": "Cart Page",
-  "settings": [
-    
-  ]
+  "tag": "section",
+  "settings": []
 }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}

@@ -1,14 +1,6 @@
 {
   "name": "Contact Us",
   "sections": {
-    "announcement": {
-      "type": "menvel-announcement",
-      "settings": {}
-    },
-    "header": {
-      "type": "menvel-header",
-      "settings": {}
-    },
     "contact_form": {
       "type": "menvel-contact-form",
       "settings": {}
@@ -20,18 +12,11 @@
     "features": {
       "type": "menvel-feature-ribbon",
       "settings": {}
-    },
-    "footer": {
-      "type": "menvel-footer",
-      "settings": {}
     }
   },
   "order": [
-    "announcement",
-    "header",
     "contact_form",
     "faq",
-    "features",
-    "footer"
+    "features"
   ]
 }

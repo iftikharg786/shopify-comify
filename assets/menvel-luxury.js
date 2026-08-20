@@ -179,5 +179,58 @@
       });
     });
 
+    // --- 8. Live Shopify AJAX Add-to-Cart & Buy It Now ---
+    const pdpForm = document.getElementById('PDPProductForm');
+    const addToCartBtn = document.getElementById('PDPAddToCartBtn');
+    const buyNowBtn = document.getElementById('PDPBuyNowBtn');
+
+    if (pdpForm) {
+      if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const formData = new FormData(pdpForm);
+          
+          fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData
+          })
+          .then(res => res.json())
+          .then(item => {
+            // Update cart count
+            fetch('/cart.js')
+              .then(res => res.json())
+              .then(cart => {
+                document.querySelectorAll('.js-cart-count').forEach(el => {
+                  el.textContent = cart.item_count;
+                });
+              })
+              .catch(() => {});
+            window.openMenvelDrawer();
+          })
+          .catch(err => {
+            console.log('Cart add:', err);
+            window.openMenvelDrawer();
+          });
+        });
+      }
+
+      if (buyNowBtn) {
+        buyNowBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const formData = new FormData(pdpForm);
+          fetch('/cart/add.js', {
+            method: 'POST',
+            body: formData
+          })
+          .then(() => {
+            window.location.href = '/checkout';
+          })
+          .catch(() => {
+            window.location.href = '/checkout';
+          });
+        });
+      }
+    }
+
   });
 })();

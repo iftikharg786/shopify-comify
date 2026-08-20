@@ -1,31 +1,29 @@
-<!-- /templates/page.liquid -->
-<section>
-  <div class="container">
-    <div class="pt-65 pb-30">
-      <div class="wrap-bread-crumb">
-        {% include 'breadcrumb' %}
-      </div>
+{%- comment -%}
+  Menvel Goods - Standard Default Page Section
+  File: sections/main-page.liquid
+{%- endcomment -%}
+
+<section class="py-12 sm:py-16 bg-white" role="region" aria-label="{{ page.title | escape }}">
+  <div class="menvel-container max-w-4xl">
+    
+    <div class="text-center space-y-3 mb-10 pb-8 border-b border-[#E8DFD5]">
+      <h1 class="menvel-heading-serif text-3xl sm:text-4xl lg:text-5xl text-[#191614]">
+        {{ page.title }}
+      </h1>
+      <div class="w-12 h-0.5 bg-[#3A2213] mx-auto mt-3 rounded-full"></div>
     </div>
-  </div>
-</section>
-<h1 class="sr-only">{{page.title}}</h1>
-<section>
-  <div class="container">
-    <div class="mb-50">
-      <div class="maxus-titlebox">
-        <div class="text-center">
-          <h2 class="maxus-titlebox__title h1 font-300 fz-60 mb-5">{{page.title}}</h2>
-          <h3 class="maxus-titlebox__meta text-uppercase h5  "></h3>
-        </div>
-      </div>
+
+    <div class="prose max-w-none text-xs sm:text-sm text-[#6B6259] leading-relaxed space-y-4">
+      {{ page.content }}
     </div>
+
   </div>
 </section>
 
-<section>
-  <div class="container">
-    {{page.content}}
-  </div>
-</section>
-
-
+{% schema %}
+{
+  "name": "Page Content",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
