@@ -1,53 +1,64 @@
 {%- comment -%}
-  Menvel Goods - Beautiful Protection Split Banner (100% Mockup Match)
+  Menvel Goods - Complete Set & Holiday Gift Showcases
   File: sections/menvel-included-and-packaging.liquid
 {%- endcomment -%}
 
-<section class="py-16 sm:py-24 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Beautiful Protection For Your Home">
-  <div class="menvel-container">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+<section class="py-12 sm:py-16 bg-[#FBF7F2] border-b border-[#E8DFD5]" role="region" aria-label="Complete Set & Packaging" data-section-id="{{ section.id }}">
+  <div class="menvel-container space-y-12">
+    
+    <!-- Row 1: Heat Protection & Everyday Versatility Studio Banner -->
+    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-white shadow-sm">
+      <img src="{{ 'menvel-versatility-banner.png' | asset_url }}" 
+           alt="Heat Protection & Everyday Versatility - Menvel Trivet under Pans, Kettles, Pots and Cups" 
+           class="w-full h-auto object-cover block" 
+           loading="lazy">
+    </div>
+
+    <!-- Row 2: Two High-Converting Packaging Banners (Complete Box + Holiday's Best Choice) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
       
-      <!-- Left: Split Before/After Graphic -->
-      <div class="lg:col-span-6 rounded-2xl overflow-hidden border border-[#E8DFD5] shadow-sm bg-white">
-        <img src="{{ 'menvel-split-protection.jpg' | asset_url }}" 
-             alt="Without a Trivet vs With Our Wooden Trivet" 
-             class="w-full h-auto object-cover"
-             loading="lazy">
+      <!-- Card 1: Complete Set in One Box -->
+      <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-white shadow-sm flex flex-col justify-between group">
+        <div class="w-full overflow-hidden bg-[#FAF6F0]">
+          <img src="{{ 'menvel-complete-set-box.png' | asset_url }}" 
+               alt="Complete Set in One Box - Menvel Goods Foldable Wooden Trivet Set" 
+               class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
+               loading="lazy">
+        </div>
       </div>
 
-      <!-- Right: Editorial Content -->
-      <div class="lg:col-span-6 space-y-5 text-left">
-        <span class="menvel-eyebrow text-[#3A2213]">ENGINEERED FOR EVERY KITCHEN</span>
-        
-        <h2 class="menvel-heading-serif text-3xl sm:text-4xl lg:text-5xl text-[#191614] leading-tight">
-          Beautiful Protection For Your Home
-        </h2>
-
-        <p class="text-sm sm:text-base text-[#6B6259] leading-relaxed">
-          Never worry about scorched wood, cracked stone, or ruined tables again. The Menvel tree trivet set elevates your dinner table while keeping every surface pristine.
-        </p>
-
-        <div class="pt-2">
-          <button type="button" 
-                  onclick="window.openMenvelDrawer()" 
-                  class="menvel-btn-primary h-12 px-8 rounded-lg shadow-sm text-xs font-extrabold uppercase tracking-wider">
-            <span>SHOP THE COLLECTION →</span>
-          </button>
+      <!-- Card 2: Holiday's Best Choice Gift Packaging -->
+      <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-white shadow-sm flex flex-col justify-between group">
+        <div class="w-full overflow-hidden bg-[#FAF6F0]">
+          <img src="{{ 'menvel-holiday-gift-box.png' | asset_url }}" 
+               alt="Holiday's Best Choice - Premium Gift Box Packaging with Ribbon" 
+               class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" 
+               loading="lazy">
         </div>
       </div>
 
     </div>
+
+    <!-- Conversion Shop Button -->
+    <div class="text-center pt-2">
+      <a href="/products/foldable-black-walnut-wooden-trivet-set" 
+         class="menvel-btn-primary h-12 px-9 rounded-xl shadow-md text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-2">
+        <span>ORDER COMPLETE GIFT SET — $18.99</span>
+        <span>→</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Menvel Protection Banner",
+  "name": "Complete Set & Packaging",
   "tag": "section",
   "settings": [],
   "presets": [
     {
-      "name": "Menvel Protection Banner"
+      "name": "Complete Set & Packaging"
     }
   ]
 }

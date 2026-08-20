@@ -1,86 +1,75 @@
 {%- comment -%}
-  Single Product: How It Works Section with Exact Diagram
+  Menvel Goods - How It Works: Designed to Work with Weight (100% Visual Match)
   File: sections/menvel-how-it-works.liquid
 {%- endcomment -%}
 
-<section id="MenvelHowItWorks" class="menvel-how-it-works py-16 sm:py-24 bg-white border-b border-[#EADFCF]">
+<section class="py-12 sm:py-16 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Designed to Work with Weight" data-section-id="{{ section.id }}">
   <div class="menvel-container">
     
-    <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="menvel-eyebrow">Designed to Work with Weight</span>
-      <h2 class="menvel-heading-lg text-[#1F1B17]">
-        One Simple Motion.
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center space-y-2.5 mb-10">
+      <h2 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614] tracking-tight uppercase">
+        DESIGNED TO WORK <span class="text-[#8A181A]">WITH WEIGHT</span>
       </h2>
-      <p class="menvel-lead mt-4 text-[#655E56]">
-        The trivet opens <strong>only</strong> when something is placed on it. It springs back up automatically when lifted.
+      <p class="text-xs sm:text-sm text-[#4B443D] leading-relaxed max-w-xl mx-auto">
+        The trivet opens <strong class="text-[#8A181A] font-bold">only</strong> when something is placed on it. It springs back up when lifted.
       </p>
+      <div class="w-12 h-0.5 bg-[#8A181A] mx-auto mt-2 rounded-full"></div>
     </div>
 
-    <!-- Exact 4-Step Diagram from Product Listing -->
-    <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-[#EADFCF] shadow-xl bg-white mb-14 aspect-square sm:aspect-[4/3] md:aspect-auto">
-      <img src="{{ 'menvel-how-it-works-diagram.jpg' | asset_url }}" 
-           alt="Designed to Work with Weight - 4 Step Action" 
-           class="w-full h-auto object-contain" 
+    <!-- Master Infographic Photo / Graphic Box -->
+    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-sm max-w-4xl mx-auto">
+      <img src="{{ 'menvel-designed-with-weight.jpg' | asset_url }}" 
+           alt="Designed to Work with Weight - 4 Step Automatic Gravity Mechanism" 
+           class="w-full h-auto object-contain block" 
            loading="lazy">
     </div>
 
-    <!-- 4 Step Interactive Breakdown -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- 4 Clear Step Descriptions Beneath for Perfect Readability & SEO -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-8 max-w-4xl mx-auto text-center">
       
-      <!-- Step 01 -->
-      <div class="menvel-step-card flex flex-col justify-between">
-        <div>
-          <div class="menvel-step-num">01</div>
-          <h3 class="font-serif text-lg font-bold text-[#1F1B17] mb-1">At Rest</h3>
-          <p class="text-xs text-[#655E56] leading-relaxed">
-            At rest, the trivet stands upright on its angled wooden legs.
-          </p>
+      <!-- Step 1 -->
+      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
+        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+          1
         </div>
-        <div class="mt-4 pt-3 border-t border-[#EADFCF] text-[11px] font-bold text-[#8A5428]">
-          ⚡ Ready to position
-        </div>
+        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">At Rest</h3>
+        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+          The trivet stands upright on its legs as a decorative tree.
+        </p>
       </div>
 
-      <!-- Step 02 -->
-      <div class="menvel-step-card flex flex-col justify-between">
-        <div>
-          <div class="menvel-step-num">02</div>
-          <h3 class="font-serif text-lg font-bold text-[#1F1B17] mb-1">Place Cookware</h3>
-          <p class="text-xs text-[#655E56] leading-relaxed">
-            Place your hot cup, kettle, or sizzling pot directly onto the center.
-          </p>
+      <!-- Step 2 -->
+      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
+        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+          2
         </div>
-        <div class="mt-4 pt-3 border-t border-[#EADFCF] text-[11px] font-bold text-[#8A5428]">
-          ☕ Pots, Pans, & Cups
-        </div>
+        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Place Cookware</h3>
+        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+          Set your cup, hot pot, pan, or kettle directly on top.
+        </p>
       </div>
 
-      <!-- Step 03 -->
-      <div class="menvel-step-card flex flex-col justify-between">
-        <div>
-          <div class="menvel-step-num">03</div>
-          <h3 class="font-serif text-lg font-bold text-[#1F1B17] mb-1">Weight Opens It</h3>
-          <p class="text-xs text-[#655E56] leading-relaxed">
-            The weight opens the trivet and it stays flat to support the base securely.
-          </p>
+      <!-- Step 3 -->
+      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
+        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+          3
         </div>
-        <div class="mt-4 pt-3 border-t border-[#EADFCF] text-[11px] font-bold text-[#8A5428]">
-          🛡️ Stable 8" heat shield
-        </div>
+        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Weight Opens It</h3>
+        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+          The downward weight expands petals flat to support and protect.
+        </p>
       </div>
 
-      <!-- Step 04 -->
-      <div class="menvel-step-card flex flex-col justify-between">
-        <div>
-          <div class="menvel-step-num">04</div>
-          <h3 class="font-serif text-lg font-bold text-[#1F1B17] mb-1">Springs Back Up</h3>
-          <p class="text-xs text-[#655E56] leading-relaxed">
-            Lift your pot or cup, and the trivet springs back up automatically.
-          </p>
+      <!-- Step 4 -->
+      <div class="p-3 sm:p-4 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5]">
+        <div class="w-7 h-7 rounded-full bg-[#8A181A] text-white flex items-center justify-center font-bold text-xs mx-auto mb-2 shadow-xs">
+          4
         </div>
-        <div class="mt-4 pt-3 border-t border-[#EADFCF] text-[11px] font-bold text-[#8A5428]">
-          ✨ Automatic return
-        </div>
+        <h3 class="font-serif font-bold text-xs sm:text-sm text-[#191614] mb-1">Springs Back Up</h3>
+        <p class="text-[11px] sm:text-xs text-[#6B6259] leading-relaxed">
+          Lift your cookware and the trivet springs back up automatically.
+        </p>
       </div>
 
     </div>
@@ -90,12 +79,12 @@
 
 {% schema %}
 {
-  "name": "Menvel How It Works",
+  "name": "How It Works (Weight)",
   "tag": "section",
   "settings": [],
   "presets": [
     {
-      "name": "Menvel How It Works"
+      "name": "How It Works (Weight)"
     }
   ]
 }
