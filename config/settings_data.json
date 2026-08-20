@@ -1,8 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "brand_walnut": "#3A2213",
     "brand_cream": "#FBF7F2",
-    "brand_red_accent": "#D93829"
+    "brand_red_accent": "#D93829",
+    "sections": {
+      "menvel-announcement": {
+        "type": "menvel-announcement",
+        "settings": {
+          "enable_announcement": true,
+          "rating_score": "4.9/5",
+          "reviews_count": "OVER 1,200+ REVIEWS",
+          "shipping_text": "FREE US SHIPPING OVER $50",
+          "guarantee_text": "30-DAY MONEY-BACK GUARANTEE",
+          "right_text": "📦 SHIPS IN 24H"
+        }
+      },
+      "menvel-header": {
+        "type": "menvel-header",
+        "settings": {
+          "menu": "main-menu",
+          "logo": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
+          "logo_width": 220,
+          "brand_title": "Menvel",
+          "brand_subtitle": "Goods"
+        }
+      },
+      "menvel-footer": {
+        "type": "menvel-footer",
+        "settings": {
+          "brand_title": "Menvel",
+          "brand_subtitle": "Goods",
+          "about_text": "Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home.",
+          "enable_newsletter": true,
+          "menu_1_heading": "QUICK LINKS",
+          "footer_menu": "",
+          "menu_2_heading": "CUSTOMER SERVICES",
+          "customer_menu": ""
+        }
+      }
+    },
+    "content_for_index": []
   },
   "presets": {
     "Default": {
