@@ -24,11 +24,12 @@
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
-  <!-- Google Fonts & Tailwind CSS CDN for Live Shopify Theme Rendering -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins (body) + Playfair Display (headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Menvel Goods Master CSS -->
   {{ 'menvel-luxury.css' | asset_url | stylesheet_tag }}

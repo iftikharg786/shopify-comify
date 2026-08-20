@@ -1,54 +1,95 @@
 /* ==========================================================================
-   MENVEL GOODS - 100% Mockup Match Luxury Aesthetic
+   MENVEL GOODS - Master CSS
+   Font: Poppins (body/UI) + Playfair Display (headings)
    File: assets/menvel-luxury.css
    ========================================================================== */
 
+/* ---------- Custom Properties ---------- */
 :root {
-  --mv-cream-bg: #F7EFE7;
-  --mv-cream-card: #FBF7F2;
-  --mv-cream-alt: #EFE6DD;
-  --mv-text: #191614;
-  --mv-text-muted: #6B6259;
-  --mv-forest: #0B2921;
-  --mv-walnut: #3A2213;
+  --mv-cream-bg:    #F7EFE7;
+  --mv-cream-card:  #FBF7F2;
+  --mv-cream-alt:   #EFE6DD;
+  --mv-text:        #191614;
+  --mv-text-muted:  #6B6259;
+  --mv-forest:      #0B2921;
+  --mv-walnut:      #3A2213;
   --mv-walnut-dark: #2A170C;
-  --mv-border: #E8DFD5;
-  --mv-border-light: #F0E8DF;
+  --mv-border:      #E8DFD5;
+  --mv-border-light:#F0E8DF;
   --mv-accent-gold: #D97706;
-  --mv-accent-red: #D93829;
-  --mv-font-serif: 'Playfair Display', Georgia, serif;
-  --mv-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --mv-radius-sm: 8px;
-  --mv-radius-md: 14px;
-  --mv-radius-lg: 20px;
+  --mv-accent-red:  #D93829;
+  --mv-font-serif:  'Playfair Display', Georgia, serif;
+  --mv-font-sans:   'Poppins', system-ui, -apple-system, sans-serif;
+  --mv-radius-sm:   8px;
+  --mv-radius-md:   14px;
+  --mv-radius-lg:   20px;
 }
+
+/* ---------- Base Reset ---------- */
+*, ::before, ::after { box-sizing: border-box; }
 
 body, .menvel-scope {
   background-color: #FFFFFF;
   color: var(--mv-text);
   font-family: var(--mv-font-sans);
+  font-size: 15px;           /* ⬆ bumped from tiny 11-12px */
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
 }
 
-.font-serif {
-  font-family: var(--mv-font-serif);
+/* Force Poppins everywhere — overrides Tailwind defaults */
+*, input, button, select, textarea {
+  font-family: var(--mv-font-sans);
 }
 
+.font-serif, h1, h2, h3.serif {
+  font-family: var(--mv-font-serif);
+}
 .font-sans {
   font-family: var(--mv-font-sans);
 }
 
+/* ---------- Typography Scale ---------- */
+/* Headings */
+h1 { font-size: 2.25rem; font-weight: 700; line-height: 1.15; }
+h2 { font-size: 1.75rem; font-weight: 700; line-height: 1.2;  }
+h3 { font-size: 1.35rem; font-weight: 600; line-height: 1.3;  }
+h4 { font-size: 1.1rem;  font-weight: 600; line-height: 1.35; }
+h5 { font-size: 0.95rem; font-weight: 600; }
+h6 { font-size: 0.875rem; font-weight: 600; }
+
+p  { font-size: 0.9375rem; line-height: 1.7; margin: 0 0 0.75rem; }
+a  { color: inherit; text-decoration: none; }
+
+/* Tailwind override: bump text-xs, text-sm, text-base up */
+.text-xs   { font-size: 0.8125rem !important; line-height: 1.6 !important; }
+.text-sm   { font-size: 0.9375rem !important; line-height: 1.65 !important; }
+.text-base { font-size: 1.0625rem !important; line-height: 1.65 !important; }
+.text-lg   { font-size: 1.2rem !important;    line-height: 1.5 !important;  }
+.text-xl   { font-size: 1.35rem !important;   line-height: 1.45 !important; }
+.text-2xl  { font-size: 1.6rem !important;    line-height: 1.35 !important; }
+.text-3xl  { font-size: 2rem !important;      line-height: 1.25 !important; }
+.text-4xl  { font-size: 2.5rem !important;    line-height: 1.15 !important; }
+.text-5xl  { font-size: 3rem !important;      line-height: 1.1 !important;  }
+
+/* Menvel custom text overrides */
+.text-\[11px\]   { font-size: 0.8125rem !important; }
+.text-\[10px\]   { font-size: 0.75rem !important; }
+.text-\[12px\]   { font-size: 0.8125rem !important; }
+.text-\[13px\]   { font-size: 0.875rem !important; }
+
+/* ---------- Container ---------- */
 .menvel-container {
   width: 100%;
-  max-width: 1160px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
-
 @media (min-width: 768px) {
   .menvel-container {
     padding-left: 2rem;
@@ -56,7 +97,7 @@ body, .menvel-scope {
   }
 }
 
-/* Headings */
+/* ---------- Typography Classes ---------- */
 .menvel-heading-serif {
   font-family: var(--mv-font-serif);
   color: var(--mv-text);
@@ -66,14 +107,17 @@ body, .menvel-scope {
 }
 
 .menvel-eyebrow {
-  font-size: 0.68rem;
-  font-weight: 800;
+  display: block;
+  font-family: var(--mv-font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--mv-text-muted);
+  margin-bottom: 0.5rem;
 }
 
-/* Buttons */
+/* ---------- Buttons ---------- */
 .menvel-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -81,23 +125,23 @@ body, .menvel-scope {
   gap: 0.5rem;
   background-color: var(--mv-walnut);
   color: #FFFFFF !important;
-  font-size: 0.82rem;
+  font-family: var(--mv-font-sans);
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  height: 46px;
-  padding: 0 1.75rem;
+  height: 50px;
+  padding: 0 2rem;
   border-radius: var(--mv-radius-sm);
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
 }
-
 .menvel-btn-primary:hover {
   background-color: var(--mv-walnut-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(58, 34, 19, 0.2);
+  box-shadow: 0 4px 14px rgba(58, 34, 19, 0.22);
 }
 
 .menvel-btn-pill {
@@ -107,31 +151,31 @@ body, .menvel-scope {
   gap: 0.5rem;
   background-color: var(--mv-walnut);
   color: #FFFFFF !important;
-  font-size: 0.8rem;
+  font-family: var(--mv-font-sans);
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  height: 42px;
-  padding: 0 1.5rem;
+  height: 46px;
+  padding: 0 1.75rem;
   border-radius: 9999px;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
 }
-
 .menvel-btn-pill:hover {
   background-color: var(--mv-walnut-dark);
   transform: translateY(-1px);
 }
 
-/* Hero Section */
+/* ---------- Hero ---------- */
 .menvel-hero-wrap {
   background: linear-gradient(135deg, #FBF6F0 0%, #F5EDE4 50%, #ECE0D4 100%);
   border-bottom: 1px solid var(--mv-border);
 }
 
-/* Split Problem & Solution Cards */
+/* ---------- Cards ---------- */
 .menvel-split-card {
   background-color: var(--mv-cream-card);
   border: 1px solid var(--mv-border);
@@ -144,8 +188,8 @@ body, .menvel-scope {
 }
 
 .menvel-num-circle {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background-color: var(--mv-accent-red);
   color: #FFFFFF;
@@ -160,7 +204,6 @@ body, .menvel-scope {
   border: 1.5px solid #FFFFFF;
 }
 
-/* Meal & Moment Cards */
 .menvel-moment-card {
   background: #FFFFFF;
   border: 1px solid var(--mv-border);
@@ -170,54 +213,66 @@ body, .menvel-scope {
   display: flex;
   flex-direction: column;
 }
-
 .menvel-moment-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 24px rgba(25, 22, 20, 0.06);
 }
-
 .menvel-moment-img {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   background-color: #FBF7F2;
 }
 
-/* Icon Badges Strip */
+/* ---------- Feature Icon Badges ---------- */
 .menvel-icon-badge-box {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background-color: var(--mv-cream-card);
+  background-color: #FFFFFF;
   border: 1.5px solid var(--mv-border);
+  box-shadow: 0 2px 8px rgba(58, 34, 19, 0.07);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  color: var(--mv-walnut);
+  transition: all 0.2s ease;
+}
+.menvel-icon-badge-box:hover,
+.menvel-icon-badge-box svg {
   color: var(--mv-walnut);
 }
+.menvel-icon-badge-box svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--mv-walnut);
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
-/* Video Section */
+/* ---------- Video Section ---------- */
 .menvel-play-btn {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
 }
-
 .menvel-play-btn:hover {
   transform: scale(1.1);
   background: #FFFFFF;
 }
 
-/* Review Cards */
+/* ---------- Reviews ---------- */
 .menvel-review-card {
   background-color: var(--mv-cream-card);
   border: 1px solid var(--mv-border);
@@ -228,18 +283,43 @@ body, .menvel-scope {
   justify-content: space-between;
 }
 
-/* Cart Drawer */
+/* ---------- Social Icon Circles ---------- */
+.menvel-social-link {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid var(--mv-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mv-walnut);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.menvel-social-link:hover {
+  background: var(--mv-walnut);
+  border-color: var(--mv-walnut);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+.menvel-social-link svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* ---------- Cart Drawer ---------- */
 .menvel-drawer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(25, 22, 20, 0.6);
+  background: rgba(25, 22, 20, 0.55);
   backdrop-filter: blur(2px);
   z-index: 10000;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
 }
-
 .menvel-drawer-overlay.is-open {
   opacity: 1;
   visibility: visible;
@@ -251,21 +331,20 @@ body, .menvel-scope {
   right: 0;
   bottom: 0;
   width: 100%;
-  max-width: 420px;
+  max-width: 440px;
   background: #FFFFFF;
   z-index: 10001;
-  box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .menvel-drawer.is-open {
   transform: translateX(0);
 }
 
-/* Mobile Left Navigation Drawer */
+/* ---------- Mobile Nav Drawer ---------- */
 .menvel-drawer-left {
   position: fixed;
   top: 0;
@@ -281,16 +360,14 @@ body, .menvel-scope {
   transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .menvel-drawer-left.is-open {
   transform: translateX(0);
 }
 
-/* Mobile Sticky Bottom Floating Buy Bar */
+/* ---------- Mobile Sticky Buy Bar ---------- */
 .menvel-mobile-sticky-buy {
   display: none;
 }
-
 @media (max-width: 768px) {
   .menvel-mobile-sticky-buy {
     display: flex;
@@ -306,75 +383,64 @@ body, .menvel-scope {
   }
 }
 
-/* ==========================================================================
-   STANDALONE UTILITY FALLBACKS (Instant Zero-Lag Rendering)
-   ========================================================================== */
-*, ::before, ::after {
-  box-sizing: border-box;
-}
+/* ---------- Utility Fallbacks (no Tailwind delay) ---------- */
+img, video { max-width: 100%; height: auto; display: block; }
 
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+.aspect-square   { aspect-ratio: 1 / 1; }
+.aspect-\[4\/3\]  { aspect-ratio: 4 / 3; }
+.aspect-\[16\/13\]{ aspect-ratio: 16 / 13; }
+.aspect-\[21\/9\] { aspect-ratio: 21 / 9; }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
+.flex          { display: flex; }
+.inline-flex   { display: inline-flex; }
+.grid          { display: grid; }
+.hidden        { display: none; }
+.block         { display: block; }
 
-.aspect-\[4\/3\] {
-  aspect-ratio: 4 / 3;
-}
-
-.aspect-\[16\/13\] {
-  aspect-ratio: 16 / 13;
-}
-
-.flex { display: flex; }
-.inline-flex { display: inline-flex; }
-.grid { display: grid; }
-.hidden { display: none; }
-.block { display: block; }
-
-.items-center { align-items: center; }
-.items-start { align-items: flex-start; }
-.items-stretch { align-items: stretch; }
-.justify-center { justify-content: center; }
+.items-center  { align-items: center; }
+.items-start   { align-items: flex-start; }
+.justify-center  { justify-content: center; }
 .justify-between { justify-content: space-between; }
-.justify-start { justify-content: flex-start; }
-.justify-end { justify-content: flex-end; }
+.justify-end   { justify-content: flex-end; }
 
-.flex-col { flex-direction: column; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-1 { flex: 1 1 0%; }
+.flex-col      { flex-direction: column; }
+.flex-wrap     { flex-wrap: wrap; }
+.flex-1        { flex: 1 1 0%; }
 .flex-shrink-0 { flex-shrink: 0; }
 
-.w-full { width: 100%; }
-.h-full { height: 100%; }
+.w-full  { width: 100%; }
+.h-full  { height: 100%; }
 
-.text-left { text-align: left; }
+.text-left   { text-align: left; }
 .text-center { text-align: center; }
-.text-right { text-align: right; }
+.text-right  { text-align: right; }
 
-.cursor-pointer { cursor: pointer; }
+.cursor-pointer  { cursor: pointer; }
 .overflow-hidden { overflow: hidden; }
 .relative { position: relative; }
 .absolute { position: absolute; }
-.sticky { position: sticky; }
+.sticky   { position: sticky; }
 
-.rounded-lg { border-radius: var(--mv-radius-sm); }
-.rounded-xl { border-radius: var(--mv-radius-md); }
-.rounded-2xl { border-radius: var(--mv-radius-lg); }
-.rounded-3xl { border-radius: 28px; }
+.rounded-lg   { border-radius: var(--mv-radius-sm); }
+.rounded-xl   { border-radius: var(--mv-radius-md); }
+.rounded-2xl  { border-radius: var(--mv-radius-lg); }
+.rounded-3xl  { border-radius: 28px; }
 .rounded-full { border-radius: 9999px; }
 
-.shadow-xs { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-.shadow-sm { box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); }
-.shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); }
-.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+.shadow-xs { box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); }
+.shadow-sm { box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1); }
+.shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
 
-/* Shopify Placeholder SVGs & Icon Placeholders */
+.transition  { transition: all 0.2s ease; }
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Shopify placeholder SVGs */
 .placeholder-svg {
   display: block;
   fill: #A09587;
@@ -384,12 +450,15 @@ img, video {
   max-width: 100%;
   max-height: 100%;
   border: 1px dashed #D5C7B7;
-  border-radius: var(--mv-radius-sm, 8px);
+  border-radius: var(--mv-radius-sm);
 }
-
 .placeholder-svg--small {
   width: 60px;
   height: 60px;
 }
 
-
+/* Shopify pagination override */
+.pagination a, .pagination span {
+  font-family: var(--mv-font-sans);
+  font-size: 0.875rem;
+}

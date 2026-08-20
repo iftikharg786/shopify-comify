@@ -4,6 +4,10 @@
       "type": "menvel-hero-pdp",
       "settings": {}
     },
+    "feature_ribbon": {
+      "type": "menvel-feature-ribbon",
+      "settings": {}
+    },
     "damage_surfaces": {
       "type": "menvel-damage-surfaces",
       "settings": {}
@@ -14,10 +18,6 @@
     },
     "why_and_smart_design": {
       "type": "menvel-why-and-smart-design",
-      "settings": {}
-    },
-    "feature_ribbon": {
-      "type": "menvel-feature-ribbon",
       "settings": {}
     },
     "video_showcase": {
@@ -39,10 +39,10 @@
   },
   "order": [
     "hero_pdp",
+    "feature_ribbon",
     "damage_surfaces",
     "various_utensils",
     "why_and_smart_design",
-    "feature_ribbon",
     "video_showcase",
     "included_and_packaging",
     "reviews_and_faq",
