@@ -21,6 +21,10 @@
       "type": "menvel-damage-surfaces",
       "settings": {}
     },
+    "how_it_works": {
+      "type": "menvel-how-it-works",
+      "settings": {}
+    },
     "various_utensils": {
       "type": "menvel-various-utensils",
       "settings": {}
@@ -50,6 +54,7 @@
     "hero_pdp",
     "feature_ribbon",
     "damage_surfaces",
+    "how_it_works",
     "various_utensils",
     "why_and_smart_design",
     "video_showcase",
