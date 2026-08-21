@@ -17,15 +17,12 @@
       </p>
     </div>
 
-    <!-- Cropped Clean Infographic (Hides the duplicate header text baked in the image) -->
-    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs max-w-3xl mx-auto relative group">
-      <!-- Container with negative top margin to crop out the top duplicate banner in the image -->
-      <div class="w-full overflow-hidden" style="margin-top: -14%; margin-bottom: -2%;">
-        <img src="{{ 'menvel-designed-with-weight.jpg' | asset_url }}" 
-             alt="How the Menvel Trivet Opens with Weight" 
-             class="w-full h-auto object-cover block" 
-             loading="lazy">
-      </div>
+    <!-- Master Clean Infographic (Pixel-Cropped, perfectly visible on all mobile & desktop screens) -->
+    <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs max-w-3xl mx-auto">
+      <img src="{{ 'menvel-designed-with-weight.jpg' | asset_url }}" 
+           alt="How the Menvel Trivet Opens with Weight - 4 Step Automatic Gravity Mechanism" 
+           class="w-full h-auto object-contain block" 
+           loading="lazy">
     </div>
 
     <!-- 4-Step Interactive Carousel / Grid with Touch Support -->

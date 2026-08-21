@@ -1,84 +1,187 @@
 {%- comment -%}
-  Menvel Goods - Customer Reviews Section (100% Mockup Match)
+  Menvel Goods - Customer Reviews Sliding Carousel (Fully Functional)
   File: sections/menvel-reviews-and-faq.liquid
 {%- endcomment -%}
 
-<section id="MenvelReviews" class="py-16 sm:py-24 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Customer Reviews">
+<section id="MenvelReviews" class="py-10 sm:py-14 bg-white border-b border-[#E8DFD5]" role="region" aria-label="Customer Reviews" data-section-id="{{ section.id }}">
   <div class="menvel-container text-center">
     
     <!-- Section Header -->
-    <div class="max-w-2xl mx-auto mb-12">
-      <span class="menvel-eyebrow text-[#3A2213]">CUSTOMER REVIEWS</span>
-      <h2 class="menvel-heading-serif text-3xl sm:text-4xl text-[#191614] mt-2">
+    <div class="max-w-2xl mx-auto mb-8">
+      <span class="menvel-eyebrow text-[#8A4315]">VERIFIED CUSTOMER EXPERIENCES</span>
+      <h2 class="menvel-heading-serif text-2xl sm:text-3xl lg:text-4xl text-[#191614] mt-1">
         Loved For Every Detail
       </h2>
-      <p class="text-xs sm:text-sm text-[#6B6259] mt-2">
+      <p class="text-xs sm:text-sm text-[#6B6259] mt-1.5 max-w-md mx-auto">
         See why home chefs and entertainers are calling this the most practical piece of kitchen decor.
       </p>
     </div>
 
-    <!-- 3 Reviews Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-      
-      <!-- Review 1 -->
-      <div class="menvel-review-card">
-        <div>
-          <div class="flex text-[#D97706] text-xs mb-3">★★★★★</div>
-          <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
-            "An absolute work of art on our kitchen island! The wood quality is unbelievable and the gravity open mechanism always impresses our dinner guests."
-          </p>
+    <!-- Interactive Sliding Reviews Track -->
+    <div class="relative max-w-5xl mx-auto px-2 sm:px-6">
+      <div id="MenvelReviewsTrack" class="flex gap-5 sm:gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory py-2 text-left" style="scrollbar-width: none; -ms-overflow-style: none;">
+        
+        <!-- Review 1 -->
+        <div class="w-[85%] sm:w-[48%] lg:w-[31.5%] flex-shrink-0 snap-start menvel-review-card bg-[#FAF6F0] p-5 sm:p-6 rounded-2xl border border-[#E8DFD5] flex flex-col justify-between shadow-2xs hover:shadow-xs transition">
+          <div>
+            <div class="flex text-[#D97706] text-xs mb-2.5">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
+              "An absolute work of art on our kitchen island! The wood quality is unbelievable and the gravity open mechanism always impresses our dinner guests."
+            </p>
+          </div>
+          <div class="pt-3.5 mt-3.5 border-t border-[#E8DFD5] flex items-center justify-between">
+            <div>
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-[#191614]">Sarah M.</h4>
+              <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
+            </div>
+            <span class="text-[10px] text-[#8A7A6E]">Black Walnut Set</span>
+          </div>
         </div>
-        <div class="pt-4 mt-4 border-t border-[#E8DFD5]">
-          <h4 class="font-serif font-bold text-xs text-[#191614]">Sarah M.</h4>
-          <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
+
+        <!-- Review 2 -->
+        <div class="w-[85%] sm:w-[48%] lg:w-[31.5%] flex-shrink-0 snap-start menvel-review-card bg-[#FAF6F0] p-5 sm:p-6 rounded-2xl border border-[#E8DFD5] flex flex-col justify-between shadow-2xs hover:shadow-xs transition">
+          <div>
+            <div class="flex text-[#D97706] text-xs mb-2.5">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
+              "The quality is top tier. I bought one for myself and three more as housewarming gifts. Everyone loves how functional and pretty it is on the table."
+            </p>
+          </div>
+          <div class="pt-3.5 mt-3.5 border-t border-[#E8DFD5] flex items-center justify-between">
+            <div>
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-[#191614]">David R.</h4>
+              <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
+            </div>
+            <span class="text-[10px] text-[#8A7A6E]">Natural Beech Set</span>
+          </div>
         </div>
+
+        <!-- Review 3 -->
+        <div class="w-[85%] sm:w-[48%] lg:w-[31.5%] flex-shrink-0 snap-start menvel-review-card bg-[#FAF6F0] p-5 sm:p-6 rounded-2xl border border-[#E8DFD5] flex flex-col justify-between shadow-2xs hover:shadow-xs transition">
+          <div>
+            <div class="flex text-[#D97706] text-xs mb-2.5">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
+              "Finally a trivet that doesn't need to be hidden away in a crowded drawer. It stays on my countertop 24/7 as beautiful wood decor."
+            </p>
+          </div>
+          <div class="pt-3.5 mt-3.5 border-t border-[#E8DFD5] flex items-center justify-between">
+            <div>
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-[#191614]">Elena K.</h4>
+              <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
+            </div>
+            <span class="text-[10px] text-[#8A7A6E]">Black Walnut Set</span>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="w-[85%] sm:w-[48%] lg:w-[31.5%] flex-shrink-0 snap-start menvel-review-card bg-[#FAF6F0] p-5 sm:p-6 rounded-2xl border border-[#E8DFD5] flex flex-col justify-between shadow-2xs hover:shadow-xs transition">
+          <div>
+            <div class="flex text-[#D97706] text-xs mb-2.5">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
+              "Holds scorching hot cast iron Dutch ovens without any heat marks on my new oak dining table. Highly recommended!"
+            </p>
+          </div>
+          <div class="pt-3.5 mt-3.5 border-t border-[#E8DFD5] flex items-center justify-between">
+            <div>
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-[#191614]">Marcus T.</h4>
+              <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
+            </div>
+            <span class="text-[10px] text-[#8A7A6E]">Black Walnut Set</span>
+          </div>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="w-[85%] sm:w-[48%] lg:w-[31.5%] flex-shrink-0 snap-start menvel-review-card bg-[#FAF6F0] p-5 sm:p-6 rounded-2xl border border-[#E8DFD5] flex flex-col justify-between shadow-2xs hover:shadow-xs transition">
+          <div>
+            <div class="flex text-[#D97706] text-xs mb-2.5">★★★★★</div>
+            <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
+              "Shipped fast in beautiful packaging. The wood feels smooth, heavy, and genuinely premium. Will buy again for Christmas!"
+            </p>
+          </div>
+          <div class="pt-3.5 mt-3.5 border-t border-[#E8DFD5] flex items-center justify-between">
+            <div>
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-[#191614]">Jessica L.</h4>
+              <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
+            </div>
+            <span class="text-[10px] text-[#8A7A6E]">Holiday Gift Set</span>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Review 2 -->
-      <div class="menvel-review-card">
-        <div>
-          <div class="flex text-[#D97706] text-xs mb-3">★★★★★</div>
-          <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
-            "The quality is top tier. I bought one for myself and three more as housewarming gifts. Everyone loves how functional and pretty it is on the table."
-          </p>
+      <!-- Functional Carousel Navigation Controls -->
+      <div class="flex items-center justify-center gap-3 mt-6">
+        <button type="button" 
+                id="ReviewsPrevBtn" 
+                class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] shadow-2xs transition cursor-pointer" 
+                aria-label="Previous review">
+          ‹
+        </button>
+
+        <div id="ReviewsDots" class="flex items-center gap-1.5">
+          <button type="button" class="w-2.5 h-2.5 rounded-full bg-[#3A2213] review-dot" data-index="0" aria-label="Slide 1"></button>
+          <button type="button" class="w-2 h-2 rounded-full bg-[#E8DFD5] review-dot" data-index="1" aria-label="Slide 2"></button>
+          <button type="button" class="w-2 h-2 rounded-full bg-[#E8DFD5] review-dot" data-index="2" aria-label="Slide 3"></button>
         </div>
-        <div class="pt-4 mt-4 border-t border-[#E8DFD5]">
-          <h4 class="font-serif font-bold text-xs text-[#191614]">David R.</h4>
-          <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
-        </div>
+
+        <button type="button" 
+                id="ReviewsNextBtn" 
+                class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] shadow-2xs transition cursor-pointer" 
+                aria-label="Next review">
+          ›
+        </button>
       </div>
 
-      <!-- Review 3 -->
-      <div class="menvel-review-card">
-        <div>
-          <div class="flex text-[#D97706] text-xs mb-3">★★★★★</div>
-          <p class="text-xs sm:text-sm text-[#191614] leading-relaxed italic">
-            "Finally a trivet that doesn't need to be hidden away in a crowded drawer. It stays on my countertop 24/7 as beautiful wood decor."
-          </p>
-        </div>
-        <div class="pt-4 mt-4 border-t border-[#E8DFD5]">
-          <h4 class="font-serif font-bold text-xs text-[#191614]">Elena K.</h4>
-          <span class="text-[10px] text-[#15803D] font-semibold">✓ Verified Buyer</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Carousel Controls -->
-    <div class="flex items-center justify-center gap-3 mt-8">
-      <button type="button" class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] transition" aria-label="Previous review">
-        ‹
-      </button>
-      <span class="w-2 h-2 rounded-full bg-[#3A2213]"></span>
-      <span class="w-2 h-2 rounded-full bg-[#E8DFD5]"></span>
-      <span class="w-2 h-2 rounded-full bg-[#E8DFD5]"></span>
-      <button type="button" class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] transition" aria-label="Next review">
-        ›
-      </button>
     </div>
 
   </div>
 </section>
+
+<script>
+  (function() {
+    function initReviewsSlider() {
+      var track = document.getElementById('MenvelReviewsTrack');
+      var prev = document.getElementById('ReviewsPrevBtn');
+      var next = document.getElementById('ReviewsNextBtn');
+      var dots = document.querySelectorAll('.review-dot');
+
+      if (!track || !prev || !next) return;
+
+      var cardWidth = 320;
+
+      prev.onclick = function() {
+        track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+      };
+
+      next.onclick = function() {
+        track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+      };
+
+      dots.forEach(function(dot) {
+        dot.onclick = function() {
+          var idx = parseInt(dot.getAttribute('data-index') || '0', 10);
+          track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+        };
+      });
+
+      track.addEventListener('scroll', function() {
+        var activeIdx = Math.round(track.scrollLeft / cardWidth);
+        dots.forEach(function(d, i) {
+          if (i === activeIdx) {
+            d.className = 'w-2.5 h-2.5 rounded-full bg-[#3A2213] review-dot';
+          } else {
+            d.className = 'w-2 h-2 rounded-full bg-[#E8DFD5] review-dot';
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReviewsSlider);
+    } else {
+      initReviewsSlider();
+    }
+  })();
+</script>
 
 {% schema %}
 {
