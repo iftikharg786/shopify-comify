@@ -55,9 +55,11 @@
             <span>{{ section.settings.button_label | default: "SHOP NOW — $18.99" }}</span>
           </a>
           
-          <span class="text-xs text-[#6B6259] font-medium flex items-center gap-1.5">
-            <span class="text-[#15803D] font-bold">✓</span> {{ section.settings.badge_text | default: "Free U.S. Shipping Included" }}
-          </span>
+          {%- if section.settings.badge_text != blank -%}
+            <span class="text-xs text-[#6B6259] font-medium flex items-center gap-1.5">
+              <span class="text-[#15803D] font-bold">✓</span> {{ section.settings.badge_text }}
+            </span>
+          {%- endif -%}
         </div>
 
       </div>
@@ -115,7 +117,7 @@
       "type": "text",
       "id": "badge_text",
       "label": "Badge Text",
-      "default": "Free U.S. Shipping Included"
+      "default": "30-Day Money-Back Guarantee"
     },
     {
       "type": "image_picker",
