@@ -1,9 +1,9 @@
 {%- comment -%}
-  Menvel Goods - 404 Page Not Found Section
+  Menvel Goods - 404 Page Not Found Section (Guaranteed Clickable Links)
   File: sections/main-404.liquid
 {%- endcomment -%}
 
-<section class="py-20 sm:py-28 bg-[#FBF7F2] text-center" role="region" aria-label="Page not found">
+<section class="py-20 sm:py-28 bg-[#FBF7F2] text-center relative z-10" role="region" aria-label="Page not found" data-section-id="{{ section.id }}">
   <div class="menvel-container max-w-xl mx-auto space-y-6">
     
     <span class="menvel-eyebrow text-[#8A4315]">404 ERROR</span>
@@ -11,14 +11,17 @@
       Page Not Found
     </h1>
     <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed">
-      The page you are looking for doesn't exist or has been moved. Discover our handcrafted wooden trivets below.
+      The page you are looking for doesn't exist or has been moved. Discover our solid wood foldable trivets below.
     </p>
 
-    <div class="pt-4 flex items-center justify-center gap-4 flex-wrap">
-      <a href="{{ routes.root_url }}" class="menvel-btn-primary h-12 px-8 rounded-xl shadow-md">
+    <div class="pt-4 flex items-center justify-center gap-4 flex-wrap relative z-20">
+      <a href="/" 
+         class="inline-flex items-center justify-center h-12 px-8 rounded-xl bg-[#3A2213] hover:bg-[#2A170C] text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition-all cursor-pointer text-center">
         <span>RETURN TO HOME</span>
       </a>
-      <a href="/products/foldable-black-walnut-wooden-trivet-set" class="inline-flex items-center justify-center h-12 px-8 rounded-xl border border-[#E8DFD5] bg-white text-[#191614] font-bold text-xs uppercase tracking-wider hover:bg-[#FAF7F2] transition">
+
+      <a href="/products/foldable-black-walnut-wooden-trivet-set" 
+         class="inline-flex items-center justify-center h-12 px-8 rounded-xl border-2 border-[#3A2213] bg-white hover:bg-[#FAF7F2] text-[#3A2213] font-extrabold text-xs uppercase tracking-wider transition-all cursor-pointer text-center">
         <span>VIEW PRODUCT</span>
       </a>
     </div>
