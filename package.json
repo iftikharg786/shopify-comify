@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@jimp/custom": "^0.22.12",
+    "@jimp/jpeg": "^0.22.12",
+    "@jimp/plugin-crop": "^1.6.1",
+    "@jimp/png": "^0.22.12",
+    "jimp": "^1.6.1"
   }
 }
