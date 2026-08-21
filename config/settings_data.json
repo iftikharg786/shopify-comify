@@ -19,6 +19,8 @@
         "type": "menvel-announcement",
         "settings": {
           "enable_announcement": true,
+          "show_on_mobile": false,
+          "show_on_desktop": true,
           "rating_score": "4.9/5",
           "reviews_count": "OVER 1,200+ REVIEWS",
           "shipping_text": "",
@@ -40,6 +42,7 @@
         "type": "menvel-footer",
         "settings": {
           "footer_logo": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
+          "footer_logo_width": 200,
           "brand_title": "Menvel",
           "brand_subtitle": "Goods",
           "about_text": "Thoughtfully crafted wooden essentials designed to bring beauty and practical surface protection to your home.",
