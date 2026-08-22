@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_pdp": {
@@ -20,6 +29,10 @@
       "type": "menvel-various-utensils",
       "settings": {}
     },
+    "why_and_smart_design": {
+      "type": "menvel-why-and-smart-design",
+      "settings": {}
+    },
     "video_showcase": {
       "type": "menvel-video-showcase",
       "settings": {}
@@ -39,6 +52,7 @@
     "damage_surfaces",
     "how_it_works",
     "various_utensils",
+    "why_and_smart_design",
     "video_showcase",
     "included_and_packaging",
     "reviews_and_faq"
