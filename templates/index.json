@@ -29,10 +29,6 @@
       "type": "menvel-various-utensils",
       "settings": {}
     },
-    "why_and_smart_design": {
-      "type": "menvel-why-and-smart-design",
-      "settings": {}
-    },
     "video_showcase": {
       "type": "menvel-video-showcase",
       "settings": {}
@@ -52,7 +48,6 @@
     "damage_surfaces",
     "how_it_works",
     "various_utensils",
-    "why_and_smart_design",
     "video_showcase",
     "included_and_packaging",
     "reviews_and_faq"
