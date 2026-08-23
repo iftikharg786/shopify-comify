@@ -17,36 +17,19 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
       
       <!-- =========================================================================
-           LEFT COLUMN: Main Image, Thumbnails, Trust Badges, Lifestyle & Feature Cards
+           LEFT COLUMN: Sticky Vertical Gallery (Left) + Main Photo + Feature Highlights
            ========================================================================= -->
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-7 space-y-6 lg:sticky lg:top-24 self-start">
         
-        <!-- 1. Master Product Photo Frame -->
-        <div class="relative w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FBF7F2] p-4 flex items-center justify-center shadow-xs group">
-          <!-- Best Seller Badge -->
-          <span class="absolute top-4 left-4 z-10 bg-[#8A4315] text-white text-[10px] sm:text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-            BEST SELLER
-          </span>
-
-          <!-- Main Image (100% visible, not cropped) -->
-          <img id="PDPMainImage" 
-               src="{% if featured_image %}{{ featured_image | image_url: width: 1200 }}{% else %}{{ 'menvel-pdp-main-hero.jpg' | asset_url }}{% endif %}" 
-               alt="{{ product.title | default: 'Foldable Wooden Trivet Set' | escape }}" 
-               class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-               loading="eager">
-        </div>
-
-        <!-- 2. Horizontal Thumbnail Carousel -->
-        <div class="flex items-center justify-center gap-3">
-          <button type="button" class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] transition flex-shrink-0" aria-label="Previous thumbnail">
-            ‹
-          </button>
-
-          <div class="flex items-center gap-3 overflow-x-auto py-1">
+        <!-- Gallery Wrapper: Vertical Thumbnails on Left + Main Photo on Right -->
+        <div class="flex flex-col-reverse md:flex-row gap-4 items-start">
+          
+          <!-- 1. Vertical Thumbnail Strip (Left side on desktop, horizontal on mobile) -->
+          <div class="flex md:flex-col gap-2.5 overflow-x-auto md:overflow-y-auto max-h-[460px] pb-2 md:pb-0 w-full md:w-20 flex-shrink-0 scrollbar-thin">
             {%- if product.images.size > 0 -%}
               {%- for image in product.images -%}
                 <button type="button" 
-                        class="js-pdp-thumb {% if forloop.first %}is-active border-2 border-[#191614]{% else %}border border-[#E8DFD5]{% endif %} w-16 h-16 sm:w-18 sm:h-18 rounded-xl p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs"
+                        class="js-pdp-thumb {% if forloop.first %}is-active border-2 border-[#191614]{% else %}border border-[#E8DFD5]{% endif %} w-16 h-16 md:w-20 md:h-20 rounded-xl p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs hover:border-[#191614]"
                         data-large-src="{{ image | image_url: width: 1200 }}"
                         aria-label="Product Image {{ forloop.index }}">
                   <img src="{{ image | image_url: width: 200 }}" alt="{{ image.alt | escape }}" class="w-full h-full object-contain rounded-lg">
@@ -54,15 +37,15 @@
               {%- endfor -%}
             {%- else -%}
               <button type="button" 
-                      class="js-pdp-thumb is-active w-16 h-16 sm:w-18 sm:h-18 rounded-xl border-2 border-[#191614] p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs"
+                      class="js-pdp-thumb is-active w-16 h-16 md:w-20 md:h-20 rounded-xl border-2 border-[#191614] p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs"
                       data-large-src="{{ 'menvel-pdp-main-hero.jpg' | asset_url }}"
                       data-variant-name="Black Walnut"
                       aria-label="Thumbnail 1">
-                <img src="{{ 'menvel-pdp-main-hero.jpg' | asset_url }}" alt="Black Walnut Set" class="w-full h-full object-contain rounded-lg">
+                <img src="{{ 'menvel-pdp-main-hero.jpg' | asset_url }}" alt="Dark Walnut Set" class="w-full h-full object-contain rounded-lg">
               </button>
 
               <button type="button" 
-                      class="js-pdp-thumb w-16 h-16 sm:w-18 sm:h-18 rounded-xl border border-[#E8DFD5] p-1 bg-white overflow-hidden transition flex-shrink-0 hover:border-[#191614] cursor-pointer shadow-xs"
+                      class="js-pdp-thumb w-16 h-16 md:w-20 md:h-20 rounded-xl border border-[#E8DFD5] p-1 bg-white overflow-hidden transition flex-shrink-0 hover:border-[#191614] cursor-pointer shadow-xs"
                       data-large-src="{{ 'menvel-beech-showcase.jpg' | asset_url }}"
                       data-variant-name="Natural Beech"
                       aria-label="Thumbnail 2">
@@ -71,9 +54,21 @@
             {%- endif -%}
           </div>
 
-          <button type="button" class="w-8 h-8 rounded-full border border-[#E8DFD5] bg-white flex items-center justify-center text-xs text-[#191614] hover:bg-[#FBF7F2] transition flex-shrink-0" aria-label="Next thumbnail">
-            ›
-          </button>
+          <!-- 2. Master Product Photo Frame -->
+          <div class="relative w-full aspect-square rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FBF7F2] p-4 flex items-center justify-center shadow-xs group flex-1">
+            <!-- Best Seller Badge -->
+            <span class="absolute top-4 left-4 z-10 bg-[#8A4315] text-white text-[10px] sm:text-xs font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
+              BEST SELLER
+            </span>
+
+            <!-- Main Image (100% visible, not cropped) -->
+            <img id="PDPMainImage" 
+                 src="{% if featured_image %}{{ featured_image | image_url: width: 1200 }}{% else %}{{ 'menvel-pdp-main-hero.jpg' | asset_url }}{% endif %}" 
+                 alt="{{ product.title | default: 'Foldable Wooden Trivet Set' | escape }}" 
+                 class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                 loading="eager">
+          </div>
+
         </div>
 
         <!-- 3. Key Feature Highlights (Environmentally Safe) -->
@@ -102,9 +97,9 @@
       </div>
 
       <!-- =========================================================================
-           RIGHT COLUMN: Sticky Purchase Details & Accordions (100% Dynamic Liquid)
+           RIGHT COLUMN: Details & Accordions (Scrolls while left side stays sticky)
            ========================================================================= -->
-      <div class="lg:col-span-5 space-y-5 text-left sticky top-24 self-start bg-white z-10">
+      <div class="lg:col-span-5 space-y-5 text-left bg-white">
         
         <!-- Rating Header (Unified) -->
         <div class="flex items-center gap-1.5 text-xs text-[#D97706]">
