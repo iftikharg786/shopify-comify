@@ -10,26 +10,29 @@
   assign compare_price = current_variant.compare_at_price | default: product.compare_at_price | money
 -%}
 
-<div class="menvel-pdp-wrapper py-6 sm:py-10 bg-white" data-section-id="{{ section.id }}" data-section-type="product" role="main">
+<div class="menvel-pdp-wrapper py-2 sm:py-6 bg-white" data-section-id="{{ section.id }}" data-section-type="product" role="main">
   <div class="menvel-container">
     
     <!-- 2-Column Split: Visual Storytelling (Left) + Sticky Purchase Details (Right) -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
       
       <!-- =========================================================================
            LEFT COLUMN: Sticky Vertical Gallery (Left) + Main Photo + Feature Highlights
            ========================================================================= -->
-      <div class="lg:col-span-7 space-y-6 lg:sticky lg:top-4 self-start">
+      <div class="lg:col-span-7 space-y-5 lg:sticky lg:top-2 self-start">
         
         <!-- Gallery Wrapper: Vertical Thumbnails on Left + Main Photo on Right -->
-        <div class="flex flex-col-reverse md:flex-row gap-4 items-start">
+        <div class="flex flex-col-reverse md:flex-row gap-3 sm:gap-4 items-start">
           
-          <!-- 1. Vertical Thumbnail Strip (Left side on desktop, horizontal on mobile) -->
-          <div class="flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto max-h-[520px] pb-2 md:pb-0 w-full md:w-[76px] flex-shrink-0 pr-1" style="scrollbar-width: thin;">
+          <!-- 1. Vertical Thumbnail Strip (No scrollbar visible) -->
+          <div class="menvel-hide-scrollbar flex md:flex-col gap-2 overflow-x-auto md:overflow-y-auto max-h-[500px] pb-2 md:pb-0 w-full md:w-[72px] flex-shrink-0" style="-ms-overflow-style: none; scrollbar-width: none;">
+            <style>
+              .menvel-hide-scrollbar::-webkit-scrollbar { display: none; width: 0; height: 0; }
+            </style>
             {%- if product.images.size > 0 -%}
               {%- for image in product.images -%}
                 <button type="button" 
-                        class="js-pdp-thumb {% if forloop.first %}is-active border-2 border-[#191614]{% else %}border border-[#E8DFD5]{% endif %} w-16 h-16 md:w-[70px] md:h-[70px] rounded-xl p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs hover:border-[#191614]"
+                        class="js-pdp-thumb {% if forloop.first %}is-active border-2 border-[#191614]{% else %}border border-[#E8DFD5]{% endif %} w-16 h-16 md:w-[68px] md:h-[68px] rounded-xl p-1 bg-white overflow-hidden transition flex-shrink-0 cursor-pointer shadow-xs hover:border-[#191614]"
                         data-large-src="{{ image | image_url: width: 1200 }}"
                         aria-label="Product Image {{ forloop.index }}">
                   <img src="{{ image | image_url: width: 200 }}" alt="{{ image.alt | escape }}" class="w-full h-full object-contain rounded-lg">
