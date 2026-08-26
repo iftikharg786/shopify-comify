@@ -155,46 +155,29 @@
           <!-- Hidden Variant ID Input for Shopify Cart -->
           <input type="hidden" name="id" id="PDPVariantIdInput" value="{{ current_variant.id | default: 1 }}">
 
-          <!-- Color Variations -->
-          <div class="pt-2 space-y-2.5">
-            <div class="text-xs font-semibold text-[#191614]">
-              Color: <strong id="PDPActiveColorName" class="text-[#3A2213]">{{ current_variant.title | default: "Black Walnut" }}</strong>
+          <!-- Color & Style Variations (Rendered ONLY if product has more than 1 variation) -->
+          {%- if product.variants.size > 1 -%}
+            <div class="pt-2 space-y-2.5">
+              <div class="text-xs font-semibold text-[#191614]">
+                Style / Color: <strong id="PDPActiveColorName" class="text-[#3A2213]">{{ current_variant.title | default: "Selected" }}</strong>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2.5">
+                {%- for variant in product.variants -%}
+                  <button type="button" 
+                          class="js-pdp-color-swatch {% if forloop.first %}is-active border-2 border-[#1A56DB] ring-2 ring-[#1A56DB]/20{% else %}border border-[#D1D5DB]{% endif %} px-3 py-2 rounded-xl bg-white shadow-xs transition hover:border-[#1A56DB] cursor-pointer flex items-center gap-2"
+                          data-color-name="{{ variant.title | escape }}"
+                          data-variant-id="{{ variant.id }}"
+                          data-price="{{ variant.price | money }}"
+                          data-sku="{{ variant.sku | escape }}"
+                          aria-label="Select {{ variant.title | escape }}">
+                    <span class="w-2.5 h-2.5 rounded-full {% if variant.title contains 'Beech' %}bg-[#E8C39E]{% else %}bg-[#5C3A21]{% endif %} flex-shrink-0"></span>
+                    <span class="text-xs font-bold text-[#191614]">{{ variant.title }}</span>
+                  </button>
+                {%- endfor -%}
+              </div>
             </div>
-
-            <div class="flex items-center gap-3">
-              
-              <!-- Variation 1: Black Walnut -->
-              <button type="button" 
-                       class="js-pdp-color-swatch is-active relative w-18 h-22 rounded-xl border-2 border-[#1A56DB] bg-white p-1.5 shadow-xs transition cursor-pointer flex flex-col items-center justify-center overflow-hidden"
-                      data-color-name="Black Walnut"
-                      data-variant-id="{% if product.variants.size > 0 %}{{ product.variants[0].id }}{% else %}1{% endif %}"
-                      data-img-src="{{ 'menvel-pdp-main-hero.jpg' | asset_url }}"
-                      data-sku="MG-RD-001-BW"
-                      data-price="$18.99 USD"
-                      aria-label="Select Black Walnut">
-                <div class="w-full h-12 flex items-center justify-center">
-                  <img src="{{ 'menvel-swatch-walnut.jpg' | asset_url }}" alt="Black Walnut" class="w-full h-full object-contain">
-                </div>
-                <span class="text-[10px] font-bold text-[#191614] mt-1">Black Walnut</span>
-              </button>
-
-              <!-- Variation 2: Natural Beech -->
-              <button type="button" 
-                      class="js-pdp-color-swatch relative w-18 h-22 rounded-xl border border-[#D1D5DB] bg-white p-1.5 shadow-xs transition hover:border-[#1A56DB] cursor-pointer flex flex-col items-center justify-center overflow-hidden"
-                      data-color-name="Natural Beech"
-                      data-variant-id="{% if product.variants.size > 1 %}{{ product.variants[1].id }}{% else %}2{% endif %}"
-                      data-img-src="{{ 'menvel-beech-showcase.jpg' | asset_url }}"
-                      data-sku="MG-RD-002-NB"
-                      data-price="$18.99 USD"
-                      aria-label="Select Natural Beech">
-                <div class="w-full h-12 flex items-center justify-center">
-                  <img src="{{ 'menvel-swatch-beech.jpg' | asset_url }}" alt="Natural Beech" class="w-full h-full object-contain">
-                </div>
-                <span class="text-[10px] font-bold text-[#191614] mt-1">Natural Beech</span>
-              </button>
-
-            </div>
-          </div>
+          {%- endif -%}
 
           <!-- Quantity Stepper -->
           <div class="flex items-center border border-[#D1D5DB] rounded-md h-11 bg-white px-3 w-32 justify-between">
