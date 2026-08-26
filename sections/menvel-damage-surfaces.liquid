@@ -42,11 +42,11 @@
           </p>
         </div>
 
-        <!-- High-Res Studio Teapot Featured Image -->
-        <div class="overflow-hidden border border-[#E8DFD5] bg-white shadow-xs mt-auto">
+        <!-- High-Res Studio Teapot Featured Image (100% visible, not cropped) -->
+        <div class="border border-[#E8DFD5] bg-white overflow-hidden shadow-xs mt-auto">
           <img src="{{ 'menvel-featured-teapot.jpg' | asset_url }}" 
                alt="Glass Teapot resting on Menvel Wooden Trivet" 
-               class="w-full h-60 sm:h-72 object-cover hover:scale-105 transition-transform duration-500" 
+               class="w-full h-auto object-contain block hover:scale-105 transition-transform duration-500" 
                loading="lazy">
         </div>
       </div>
