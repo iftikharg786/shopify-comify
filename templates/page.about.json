@@ -11,11 +11,32 @@
   "sections": {
     "story": {
       "type": "menvel-about-story",
-      "settings": {}
+      "settings": {
+        "eyebrow": "✦ OUR HERITAGE & PHILOSOPHY",
+        "heading": "Crafted By Nature.Designed For Your Table.",
+        "subheading": "We believe kitchen essentials shouldn't be hidden away in crowded drawers. Menvel Goods was born to create functional wood decor that protects your surfaces while celebrating the timeless beauty of natural hardwood.",
+        "image_badge": "Hand-Finished with Botanical Oils",
+        "story_eyebrow": "OUR BEGINNING",
+        "story_heading": "A Natural Alternative to Silicone & Metal Trivets",
+        "story_paragraph_1": "For years, kitchen trivets have been treated as an afterthought — often designed purely for function and hidden away when not in use.",
+        "story_paragraph_2": "We asked ourselves a simple question: What if surface protection could also be a beautiful piece of functional decor you’re proud to display?",
+        "story_paragraph_3": "Inspired by minimalist Scandinavian aesthetics and traditional woodworking joinery, we created the Menvel Foldable Tree Trivet — a gravity-opening design crafted from solid beechwood and finished to complement a variety of kitchen styles.",
+        "quote": "Every piece of wood has its own unique grain story. We simply shape it so it protects your family’s gathering place for generations."
+      }
     },
     "craft": {
       "type": "menvel-about-craft",
-      "settings": {}
+      "settings": {
+        "eyebrow": "MATERIALS & ARTISANRY",
+        "heading": "Pure Timber. No Plastics. No Shortcuts.",
+        "subheading": "Every Menvel piece undergoes an 8-step hand-carving and precision sanding process.",
+        "card_1_title": "100% Solid Natural Timber",
+        "card_1_text": "We never use veneer, synthetic particle board, or MDF. Only genuine North American Black Walnut and European Natural Beech harvested from certified renewable forests.",
+        "card_2_title": "Automatic Gravity Drop",
+        "card_2_text": "Precision interlocking petals open effortlessly with downward gravity pressure when cookware is placed on top, distributing weight evenly across protective contact points.",
+        "card_3_title": "Heat Proof up to 450°F",
+        "card_3_text": "Treated with natural botanical mineral oils that nourish the timber grain while shielding against direct heat, scorch marks, and condensation from hot pots and skillets."
+      }
     },
     "packaging": {
       "type": "menvel-included-and-packaging",
@@ -23,7 +44,16 @@
     },
     "features": {
       "type": "menvel-feature-ribbon",
-      "settings": {}
+      "settings": {
+        "feat1_title": "Natural Solid Wood",
+        "feat1_text": "Environmentally safe, 100% natural solid wood.",
+        "feat2_title": "Gravity Opens Automatically",
+        "feat2_text": "Opens with gravity when cookware is placed on top.",
+        "feat3_title": "Space-Saving Tree Form",
+        "feat3_text": "Stores upright as a decorative tree sculpture on your countertop.",
+        "feat4_title": "Gift-Ready Luxury Box",
+        "feat4_text": "Packed in a gold-embossed premium presentation gift box."
+      }
     },
     "reviews": {
       "type": "menvel-reviews-and-faq",
@@ -31,7 +61,14 @@
     },
     "cta": {
       "type": "menvel-about-cta",
-      "settings": {}
+      "settings": {
+        "eyebrow": "ELEVATE YOUR KITCHEN TODAY",
+        "heading": "Protect Your Table.<br>Serve Beautifully.",
+        "subheading": "Experience the original Foldable Wooden Trivet Set. Includes 4 solid wood foldable trivets and a matching decorative tree display stand.",
+        "button_label": "SHOP THE COLLECTION — $18.99",
+        "button_link": "",
+        "guarantee_text": "30-Day Money-Back Guarantee"
+      }
     }
   },
   "order": [
