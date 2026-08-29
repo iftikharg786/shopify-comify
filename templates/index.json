@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_pdp": {
@@ -9,7 +18,7 @@
         "button_label": "SHOP NOW — $18.99",
         "button_link": "",
         "badge_text": "30-Day Money-Back Guarantee",
-        "hero_image": "shopify:\/\/shop_images\/F39593A1-4776-46C4-9DE6-3C8575C15064.png"
+        "hero_image": "shopify://shop_images/F39593A1-4776-46C4-9DE6-3C8575C15064.png"
       }
     },
     "feature_ribbon": {
@@ -46,7 +55,7 @@
       "settings": {
         "heading": "See It In Action",
         "subheading": "Watch how it effortlessly opens with gravity and protects your table in one smooth motion.",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=tLxs8QAS00g",
+        "video_url": "https://www.youtube.com/watch?v=tLxs8QAS00g",
         "mp4_url": ""
       }
     },
