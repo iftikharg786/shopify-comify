@@ -1,15 +1,6 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
-    "logo_mobile": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
+    "logo_mobile": "shopify:\/\/shop_images\/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
     "mobile_logo_maxwidth": 115,
     "brand_walnut": "#3A2213",
     "brand_cream": "#FBF7F2",
@@ -21,7 +12,7 @@
           "enable_announcement": true,
           "show_on_mobile": false,
           "show_on_desktop": true,
-          "rating_score": "4.9/5",
+          "rating_score": "4.9\/5",
           "reviews_count": "",
           "shipping_text": "",
           "guarantee_text": "OVER 48+ REVIEWS",
@@ -32,7 +23,7 @@
         "type": "menvel-header",
         "settings": {
           "menu": "main-menu",
-          "logo": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
+          "logo": "shopify:\/\/shop_images\/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
           "logo_width": 220,
           "brand_title": "Menvel",
           "brand_subtitle": "Goods"
@@ -41,7 +32,7 @@
       "menvel-footer": {
         "type": "menvel-footer",
         "settings": {
-          "footer_logo": "shopify://shop_images/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
+          "footer_logo": "shopify:\/\/shop_images\/cc3ee333-ef79-4d19-b5df-5ba8e8011420.png",
           "footer_logo_width": 200,
           "brand_title": "Menvel",
           "brand_subtitle": "Goods",
