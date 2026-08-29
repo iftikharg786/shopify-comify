@@ -8,12 +8,12 @@
     
     <!-- Top Editorial Header -->
     <div class="max-w-2xl mx-auto text-center space-y-1.5">
-      <span class="menvel-eyebrow text-[#8A4315]">✦ PREMIUM PRESENTATION</span>
+      <span class="menvel-eyebrow text-[#8A4315]">{{ section.settings.eyebrow | default: "✦ PREMIUM PRESENTATION" }}</span>
       <h2 class="menvel-heading-serif text-2xl sm:text-3xl lg:text-4xl text-[#191614]">
-        Everyday Versatility & Holiday Gift Ready
+        {{ section.settings.heading | default: "Everyday Versatility & Holiday Gift Ready" }}
       </h2>
       <p class="text-xs sm:text-sm text-[#6B6259] leading-relaxed max-w-lg mx-auto">
-        Complete 4-trivet set + stand packed in a gold-embossed presentation box. Ready to gift or display.
+        {{ section.settings.subheading | default: "Complete 4-trivet set + stand packed in a gold-embossed presentation box. Ready to gift or display." }}
       </p>
     </div>
 
@@ -23,7 +23,7 @@
       <!-- Card 1: Dark Walnut Holiday Edition -->
       <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-center group">
         <div class="w-full h-full overflow-hidden flex items-center justify-center">
-          <img src="{{ 'menvel-dark-walnut-holiday-box.jpg' | asset_url }}" 
+          <img src="{% if section.settings.card1_image != blank %}{{ section.settings.card1_image | image_url: width: 1000 }}{% else %}{{ 'menvel-dark-walnut-holiday-box.jpg' | asset_url }}{% endif %}" 
                alt="Holiday's Best Choice - Dark Walnut Foldable Wooden Trivet Set" 
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                loading="lazy">
@@ -33,7 +33,7 @@
       <!-- Card 2: Natural Beech Holiday Edition -->
       <div class="rounded-2xl overflow-hidden border border-[#E8DFD5] bg-[#FAF6F0] shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-center group">
         <div class="w-full h-full overflow-hidden flex items-center justify-center">
-          <img src="{{ 'menvel-holiday-gift-box.png' | asset_url }}" 
+          <img src="{% if section.settings.card2_image != blank %}{{ section.settings.card2_image | image_url: width: 1000 }}{% else %}{{ 'menvel-holiday-gift-box.png' | asset_url }}{% endif %}" 
                alt="Holiday's Best Choice - Natural Beech Foldable Wooden Trivet Set" 
                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                loading="lazy">
@@ -44,9 +44,9 @@
 
     <!-- Conversion Action Button -->
     <div class="text-center pt-2">
-      <a href="/products/foldable-black-walnut-wooden-trivet-set" 
+      <a href="{{ section.settings.button_link | default: '/collections/all' }}" 
          class="menvel-btn-primary h-12 px-9 rounded-xl shadow-md text-xs font-extrabold uppercase tracking-wider inline-flex items-center gap-2">
-        <span>ORDER COMPLETE GIFT SET — $18.99</span>
+        <span>{{ section.settings.button_label | default: "ORDER COMPLETE GIFT SET — $18.99" }}</span>
         <span>→</span>
       </a>
     </div>
@@ -58,7 +58,47 @@
 {
   "name": "Complete Set & Packaging",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "✦ PREMIUM PRESENTATION"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everyday Versatility & Holiday Gift Ready"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Complete 4-trivet set + stand packed in a gold-embossed presentation box. Ready to gift or display."
+    },
+    {
+      "type": "image_picker",
+      "id": "card1_image",
+      "label": "Card 1 Image (Dark Walnut)"
+    },
+    {
+      "type": "image_picker",
+      "id": "card2_image",
+      "label": "Card 2 Image (Natural Beech)"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "ORDER COMPLETE GIFT SET — $18.99"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
   "presets": [
     {
       "name": "Complete Set & Packaging"

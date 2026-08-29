@@ -196,7 +196,6 @@
           })
           .then(res => res.json())
           .then(item => {
-            // Update cart count
             fetch('/cart.js')
               .then(res => res.json())
               .then(cart => {
@@ -231,6 +230,53 @@
         });
       }
     }
+
+    // --- 9. Cart Drawer Real-Time Quantity (+ / -) & Remove Handlers ---
+    function initCartDrawerSteppers() {
+      document.querySelectorAll('.js-qty-decrease, .js-qty-increase').forEach(function (btn) {
+        btn.onclick = function (e) {
+          e.preventDefault();
+          const line = this.getAttribute('data-line');
+          const qty = parseInt(this.getAttribute('data-qty'), 10);
+          if (isNaN(qty) || !line) return;
+
+          fetch('/cart/change.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ line: parseInt(line, 10), quantity: qty })
+          })
+          .then(res => res.json())
+          .then(cart => {
+            // Update cart count badge
+            document.querySelectorAll('.js-cart-count').forEach(el => {
+              el.textContent = cart.item_count;
+            });
+            // Fetch updated drawer HTML and replace
+            fetch(window.location.href)
+              .then(r => r.text())
+              .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const newDrawer = doc.getElementById('MenvelCartDrawer');
+                const currentDrawer = document.getElementById('MenvelCartDrawer');
+                if (newDrawer && currentDrawer) {
+                  currentDrawer.innerHTML = newDrawer.innerHTML;
+                  // Re-bind close & steppers
+                  const newClose = document.getElementById('MenvelCloseDrawer');
+                  if (newClose) newClose.addEventListener('click', window.closeMenvelDrawer);
+                  initCartDrawerSteppers();
+                }
+              });
+          })
+          .catch(err => {
+            console.error('Cart quantity update error:', err);
+            window.location.reload();
+          });
+        };
+      });
+    }
+
+    initCartDrawerSteppers();
 
   });
 })();
