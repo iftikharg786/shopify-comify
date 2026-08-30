@@ -3,149 +3,175 @@
   File: sections/menvel-faq.liquid
 {%- endcomment -%}
 
-<section id="MenvelFAQ" class="menvel-faq py-16 sm:py-24 bg-[#F8F2E9] border-b border-[#EADFCF]">
+<section id="MenvelFAQ" class="menvel-faq py-16 sm:py-24 bg-[#F8F2E9] border-b border-[#EADFCF]" data-section-id="{{ section.id }}">
   <div class="menvel-container max-w-4xl">
     
     <div class="text-center mb-16">
-      <span class="menvel-eyebrow">Frequently Asked Questions</span>
+      <span class="menvel-eyebrow">{{ section.settings.eyebrow | default: "Frequently Asked Questions" }}</span>
       <h2 class="menvel-heading-lg text-[#1F1B17]">
-        Got Questions? We’ve Got Answers.
+        {{ section.settings.heading | default: "Got Questions? We’ve Got Answers." }}
       </h2>
       <p class="menvel-lead mt-4 text-[#655E56]">
-        Everything you need to know about the Menvel Goods Foldable Black Walnut Trivet Set.
+        {{ section.settings.subheading | default: "Everything you need to know about the Menvel Goods Foldable Black Walnut Trivet Set." }}
       </p>
     </div>
 
     <!-- FAQ Accordion List -->
     <div class="space-y-4">
-      
-      <!-- FAQ 1 -->
-      <div class="menvel-faq-item is-open">
-        <button type="button" class="menvel-faq-question">
-          <span>How many trivets are included in the set?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            Each set includes <strong>4 foldable wooden trivets</strong>, <strong>1 central weighted tree storage/display stand</strong>, and <strong>1 premium gold-foil gift box</strong>.
-          </p>
+      {%- if section.blocks.size > 0 -%}
+        {%- for block in section.blocks -%}
+          <div class="menvel-faq-item {% if forloop.first %}is-open{% endif %}" {{ block.shopify_attributes }}>
+            <button type="button" class="menvel-faq-question js-pdp-accordion-header">
+              <span>{{ block.settings.question }}</span>
+              <svg class="menvel-faq-icon w-4 h-4 transform transition-transform duration-300 {% if forloop.first %}rotate-180{% endif %}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="menvel-faq-answer js-pdp-accordion-content {% unless forloop.first %}hidden{% endunless %}">
+              <div class="prose text-xs sm:text-sm text-[#655E56] leading-relaxed pt-2">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- else -%}
+        <!-- Default Accordions -->
+        <div class="menvel-faq-item is-open">
+          <button type="button" class="menvel-faq-question js-pdp-accordion-header">
+            <span>How many trivets are included in the set?</span>
+            <svg class="menvel-faq-icon rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="menvel-faq-answer js-pdp-accordion-content">
+            <p>Each set includes <strong>4 foldable wooden trivets</strong>, <strong>1 central weighted tree storage/display stand</strong>, and <strong>1 premium gold-foil gift box</strong>.</p>
+          </div>
         </div>
-      </div>
-
-      <!-- FAQ 2 -->
-      <div class="menvel-faq-item">
-        <button type="button" class="menvel-faq-question">
-          <span>How does the automatic gravity unfolding mechanism work?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            Simply remove one of the folded trivet branches from the tree stand and place it flat on your tabletop. The balanced precision joints naturally expand via gravity into an 8-inch wide heat shield in one smooth, second-long motion. No springs, latches, or awkward locks required.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ 3 -->
-      <div class="menvel-faq-item">
-        <button type="button" class="menvel-faq-question">
-          <span>What cookware and temperature ratings are supported?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            The Menvel Trivet is heat-rated for temperatures up to <strong>450°F (232°C)</strong>. It is designed to safely hold heavy enamelled Dutch ovens (like Le Creuset), sizzling cast iron skillets, boiling teapots, soup tureens, and hot baking casserole dishes without transferring damaging heat to your delicate counters or dining table.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ 4 -->
-      <div class="menvel-faq-item">
-        <button type="button" class="menvel-faq-question">
-          <span>Is this real solid wood or composite veneer?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            Every piece is <strong>100% Solid Natural American Black Walnut</strong>. We never use particle board, plastic core, or artificial laminates. Each trivet features distinct organic grain, rich chocolate-walnut coloring, and hand-sanded edges.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ 5 -->
-      <div class="menvel-faq-item">
-        <button type="button" class="menvel-faq-question">
-          <span>How do I clean and maintain the walnut wood?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            Cleaning is effortless: simply wipe the surface with a damp cloth and mild dish soap, then air dry. To maintain the rich, vibrant luster of the natural wood over decades, we recommend rubbing a few drops of food-grade mineral or walnut oil onto the wood every 4–6 months. Do not soak in water or place in an automatic dishwasher.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ 6 -->
-      <div class="menvel-faq-item">
-        <button type="button" class="menvel-faq-question">
-          <span>Is it ready for gifting?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            Yes! Every Menvel set arrives in a custom, heavy-duty presentation box with gold-foil typography and molded protective inserts. It is completely ready to be gifted for weddings, bridal showers, housewarmings, Christmas, Mother's Day, or birthdays.
-          </p>
-        </div>
-      </div>
-
-      <!-- FAQ 7 -->
-      <div class="menvel-faq-item">
-        <button type="button" class="menvel-faq-question">
-          <span>What is your return & guarantee policy?</span>
-          <svg class="menvel-faq-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </button>
-        <div class="menvel-faq-answer">
-          <p>
-            We stand behind our craftsmanship with a <strong>30-Day Risk-Free Money-Back Guarantee</strong>. If you are not completely enchanted by the beauty and functionality of the Menvel Tree Set, contact our support team for a full refund or hassle-free replacement.
-          </p>
-        </div>
-      </div>
-
+      {%- endif -%}
     </div>
 
     <!-- Need More Help Card -->
-    <div class="mt-12 p-6 rounded-2xl bg-white border border-[#EADFCF] text-center shadow-xs">
-      <h4 class="font-serif text-lg font-bold text-[#1F1B17]">Still have questions?</h4>
-      <p class="text-xs text-[#655E56] mt-1">Our dedicated customer care team is here 7 days a week.</p>
-      <a href="mailto:support@menvelgoods.com" class="inline-block mt-3 text-xs font-bold text-[#8A5428] hover:underline">
-        Contact Support → support@menvelgoods.com
-      </a>
-    </div>
+    {%- if section.settings.show_contact_card -%}
+      <div class="mt-12 p-6 rounded-2xl bg-white border border-[#EADFCF] text-center shadow-xs">
+        <h4 class="font-serif text-lg font-bold text-[#1F1B17]">{{ section.settings.contact_heading | default: "Still have questions?" }}</h4>
+        <p class="text-xs text-[#655E56] mt-1">{{ section.settings.contact_subheading | default: "Our dedicated customer care team is here 7 days a week." }}</p>
+        <a href="mailto:{{ section.settings.contact_email | default: 'support@menvelgoods.com' }}" class="inline-block mt-3 text-xs font-bold text-[#8A5428] hover:underline">
+          Contact Support → {{ section.settings.contact_email | default: 'support@menvelgoods.com' }}
+        </a>
+      </div>
+    {%- endif -%}
 
   </div>
 </section>
 
 {% schema %}
 {
-  "name": "Menvel FAQ",
+  "name": "Menvel FAQ Page",
   "tag": "section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Got Questions? We’ve Got Answers."
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Everything you need to know about the Menvel Goods Foldable Black Walnut Trivet Set."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_card",
+      "label": "Show Contact Card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_heading",
+      "label": "Contact Card Heading",
+      "default": "Still have questions?"
+    },
+    {
+      "type": "text",
+      "id": "contact_subheading",
+      "label": "Contact Card Subheading",
+      "default": "Our dedicated customer care team is here 7 days a week."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Email",
+      "default": "support@menvelgoods.com"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How many trivets are included in the set?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Each set includes 4 foldable wooden trivets, 1 central weighted tree storage/display stand, and 1 premium gift box.</p>"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Menvel FAQ"
+      "name": "Menvel FAQ Page",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How many trivets are included in the set?",
+            "answer": "<p>Each set includes <strong>4 foldable wooden trivets</strong>, <strong>1 central weighted tree storage/display stand</strong>, and <strong>1 premium gold-foil gift box</strong>.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the automatic gravity unfolding mechanism work?",
+            "answer": "<p>Simply remove one of the folded trivet branches from the tree stand and place it flat on your tabletop. The balanced precision joints naturally expand via gravity into an 8-inch wide heat shield in one smooth motion.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What cookware and temperature ratings are supported?",
+            "answer": "<p>The Menvel Trivet is heat-rated for temperatures up to <strong>450°F (232°C)</strong>. It safely holds Dutch ovens, cast iron skillets, boiling teapots, and hot baking casserole dishes.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is this real solid wood or composite veneer?",
+            "answer": "<p>Every piece is <strong>100% Solid Natural American Black Walnut & Beech</strong>. We never use particle board, plastic core, or artificial laminates.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I clean and care for my wooden trivet set?",
+            "answer": "<p>Simply wipe clean with a soft, slightly damp cloth after use. Do not submerge in water or place in the dishwasher. You can apply mineral oil or wax once or twice a year to keep the wood lustrous.</p>"
+          }
+        }
+      ]
     }
   ]
 }

@@ -208,6 +208,15 @@
             </button>
           </div>
 
+          <!-- App Blocks (e.g. Amazon MCF / Buy with Prime Delivery Card) placed directly under BUY IT NOW -->
+          {%- for block in section.blocks -%}
+            {%- if block.type == '@app' -%}
+              <div class="pt-2" {{ block.shopify_attributes }}>
+                {% render block %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+
         {% endform %}
 
         <!-- Mini Trust Badges Grid -->
@@ -343,6 +352,9 @@
     }
   ],
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "custom_tab",
       "name": "Accordion Tab",

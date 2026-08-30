@@ -163,12 +163,14 @@
         <div class="rounded-3xl border border-[#E8DFD5] bg-white p-6 space-y-4 shadow-xs">
           <div class="flex items-center gap-4">
             <div class="w-16 h-16 rounded-xl bg-[#FBF7F2] border border-[#E8DFD5] p-1 flex-shrink-0 flex items-center justify-center overflow-hidden">
-              <img src="{{ 'menvel-pdp-main-hero.jpg' | asset_url }}" alt="Menvel Tree Trivet" class="w-full h-full object-cover">
+              <img src="{% if section.settings.card_image != blank %}{{ section.settings.card_image | image_url: width: 200 }}{% else %}{{ 'menvel-pdp-main-hero.jpg' | asset_url }}{% endif %}" 
+                   alt="{{ section.settings.card_title | default: 'Made with Quality in Mind' | escape }}" 
+                   class="w-full h-full object-cover">
             </div>
             <div>
-              <h4 class="font-serif font-bold text-sm text-[#191614]">Made with Quality in Mind</h4>
+              <h4 class="font-serif font-bold text-sm text-[#191614]">{{ section.settings.card_title | default: "Made with Quality in Mind" }}</h4>
               <p class="text-[11px] text-[#6B6259] mt-0.5 leading-relaxed">
-                Crafted from carefully selected solid natural wood.
+                {{ section.settings.card_text | default: "Crafted from carefully selected solid natural wood." }}
               </p>
             </div>
           </div>
@@ -239,6 +241,27 @@
       "id": "hours_weekend",
       "label": "Weekend Hours",
       "default": "Saturday – Sunday: 10:00 AM – 4:00 PM EST"
+    },
+    {
+      "type": "header",
+      "content": "Mini Feature Card"
+    },
+    {
+      "type": "image_picker",
+      "id": "card_image",
+      "label": "Feature Card Image"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Feature Card Title",
+      "default": "Made with Quality in Mind"
+    },
+    {
+      "type": "textarea",
+      "id": "card_text",
+      "label": "Feature Card Text",
+      "default": "Crafted from carefully selected solid natural wood."
     }
   ],
   "presets": [
