@@ -48,7 +48,20 @@
     },
     "why_and_smart_design": {
       "type": "menvel-why-and-smart-design",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/8303BD55-CE3B-471E-BB73-0C099C9BDEB5.jpg",
+        "eyebrow": "✦ THE NATURAL CHOICE",
+        "heading": "Why Choose Our Wooden Trivet Set?",
+        "b1_icon": "✦",
+        "b1_title": "No Plastic Components",
+        "b1_text": "Crafted from 100% solid natural wood and finished with organic, food-safe protective coating to preserve the rich natural wood grain.",
+        "b2_icon": "🛡️",
+        "b2_title": "Superior Heat Protection",
+        "b2_text": "Naturally heat-resistant up to 450°F to reliably protect your tables and quartz or marble countertops from hot cookware and boiling kettles.",
+        "b3_icon": "🪵",
+        "b3_title": "Space-Saving Decorative Tree Stand",
+        "b3_text": "When not in use, store all 4 trivets on the matching upright stand to keep your kitchen tidy while serving as a beautiful conversation piece."
+      }
     },
     "video_showcase": {
       "type": "menvel-video-showcase",
@@ -61,7 +74,14 @@
     },
     "included_and_packaging": {
       "type": "menvel-included-and-packaging",
-      "settings": {}
+      "settings": {
+        "eyebrow": "✦ PREMIUM PRESENTATION",
+        "heading": "Everyday Versatility & Holiday Gift Ready",
+        "subheading": "Complete 4-trivet set + stand packed in a gold-embossed presentation box. Ready to gift or display.",
+        "card1_image": "shopify://shop_images/07E789DF-9BC8-43A4-A1D1-3089F4D6553F.jpg",
+        "button_label": "ORDER COMPLETE GIFT SET — $18.99",
+        "button_link": ""
+      }
     },
     "reviews_and_faq": {
       "type": "menvel-reviews-and-faq",
