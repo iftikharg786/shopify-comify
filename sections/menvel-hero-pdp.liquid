@@ -28,23 +28,21 @@
           </span>
           
           <div class="flex items-center gap-3">
-            <button type="button" 
-                    class="menvel-variant-card is-selected flex items-center gap-2 px-3.5 py-1.5 rounded-full border-2 border-[#3A2213] bg-white text-xs font-bold text-[#191614] shadow-xs cursor-pointer"
-                    data-variant-name="Black Walnut"
-                    data-variant-img="{% if section.settings.walnut_image != blank %}{{ section.settings.walnut_image | image_url: width: 1000 }}{% else %}{{ 'menvel-hero-showcase.jpg' | asset_url }}{% endif %}"
-                    data-variant-id="1">
+            <a href="{{ section.settings.walnut_link | default: '/products/foldable-black-walnut-wooden-trivet-set' }}" 
+               class="menvel-variant-card is-selected flex items-center gap-2 px-3.5 py-1.5 rounded-full border-2 border-[#3A2213] bg-white text-xs font-bold text-[#191614] shadow-xs hover:border-[#3A2213] transition"
+               data-variant-name="Black Walnut"
+               data-variant-img="{% if section.settings.walnut_image != blank %}{{ section.settings.walnut_image | image_url: width: 1000 }}{% elsif section.settings.hero_image != blank %}{{ section.settings.hero_image | image_url: width: 1000 }}{% else %}{{ 'menvel-hero-showcase.jpg' | asset_url }}{% endif %}">
               <span class="w-3.5 h-3.5 rounded-full bg-[#3A2213]"></span>
               <span>Black Walnut</span>
-            </button>
+            </a>
 
-            <button type="button" 
-                    class="menvel-variant-card flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E8DFD5] bg-white text-xs font-bold text-[#191614] shadow-xs cursor-pointer hover:border-[#3A2213]"
-                    data-variant-name="Natural Beech"
-                    data-variant-img="{% if section.settings.beech_image != blank %}{{ section.settings.beech_image | image_url: width: 1000 }}{% else %}{{ 'menvel-beech-showcase.jpg' | asset_url }}{% endif %}"
-                    data-variant-id="2">
+            <a href="{{ section.settings.beech_link | default: '/products/foldable-wooden-trivet-set-natural-beech' }}" 
+               class="menvel-variant-card flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#E8DFD5] bg-white text-xs font-bold text-[#191614] shadow-xs hover:border-[#3A2213] transition"
+               data-variant-name="Natural Beech"
+               data-variant-img="{% if section.settings.beech_image != blank %}{{ section.settings.beech_image | image_url: width: 1000 }}{% else %}{{ 'menvel-beech-showcase.jpg' | asset_url }}{% endif %}">
               <span class="w-3.5 h-3.5 rounded-full bg-[#E2BA9A]"></span>
               <span>Natural Beech</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -124,9 +122,19 @@
       "label": "Walnut Variant Image"
     },
     {
+      "type": "url",
+      "id": "walnut_link",
+      "label": "Walnut Product Link"
+    },
+    {
       "type": "image_picker",
       "id": "beech_image",
       "label": "Beech Variant Image"
+    },
+    {
+      "type": "url",
+      "id": "beech_link",
+      "label": "Beech Product Link"
     }
   ],
   "presets": [
