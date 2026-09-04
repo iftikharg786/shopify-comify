@@ -22,7 +22,7 @@
       "type": "apps",
       "blocks": {
         "amazon_mcf_and_buy_with_prime_delivery_card_GKQjCE": {
-          "type": "shopify://apps/amazon-mcf-and-buy-with-prime/blocks/delivery_card/cd9463cc-4da0-4f9f-92a6-6e3f345eb3ce",
+          "type": "shopify:\/\/apps\/amazon-mcf-and-buy-with-prime\/blocks\/delivery_card\/cd9463cc-4da0-4f9f-92a6-6e3f345eb3ce",
           "settings": {
             "free_shipping_threshold": "",
             "color_mode": "light",
