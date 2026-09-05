@@ -208,7 +208,28 @@
             </button>
           </div>
 
-          <!-- App Blocks (e.g. Amazon MCF / Buy with Prime Delivery Card) placed directly under BUY IT NOW -->
+          <!-- Prime Free Delivery Callout Banner (Placed directly under BUY IT NOW) -->
+          {%- if section.settings.show_prime_delivery -%}
+            <div class="pt-3 pb-1 flex items-center gap-2 text-xs text-[#191614] flex-wrap">
+              <span class="font-extrabold text-[#00A8E1] tracking-tight italic flex items-center gap-1">
+                <svg class="w-4 h-4 inline-block text-[#00A8E1]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                prime
+              </span>
+              <span class="font-medium text-[#191614]">{{ section.settings.prime_delivery_text | default: "FREE delivery for Prime members." }}</span>
+              {%- if section.settings.prime_delivery_subtext != blank -%}
+                <span class="text-[#4B5563] text-[11px] block sm:inline w-full sm:w-auto">
+                  {{ section.settings.prime_delivery_subtext | default: "Get it as soon as 2-3 Business Days." }}
+                  {%- if section.settings.prime_learn_more_link != blank -%}
+                    <a href="{{ section.settings.prime_learn_more_link }}" class="text-[#007185] hover:underline font-semibold ml-1">Learn More</a>
+                  {%- endif -%}
+                </span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          <!-- App Blocks (e.g. Amazon MCF / Buy with Prime Delivery Card) -->
           {%- for block in section.blocks -%}
             {%- if block.type == '@app' -%}
               <div class="pt-2" {{ block.shopify_attributes }}>
@@ -349,6 +370,33 @@
       "id": "visitors_text",
       "label": "Real-time Visitors Text",
       "default": "Real-time 11 Visitors right now"
+    },
+    {
+      "type": "header",
+      "content": "Prime Delivery Callout"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_prime_delivery",
+      "label": "Show Prime Delivery Callout",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "prime_delivery_text",
+      "label": "Prime Delivery Text",
+      "default": "FREE delivery for Prime members."
+    },
+    {
+      "type": "text",
+      "id": "prime_delivery_subtext",
+      "label": "Prime Delivery Subtext",
+      "default": "Get it as soon as Mon, Aug 31."
+    },
+    {
+      "type": "url",
+      "id": "prime_learn_more_link",
+      "label": "Learn More Link"
     }
   ],
   "blocks": [
