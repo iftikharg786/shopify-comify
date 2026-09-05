@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "story": {
@@ -15,7 +6,7 @@
         "eyebrow": "✦ OUR HERITAGE & PHILOSOPHY",
         "heading": "Crafted By Nature.Designed For Your Table.",
         "subheading": "We believe kitchen essentials shouldn't be hidden away in crowded drawers. Menvel Goods was born to create functional wood decor that protects your surfaces while celebrating the timeless beauty of natural hardwood.",
-        "story_image": "shopify://shop_images/F39593A1-4776-46C4-9DE6-3C8575C15064.png",
+        "story_image": "shopify:\/\/shop_images\/F39593A1-4776-46C4-9DE6-3C8575C15064.png",
         "image_badge": "Hand-Finished with Botanical Oils",
         "story_eyebrow": "OUR BEGINNING",
         "story_heading": "A Natural Alternative to Silicone & Metal Trivets",
@@ -31,7 +22,7 @@
         "eyebrow": "MATERIALS & ARTISANRY",
         "heading": "Pure Timber. No Plastics. No Shortcuts.",
         "subheading": "Every Menvel piece undergoes an 8-step hand-carving and precision sanding process.",
-        "card_1_image": "shopify://shop_images/A75B35AE-C966-4427-BE14-AE4FE75DB71B.png",
+        "card_1_image": "shopify:\/\/shop_images\/A75B35AE-C966-4427-BE14-AE4FE75DB71B.png",
         "card_1_title": "Premium Solid Natural Wood",
         "card_1_text": "Crafted from carefully selected solid natural wood for beauty, strength, and lasting durability. We use real wood — never veneer, MDF, or particle board. Natural variations in grain and tone give every Menvel trivet its own unique character.",
         "card_2_title": "Automatic Gravity Drop",
@@ -46,7 +37,7 @@
         "eyebrow": "✦ PREMIUM PRESENTATION",
         "heading": "Everyday Versatility & Holiday Gift Ready",
         "subheading": "Complete 4-trivet set + stand packed in a gold-embossed presentation box. Ready to gift or display.",
-        "card1_image": "shopify://shop_images/07E789DF-9BC8-43A4-A1D1-3089F4D6553F.jpg",
+        "card1_image": "shopify:\/\/shop_images\/07E789DF-9BC8-43A4-A1D1-3089F4D6553F.jpg",
         "button_label": "ORDER COMPLETE GIFT SET — $18.99",
         "button_link": ""
       }
@@ -77,7 +68,7 @@
         "button_label": "SHOP THE COLLECTION — $18.99",
         "button_link": "",
         "guarantee_text": "30-Day Money-Back Guarantee",
-        "cta_image": "shopify://shop_images/F39593A1-4776-46C4-9DE6-3C8575C15064.png"
+        "cta_image": "shopify:\/\/shop_images\/F39593A1-4776-46C4-9DE6-3C8575C15064.png"
       }
     }
   },

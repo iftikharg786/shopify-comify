@@ -1,19 +1,10 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main_product": {
       "type": "menvel-single-product",
       "blocks": {
         "amazon_mcf_and_buy_with_prime_delivery_card_Pj9L4A": {
-          "type": "shopify://apps/amazon-mcf-and-buy-with-prime/blocks/delivery_card/cd9463cc-4da0-4f9f-92a6-6e3f345eb3ce",
+          "type": "shopify:\/\/apps\/amazon-mcf-and-buy-with-prime\/blocks\/delivery_card\/cd9463cc-4da0-4f9f-92a6-6e3f345eb3ce",
           "settings": {
             "free_shipping_threshold": "",
             "color_mode": "light",

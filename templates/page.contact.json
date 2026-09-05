@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "contact_form": {
@@ -20,35 +11,35 @@
           "type": "faq_item",
           "settings": {
             "question": "How do I clean and care for my wooden trivet set?",
-            "answer": "<p>Simply wipe clean with a soft, slightly damp cloth after use. Do not submerge in water or place in the dishwasher. To keep the wood looking rich and vibrant for years, you can apply a drop of food-safe mineral oil or cutting board wax once or twice a year.</p>"
+            "answer": "<p>Simply wipe clean with a soft, slightly damp cloth after use. Do not submerge in water or place in the dishwasher. To keep the wood looking rich and vibrant for years, you can apply a drop of food-safe mineral oil or cutting board wax once or twice a year.<\/p>"
           }
         },
         "faq_item_2": {
           "type": "faq_item",
           "settings": {
             "question": "What is the maximum heat resistance?",
-            "answer": "<p>Our solid natural wood trivets are naturally heat-resistant up to 450°F (232°C). They safely handle cast iron skillets, boiling kettles, Dutch ovens, and sizzling casserole dishes straight off the stove or oven.</p>"
+            "answer": "<p>Our solid natural wood trivets are naturally heat-resistant up to 450°F (232°C). They safely handle cast iron skillets, boiling kettles, Dutch ovens, and sizzling casserole dishes straight off the stove or oven.<\/p>"
           }
         },
         "faq_item_3": {
           "type": "faq_item",
           "settings": {
             "question": "How long does shipping take?",
-            "answer": "<p>Orders are fulfilled through Amazon’s fulfillment network. Eligible U.S. customers may have access to fast Prime delivery, while delivery times for other orders vary based on location and the shipping option selected at checkout. Estimated delivery times will be displayed during checkout.</p>"
+            "answer": "<p>Orders are fulfilled through Amazon’s fulfillment network. Eligible U.S. customers may have access to fast Prime delivery, while delivery times for other orders vary based on location and the shipping option selected at checkout. Estimated delivery times will be displayed during checkout.<\/p>"
           }
         },
         "faq_item_4": {
           "type": "faq_item",
           "settings": {
             "question": "What type of wood is used?",
-            "answer": "<p>Our trivets are made from 100% natural solid wood, carefully selected for durability, strength, and a beautiful natural finish.</p>"
+            "answer": "<p>Our trivets are made from 100% natural solid wood, carefully selected for durability, strength, and a beautiful natural finish.<\/p>"
           }
         },
         "faq_item_5": {
           "type": "faq_item",
           "settings": {
             "question": "What is your return & refund policy?",
-            "answer": "<p>We want you to be completely satisfied with your purchase. Eligible items may be returned within 30 days of delivery through Amazon’s fulfillment network.</p>"
+            "answer": "<p>We want you to be completely satisfied with your purchase. Eligible items may be returned within 30 days of delivery through Amazon’s fulfillment network.<\/p>"
           }
         }
       },
