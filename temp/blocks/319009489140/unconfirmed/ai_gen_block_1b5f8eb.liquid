@@ -1,6 +1,344 @@
+{% doc %}
+  @prompt
+    Create a "Prime Free Delivery" badge/banner block for the product page that always displays a Prime free delivery message. It should look similar to Amazon's Prime delivery style — include the Prime logo text or badge styling, a delivery message like "FREE delivery with Prime", and make it visually stand out on the product page. The block should always be visible and not depend on any app or condition to show.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-prime-delivery-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+    margin: 0 auto;
+    background: {{ block.settings.background_gradient_start }};
+    background: linear-gradient(135deg, {{ block.settings.background_gradient_start }} 0%, {{ block.settings.background_gradient_end }} 100%);
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .ai-prime-delivery-content-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    justify-content: {{ block.settings.content_alignment }};
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ai-prime-badge-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    background-color: {{ block.settings.badge_bg_color }};
+    color: {{ block.settings.badge_text_color }};
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: {{ block.settings.badge_font_size }}px;
+    line-height: 1.2;
+    text-transform: {{ block.settings.badge_text_transform }};
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  }
+
+  .ai-prime-delivery-message-{{ ai_gen_id }} {
+    color: {{ block.settings.message_text_color }};
+    font-size: {{ block.settings.message_font_size }}px;
+    font-weight: {{ block.settings.message_font_weight }};
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .ai-prime-delivery-icon-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: {{ block.settings.icon_color }};
+  }
+
+  .ai-prime-delivery-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-prime-delivery-{{ ai_gen_id }} {
+      width: 100%;
+      padding: {{ block.settings.padding_vertical | times: 0.8 }}px {{ block.settings.padding_horizontal | times: 0.8 }}px;
+    }
+
+    .ai-prime-delivery-content-{{ ai_gen_id }} {
+      justify-content: center;
+    }
+
+    .ai-prime-badge-{{ ai_gen_id }} {
+      font-size: {{ block.settings.badge_font_size | times: 0.9 }}px;
+    }
+
+    .ai-prime-delivery-message-{{ ai_gen_id }} {
+      font-size: {{ block.settings.message_font_size | times: 0.9 }}px;
+      text-align: center;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-prime-delivery-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-prime-delivery-content-{{ ai_gen_id }}">
+    {% if block.settings.show_icon %}
+      <div class="ai-prime-delivery-icon-{{ ai_gen_id }}">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>
+      </div>
+    {% endif %}
+
+    {% if block.settings.show_badge %}
+      <span class="ai-prime-badge-{{ ai_gen_id }}">
+        {{ block.settings.badge_text }}
+      </span>
+    {% endif %}
+
+    {% if block.settings.delivery_message != blank %}
+      <p class="ai-prime-delivery-message-{{ ai_gen_id }}">
+        {{ block.settings.delivery_message }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Prime delivery badge",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show Prime badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "prime"
+    },
+    {
+      "type": "select",
+      "id": "badge_text_transform",
+      "label": "Badge text style",
+      "options": [
+        {
+          "value": "none",
+          "label": "Normal"
+        },
+        {
+          "value": "uppercase",
+          "label": "Uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "Lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge font size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge background",
+      "default": "#00A8E1"
+    },
+    {
+      "type": "color",
+      "id": "badge_text_color",
+      "label": "Badge text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Delivery message"
+    },
+    {
+      "type": "text",
+      "id": "delivery_message",
+      "label": "Message",
+      "default": "FREE delivery"
+    },
+    {
+      "type": "range",
+      "id": "message_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Message font size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "message_font_weight",
+      "label": "Message font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "message_text_color",
+      "label": "Message text",
+      "default": "#232F3E"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show delivery truck icon",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon",
+      "default": "#232F3E"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "flex-start"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_start",
+      "label": "Background start",
+      "default": "#E8F5F9"
+    },
+    {
+      "type": "color",
+      "id": "background_gradient_end",
+      "label": "Background end",
+      "default": "#D4EDF6"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding vertical",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 12,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding horizontal",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Prime delivery badge"
+    }
+  ]
+}
 {% endschema %}
