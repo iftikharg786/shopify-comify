@@ -118,18 +118,23 @@
 
         <!-- Price Display -->
         <div class="flex items-baseline gap-3">
-          {%- if product.compare_at_price > product.price -%}
-            <span class="text-xs text-neutral-400 line-through font-medium">{{ compare_price }}</span>
-          {%- else -%}
-            <span class="text-xs text-neutral-400 line-through font-medium">$19.99 USD</span>
+          {%- assign has_discount = false -%}
+          {%- if current_variant.compare_at_price > current_variant.price -%}
+            {%- assign has_discount = true -%}
+            {%- assign diff = current_variant.compare_at_price | minus: current_variant.price -%}
+            {%- assign discount_pct = diff | times: 100.0 | divided_by: current_variant.compare_at_price | round -%}
           {%- endif -%}
 
-          <span class="text-2xl font-bold text-[#191614]" id="PDPMainPrice">
-            {%- if product.price -%}{{ money_price }}{%- else -%}$18.99 USD{%- endif -%}
+          <span id="PDPComparePrice" class="text-xs text-neutral-400 line-through font-medium {% unless has_discount %}hidden{% endunless %}">
+            {%- if has_discount -%}{{ current_variant.compare_at_price | money }}{%- endif -%}
           </span>
 
-          <span class="text-[11px] font-bold text-[#15803D] bg-[#DCFCE7] px-2.5 py-0.5 rounded-full">
-            Save 5%
+          <span class="text-2xl font-bold text-[#191614]" id="PDPMainPrice">
+            {{ money_price }}
+          </span>
+
+          <span id="PDPSavingBadge" class="text-[11px] font-bold text-[#15803D] bg-[#DCFCE7] px-2.5 py-0.5 rounded-full {% unless has_discount %}hidden{% endunless %}">
+            {%- if has_discount -%}Save {{ discount_pct }}%{%- endif -%}
           </span>
         </div>
 
@@ -164,11 +169,20 @@
 
               <div class="flex flex-wrap items-center gap-2.5">
                 {%- for variant in product.variants -%}
+                  {%- assign var_has_discount = false -%}
+                  {%- assign var_discount_pct = 0 -%}
+                  {%- if variant.compare_at_price > variant.price -%}
+                    {%- assign var_has_discount = true -%}
+                    {%- assign var_diff = variant.compare_at_price | minus: variant.price -%}
+                    {%- assign var_discount_pct = var_diff | times: 100.0 | divided_by: variant.compare_at_price | round -%}
+                  {%- endif -%}
                   <button type="button" 
                           class="js-pdp-color-swatch {% if forloop.first %}is-active border-2 border-[#1A56DB] ring-2 ring-[#1A56DB]/20{% else %}border border-[#D1D5DB]{% endif %} px-3 py-2 rounded-xl bg-white shadow-xs transition hover:border-[#1A56DB] cursor-pointer flex items-center gap-2"
                           data-color-name="{{ variant.title | escape }}"
                           data-variant-id="{{ variant.id }}"
                           data-price="{{ variant.price | money }}"
+                          data-compare-price="{% if var_has_discount %}{{ variant.compare_at_price | money }}{% endif %}"
+                          data-saving-pct="{% if var_has_discount %}{{ var_discount_pct }}{% endif %}"
                           data-sku="{{ variant.sku | escape }}"
                           aria-label="Select {{ variant.title | escape }}">
                     <span class="w-2.5 h-2.5 rounded-full {% if variant.title contains 'Beech' %}bg-[#E8C39E]{% else %}bg-[#5C3A21]{% endif %} flex-shrink-0"></span>

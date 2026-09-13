@@ -94,6 +94,8 @@
     const skuLabel = document.getElementById('PDPSkuLabel');
     const variantIdInput = document.getElementById('PDPVariantIdInput');
     const priceDisplay = document.getElementById('PDPMainPrice');
+    const comparePriceDisplay = document.getElementById('PDPComparePrice');
+    const savingBadgeDisplay = document.getElementById('PDPSavingBadge');
 
     swatchBtns.forEach(function (swatch) {
       swatch.addEventListener('click', function () {
@@ -102,12 +104,26 @@
         const sku = this.getAttribute('data-sku');
         const variantId = this.getAttribute('data-variant-id');
         const price = this.getAttribute('data-price');
+        const comparePrice = this.getAttribute('data-compare-price');
+        const savingPct = this.getAttribute('data-saving-pct');
 
         if (colorLabel) colorLabel.textContent = colorName;
         if (skuLabel && sku) skuLabel.textContent = sku;
         if (targetImg && pdpMainImg) pdpMainImg.src = targetImg;
         if (variantIdInput && variantId) variantIdInput.value = variantId;
         if (priceDisplay && price) priceDisplay.textContent = price;
+
+        if (comparePriceDisplay && savingBadgeDisplay) {
+          if (comparePrice && savingPct) {
+            comparePriceDisplay.textContent = comparePrice;
+            comparePriceDisplay.classList.remove('hidden');
+            savingBadgeDisplay.textContent = 'Save ' + savingPct + '%';
+            savingBadgeDisplay.classList.remove('hidden');
+          } else {
+            comparePriceDisplay.classList.add('hidden');
+            savingBadgeDisplay.classList.add('hidden');
+          }
+        }
 
         // Active border styling (Blue highlight as in mockup)
         swatchBtns.forEach(s => {
