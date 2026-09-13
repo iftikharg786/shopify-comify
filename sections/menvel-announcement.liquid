@@ -35,10 +35,21 @@
       </div>
     {%- endif -%}
 
-    <!-- Right: Highlight / Badge (Only shows if not blank) -->
-    {%- if section.settings.right_text != blank -%}
+    <!-- Right: Support Email / Highlight (Only shows if not blank) -->
+    {%- if section.settings.support_email != blank or section.settings.right_text != blank -%}
       <div class="hidden sm:flex items-center gap-3 justify-end text-white/90 text-xs">
-        <span>{{ section.settings.right_text }}</span>
+        {%- if section.settings.support_email != blank -%}
+          <a href="mailto:{{ section.settings.support_email }}" class="hover:underline flex items-center gap-1 font-semibold text-white/90">
+            <span>✉️</span>
+            <span>{{ section.settings.support_email }}</span>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.support_email != blank and section.settings.right_text != blank -%}
+          <span class="text-white/40">•</span>
+        {%- endif -%}
+        {%- if section.settings.right_text != blank -%}
+          <span>{{ section.settings.right_text }}</span>
+        {%- endif -%}
       </div>
     {%- endif -%}
 
@@ -90,6 +101,11 @@
       "type": "text",
       "id": "guarantee_text",
       "label": "Guarantee Text"
+    },
+    {
+      "type": "text",
+      "id": "support_email",
+      "label": "Support Email (e.g. support@menvelgoods.com)"
     },
     {
       "type": "text",
