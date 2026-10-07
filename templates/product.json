@@ -1,10 +1,19 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main_product": {
       "type": "menvel-single-product",
       "blocks": {
         "amazon_mcf_and_buy_with_prime_delivery_card_Pj9L4A": {
-          "type": "shopify:\/\/apps\/amazon-mcf-and-buy-with-prime\/blocks\/delivery_card\/cd9463cc-4da0-4f9f-92a6-6e3f345eb3ce",
+          "type": "shopify://apps/amazon-mcf-and-buy-with-prime/blocks/delivery_card/cd9463cc-4da0-4f9f-92a6-6e3f345eb3ce",
           "settings": {
             "free_shipping_threshold": "",
             "color_mode": "light",
@@ -25,7 +34,10 @@
         "urgency_text": "HURRY! ONLY 43 LEFT IN STOCK",
         "special_offer_heading": "SPECIAL OFFER",
         "promo_code_text": "Sale 30% Off Use Code: Deal30",
-        "visitors_text": "Real-time 11 Visitors right now"
+        "visitors_text": "Real-time 11 Visitors right now",
+        "show_prime_delivery": true,
+        "prime_delivery_text": "FREE delivery for Prime members.",
+        "prime_delivery_subtext": "Fast, tracked shipping on eligible items."
       }
     },
     "1787988166a72a1ba6": {
@@ -35,11 +47,30 @@
     "1788605432b35bae16": {
       "type": "apps",
       "settings": {}
+    },
+    "1791341340949625a7": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_nyyPeH": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_nyyPeH"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "main_product",
     "1787988166a72a1ba6",
-    "1788605432b35bae16"
+    "1788605432b35bae16",
+    "1791341340949625a7"
   ]
 }
